@@ -1,7 +1,7 @@
-package cn.freefly.springboot.rabbitMqManual.consumer;
+package cn.freefly.springboot.rabbitMqManu.consumer;
 
-import cn.freefly.springboot.rabbitMqManual.dto.TestManualSendObj;
-import cn.freefly.springboot.rabbitMqManual.utils.JsonUtil;
+import cn.freefly.springboot.rabbitMqManu.dto.TestManualSendObj;
+import cn.freefly.springboot.rabbitMqManu.utils.JsonUtil;
 import com.rabbitmq.client.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

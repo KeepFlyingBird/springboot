@@ -1,4 +1,4 @@
-package cn.freefly.springboot.rabbitMqManual.dto;
+package cn.freefly.springboot.rabbitMqManu.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

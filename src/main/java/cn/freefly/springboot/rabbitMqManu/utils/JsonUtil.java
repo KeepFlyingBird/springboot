@@ -1,4 +1,4 @@
-package cn.freefly.springboot.rabbitMqManual.utils;
+package cn.freefly.springboot.rabbitMqManu.utils;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.util.StringUtils;

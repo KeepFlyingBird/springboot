@@ -1,8 +1,8 @@
-package cn.freefly.springboot.rabbitMqManual.service.impl;
+package cn.freefly.springboot.rabbitMqManu.service.impl;
 
-import cn.freefly.springboot.rabbitMqManual.dto.TestManualSendObj;
-import cn.freefly.springboot.rabbitMqManual.producer.TestManualProducer;
-import cn.freefly.springboot.rabbitMqManual.service.TestManualService;
+import cn.freefly.springboot.rabbitMqManu.dto.TestManualSendObj;
+import cn.freefly.springboot.rabbitMqManu.producer.TestManualProducer;
+import cn.freefly.springboot.rabbitMqManu.service.TestManualService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

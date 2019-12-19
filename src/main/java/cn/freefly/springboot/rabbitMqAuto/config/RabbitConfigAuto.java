@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Primary;
  * @Desc
  */
 @Configuration
-public class RabbitConfig {
+public class RabbitConfigAuto {
 
     /**
      * @Author xiao.yunfei

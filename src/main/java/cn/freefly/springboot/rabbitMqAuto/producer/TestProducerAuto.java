@@ -18,8 +18,8 @@ import java.util.UUID;
  * @Desc 生产者-测试
  */
 @Component
-public class TestProducer {
-    private static final Logger logger = LoggerFactory.getLogger(TestProducer.class);
+public class TestProducerAuto {
+    private static final Logger logger = LoggerFactory.getLogger(TestProducerAuto.class);
 
     @Resource(name="baseRabbitTemplate")
     private RabbitTemplate rabbitTemplate;

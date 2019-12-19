@@ -2,8 +2,8 @@ package cn.freefly.springboot.controller;
 
 import cn.freefly.springboot.rabbitMqAuto.dto.TestSendObj;
 import cn.freefly.springboot.rabbitMqAuto.service.TestService;
-import cn.freefly.springboot.rabbitMqManual.dto.TestManualSendObj;
-import cn.freefly.springboot.rabbitMqManual.service.TestManualService;
+import cn.freefly.springboot.rabbitMqManu.dto.TestManualSendObj;
+import cn.freefly.springboot.rabbitMqManu.service.TestManualService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

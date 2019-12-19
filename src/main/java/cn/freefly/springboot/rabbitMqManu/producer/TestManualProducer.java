@@ -1,6 +1,6 @@
-package cn.freefly.springboot.rabbitMqManual.producer;
+package cn.freefly.springboot.rabbitMqManu.producer;
 
-import cn.freefly.springboot.rabbitMqManual.dto.TestManualSendObj;
+import cn.freefly.springboot.rabbitMqManu.dto.TestManualSendObj;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.connection.CorrelationData;

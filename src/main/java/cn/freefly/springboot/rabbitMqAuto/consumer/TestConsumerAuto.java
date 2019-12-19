@@ -16,8 +16,8 @@ import org.springframework.stereotype.Component;
  * @Desc 消费者-测试
  */
 @Component //实例化到spring容器中
-public class TestConsumer {
-    private static final Logger logger = LoggerFactory.getLogger(TestConsumer.class);
+public class TestConsumerAuto {
+    private static final Logger logger = LoggerFactory.getLogger(TestConsumerAuto.class);
 
     @RabbitListener(queues={"${queue.test}"},containerFactory = "baseRabbitListenerContainerFactory")
     private void receiveMsgTest(final Message message, Channel channel){

@@ -2,7 +2,7 @@ package cn.freefly.springboot.rabbitMqAuto.service.impl;
 
 import cn.freefly.springboot.rabbitMqAuto.dto.TestSendObj;
 import cn.freefly.springboot.rabbitMqAuto.service.TestService;
-import cn.freefly.springboot.rabbitMqAuto.producer.TestProducer;
+import cn.freefly.springboot.rabbitMqAuto.producer.TestProducerAuto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class TestServiceImpl implements TestService {
     @Autowired
-    private TestProducer testProducer;
+    private TestProducerAuto testProducer;
 
     @Override
     public void sendObjList(List<TestSendObj> list) {
