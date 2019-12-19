@@ -1,0 +1,27 @@
+消息队列:
+    RabbitMq、Kafka
+内存数据库：
+    Redis、memcached
+搜索：
+    Es、Solr
+反向代理服务器：
+    nginx、haproxy、Zuul
+自动化服务：
+    Jenkins
+容器：
+    docker、kubernetes
+日志分析系统：
+    ELK:Elasticsearch、Logstash和Kibana
+多线程：
+线程池：
+RPC架构:
+Dubbo架构:
+Jdk8新特性：
+代码并行执行:
+lombok框架：
+Swagger2框架：
+validation框架：
+dozer框架：JavaBean映射工具库
+ObjectMapper框架：实现Java对象跟json的转换
+windows架构sftp文件服务器：bitvise
+虚拟机
