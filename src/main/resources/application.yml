@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://10.0.3.4:3306/jy_fund?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: dev_user
+    password: dev_user@jy28%JK
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+
+  redis:
+    database: 4
+    host: 10.0.1.34
+    port: 6379
+    password: deThaxi6hesp8paKocheRorLf6AbRAsaxiqoxaquzeswoprar8juvlst7ru0AFro
+    timeout: 10000
+    jedis:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 10
+        min-idle: 0
+  ## RabbitMQ 配置
+  rabbitmq:
+    host: '183.84.2.5' # RabbitMQ 服务器地址
+    port: 5672 # RabbitMQ 服务器端口
+    username: 'jianyuanRish' # RabbitMQ 服务器用户
+    password: 'jy123456' # RabbitMQ 服务器密码
+    virtual-host: 'rish'
+
+server:
+  port: 8082
+undertow:
+  ## IO线程数, 它主要执行非阻塞的任务，它们会负责多个连接，默认设置每个CPU核心一个线程，不可设置过大，否则启动项目会报错：打开文件数过多
+  io-threads: 16
+  ## 阻塞任务线程池，当执行类似servlet请求阻塞IO操作，undertow会从这个线程池中取得线程。它的值取决于系统线程执行任务的阻塞系数，默认值是 io-threads*8
+  worker-threads: 256
+  ## 每块buffer的空间大小，越小的空间被利用越充分，不要设置太大，以免影响其他应用
+  buffer-size: 1024
+  ## 每个区分配的buffer数量
+  buffers-per-region: 1024
+  ## 是否分配的直接内存(NIO直接分配的堆外内存)
+  direct-buffers: true
