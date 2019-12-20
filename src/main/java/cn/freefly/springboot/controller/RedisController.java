@@ -1,7 +1,7 @@
 package cn.freefly.springboot.controller;
 
 import cn.freefly.springboot.dto.redis.RedisUserEntity;
-import cn.freefly.springboot.util.RedisUtil;
+import cn.freefly.springboot.devUtils.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

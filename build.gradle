@@ -44,5 +44,7 @@ dependencies {
     // mysql数据库
     implementation "mysql:mysql-connector-java:8.0.15"
 
-
+    implementation 'commons-codec:commons-codec:1.12'
+    //
+    implementation 'commons-io:commons-io:2.6'
 }

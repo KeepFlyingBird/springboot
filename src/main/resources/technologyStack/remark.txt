@@ -13,7 +13,8 @@
 日志分析系统：
     ELK:Elasticsearch、Logstash和Kibana
 多线程：
-线程池：
+数据库连接池：HiKariCP、Druid
+
 RPC架构:
 Dubbo架构:
 Jdk8新特性：
@@ -25,3 +26,4 @@ dozer框架：JavaBean映射工具库
 ObjectMapper框架：实现Java对象跟json的转换
 windows架构sftp文件服务器：bitvise
 虚拟机
+私钥

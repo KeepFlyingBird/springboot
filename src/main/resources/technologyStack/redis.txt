@@ -1,0 +1,6 @@
+参考：https://www.cnblogs.com/zhuifeng523/p/11641792.html
+主要使用场景：
+  1、缓存
+  2、消息队列
+  3、分布式锁
+  4、分布式集群
