@@ -7,4 +7,5 @@ package cn.freefly.springboot.redis.service;
  * @Desc
  */
 public class Service {
+
 }

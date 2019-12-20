@@ -1,4 +1,4 @@
-package cn.freefly.springboot.dto.redis;
+package cn.freefly.springboot.redis.dto;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

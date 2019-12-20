@@ -1,4 +1,4 @@
-package cn.freefly.springboot.config;
+package cn.freefly.springboot.redis.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

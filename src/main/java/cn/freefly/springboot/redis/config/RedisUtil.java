@@ -1,4 +1,4 @@
-package cn.freefly.springboot.devUtils;
+package cn.freefly.springboot.redis.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundListOperations;

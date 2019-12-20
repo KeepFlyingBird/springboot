@@ -1,4 +1,4 @@
-package cn.freefly.springboot.dto.redis;
+package cn.freefly.springboot.redis.dto;
 
 /**
  * @ClassNmae ExecMyRedisLock

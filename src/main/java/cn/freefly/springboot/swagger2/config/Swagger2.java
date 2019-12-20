@@ -1,4 +1,4 @@
-package cn.freefly.springboot.config;
+package cn.freefly.springboot.swagger2.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

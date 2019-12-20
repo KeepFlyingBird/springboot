@@ -27,7 +27,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // ----swagger2 --- start
     implementation "io.springfox:springfox-swagger2:2.9.2"
-    implementation "io.springfox:springfox-swagger-ui:2.9.2"
+    implementation "io.springfox:springfox-swagger2-ui:2.9.2"
     // ----swagger2 --- end
     //--springboot中的redis依赖
     compile('org.springframework.boot:spring-boot-starter-data-redis')

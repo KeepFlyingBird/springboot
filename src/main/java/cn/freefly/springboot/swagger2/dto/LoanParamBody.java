@@ -1,4 +1,4 @@
-package cn.freefly.springboot.dto.swagger2;
+package cn.freefly.springboot.swagger2.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

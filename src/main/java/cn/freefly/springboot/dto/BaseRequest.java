@@ -1,6 +1,6 @@
 //package com.jy.springboot.dto;
 //
-//import io.swagger.annotations.ApiModelProperty;
+//import io.swagger2.annotations.ApiModelProperty;
 //import lombok.Getter;
 //import lombok.Setter;
 //

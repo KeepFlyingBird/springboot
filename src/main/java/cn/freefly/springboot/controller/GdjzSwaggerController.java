@@ -1,7 +1,7 @@
 package cn.freefly.springboot.controller;
 
-import cn.freefly.springboot.dto.swagger2.LoanParamBody;
-import cn.freefly.springboot.dto.swagger2.ResponseBody;
+import cn.freefly.springboot.swagger2.dto.LoanParamBody;
+import cn.freefly.springboot.swagger2.dto.ResponseBody;
 import io.swagger.annotations.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;

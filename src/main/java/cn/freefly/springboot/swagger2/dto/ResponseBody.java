@@ -1,4 +1,4 @@
-package cn.freefly.springboot.dto.swagger2;
+package cn.freefly.springboot.swagger2.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

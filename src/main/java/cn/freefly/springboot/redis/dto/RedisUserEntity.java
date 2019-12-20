@@ -1,4 +1,4 @@
-package cn.freefly.springboot.dto.redis;
+package cn.freefly.springboot.redis.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
