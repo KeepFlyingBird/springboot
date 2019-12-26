@@ -16,7 +16,7 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.jy.springboot.controller"))  // 注意修改此处的包名
+                .apis(RequestHandlerSelectors.basePackage("cn.freefly.springboot.controller"))  // 注意修改此处的包名
                 .paths(PathSelectors.any())
                 .build();
     }

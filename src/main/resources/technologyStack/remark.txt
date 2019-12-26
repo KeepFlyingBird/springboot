@@ -1,29 +1,38 @@
-消息队列:
-    RabbitMq、Kafka
-内存数据库：
-    Redis、memcached
-搜索：
-    Es、Solr
-反向代理服务器：
-    nginx、haproxy、Zuul
-自动化服务：
-    Jenkins
-容器：
-    docker、kubernetes
-日志分析系统：
-    ELK:Elasticsearch、Logstash和Kibana
-多线程：
-数据库连接池：HiKariCP、Druid
+已掌握运用：
+    消息队列:
+        RabbitMq、Kafka
+    Swagger2框架：
+    lombok框架：
+待学习：
+    技术栈：
+        mybatis
+        内存数据库：
+                    Redis、memcached
+        validation框架：
+        dozer框架：JavaBean映射工具库
+        ObjectMapper框架：实现Java对象跟json的转换
+        多线程：
+        工作流：
+        数据库连接池：HiKariCP、Druid
+        数据库：mysql 主从备份
+        搜索：Es、Solr
+        GRPC架构:
+        Dubbo架构:
+        Jdk8新特性：
+        代码并行执行:
+        私钥
+    基础运营：
+        反向代理服务器：
+            nginx、haproxy、Zuul
+        自动化服务：
+            Jenkins
+        容器：
+            docker、kubernetes
+        日志分析系统：
+            ELK:Elasticsearch、Logstash和Kibana
+        文件服务器：
+            windows搭建sftp文件服务器：bitvise
+            linux搭建sftp文件服务器
+        虚拟机：teamviewer
 
-RPC架构:
-Dubbo架构:
-Jdk8新特性：
-代码并行执行:
-lombok框架：
-Swagger2框架：
-validation框架：
-dozer框架：JavaBean映射工具库
-ObjectMapper框架：实现Java对象跟json的转换
-windows架构sftp文件服务器：bitvise
-虚拟机
-私钥
+

@@ -1,13 +1,25 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://10.0.3.4:3306/jy_fund?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
     username: dev_user
     password: dev_user@jy28%JK
+    type: com.zaxxer.hikari.HikariDataSource
     hikari:
-      poolName: Hikari
-      auto-commit: false
+      ## 连接池的用户定义名称
+      poolName: MyHikari
+      ## 最小空闲连接数量
+      minimum-idle: 5
+      ## 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 600000
+      ## 连接池最大连接数，默认是10
+      maximum-pool-size: 10
+      ## 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      ## 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      ## 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 30000
 
   redis:
     database: 4
@@ -31,6 +43,15 @@ spring:
 
 server:
   port: 8082
+
+# mybatis对应的映射文件路径
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: cn.freefly.springboot.entity
+  configuration:
+    #配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性。
+    map-underscore-to-camel-case: true
+
 undertow:
   ## IO线程数, 它主要执行非阻塞的任务，它们会负责多个连接，默认设置每个CPU核心一个线程，不可设置过大，否则启动项目会报错：打开文件数过多
   io-threads: 16
