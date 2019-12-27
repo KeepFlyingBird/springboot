@@ -1,4 +1,4 @@
-package cn.freefly.springboot.mybatis.config;
+package cn.freefly.springboot.mybatis.plugin;
 
 import org.mybatis.generator.api.GeneratedXmlFile;
 import org.mybatis.generator.api.IntrospectedTable;
