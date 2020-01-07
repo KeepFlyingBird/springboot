@@ -1,0 +1,3 @@
+1、idea工具安装lombok插件：
+    File > Settings > Plugins，输入lombok
+2、添加依赖：org.projectlombok:lombok

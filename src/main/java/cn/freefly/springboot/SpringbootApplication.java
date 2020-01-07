@@ -1,5 +1,6 @@
 package cn.freefly.springboot;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
@@ -10,6 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableTransactionManagement
 @EnableSwagger2 //添加swagger启用注解
 @PropertySource(value = "classpath:rabbitMq.properties")
+@MapperScan("cn.freefly.springboot.mybatis.mapper")
 public class SpringbootApplication {
 
     public static void main(String[] args) {

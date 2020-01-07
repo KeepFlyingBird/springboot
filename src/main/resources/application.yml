@@ -1,9 +1,16 @@
 spring:
   datasource:
+#    mysql配置
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://10.0.3.4:3306/jy_fund?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
     username: dev_user
     password: dev_user@jy28%JK
+
+#   oracle 配置
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin:@183.84.2.10:1521:jy
+#    username: loppro
+#    password: Retail-db.123
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       ## 连接池的用户定义名称
@@ -47,7 +54,7 @@ server:
 # mybatis对应的映射文件路径
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
-  type-aliases-package: cn.freefly.springboot.entity
+  type-aliases-package: cn.freefly.springboot.mybatis.entity
   configuration:
     #配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性。
     map-underscore-to-camel-case: true
