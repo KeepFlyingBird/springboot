@@ -2,3 +2,21 @@
 　　1.jdk环境，Jenkins是java语言开发的，因需要jdk环境。
 　　2.git/svn客户端，因一般代码是放在git/svn服务器上的，我们需要拉取代码。
 　　3.maven客户端，因一般java程序是由maven工程，需要maven打包，当然也有其他打包方式，如：gradle
+1、创建目录：/xyf/jenkins/war/ 存放jenkins.war
+2、运行命令：java -jar jenkins.war --httpPort=8080
+3、打开浏览器输入连接：http://localhost:8080
+   若连接打不开核对
+   网络端口是否可用：netstat  -lntup
+   防火墙服务状态：systemctl status firewalld
+   防火墙服务关闭：systemctl stop firewalld
+
+jenkins 账号：xiaoyf  密码：xyf888888
+
+4、Configure System(系统设置)
+   代码运行服务器：
+   服务器名：VMware_springboot
+   ip:192.168.213.128 root xyf888888
+   上传代码根路径：/xyf/project/springboot
+5、源码仓库地址：
+    https://github.com/KeepFlyingBird/springboot.git
+    账号：1226781445@qq.com   密码：xyfc123456
