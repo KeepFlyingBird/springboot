@@ -23,7 +23,7 @@ public class Swagger2 {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Swagger2")
+                .title("Swagger2.0")
                 .description("API接口文档")
                 .version("1.1.0")
                 .build();
