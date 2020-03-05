@@ -12,9 +12,26 @@ import org.springframework.data.redis.core.*;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+/**
+ * @ClassNmae RedisConfig
+ * @Author xiao.yunfei
+ * @Date 2020/1/17 14:59
+ * @Desc reids 相关bean的配置
+ */
 @Configuration
-@EnableCaching //开启注解
+@EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
+    /**
+     * 选择redis作为默认缓存工具
+     * @param redisTemplate
+     * @return
+     */
+//    @Bean
+//    public CacheManager cacheManager(RedisTemplate redisTemplate) {
+//        RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
+//        return rcm;
+//    }
+
     /**
      * retemplate相关配置
      * @param factory
@@ -27,11 +44,6 @@ public class RedisConfig extends CachingConfigurerSupport {
         // 配置连接工厂
         template.setConnectionFactory(factory);
 
-        /**
-         * Java对象实例存入Redis，常用方法有两种：
-         *  1. 将对象序列化成字符串后存入Redis：Jackson2JsonRedisSerializer
-         *  2. 将对象序列化成byte数组后存入Redis：KryoRedisSerializer
-         */
         //使用Jackson2JsonRedisSerializer来序列化和反序列化redis的value值（默认使用JDK的序列化方式）
         Jackson2JsonRedisSerializer jacksonSeial = new Jackson2JsonRedisSerializer(Object.class);
 

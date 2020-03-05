@@ -11,7 +11,7 @@ jenkins 账号：xiaoyf  密码：xyf888888
 防火墙服务关闭：systemctl stop firewalld
 
 遗留问题：
-1、jenkins jar包名如何共用
+1、部署paapi项目jenkins 能部署Revolution项目吗？
 2、jenkins 只能jar命令启动？
 3、linux如何设置ip和端口可用
 4、linux如何设置防火墙开机即同步可用ip和端口
