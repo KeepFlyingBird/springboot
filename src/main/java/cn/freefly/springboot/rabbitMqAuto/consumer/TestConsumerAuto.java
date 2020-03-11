@@ -1,7 +1,7 @@
 package cn.freefly.springboot.rabbitMqAuto.consumer;
 
+import cn.freefly.springboot.devUtils.JsonUtil;
 import cn.freefly.springboot.rabbitMqAuto.dto.TestSendObj;
-import cn.freefly.springboot.rabbitMqAuto.utils.JsonUtil;
 import com.rabbitmq.client.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
