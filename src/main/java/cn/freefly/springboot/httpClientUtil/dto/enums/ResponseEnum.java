@@ -1,4 +1,4 @@
-package cn.freefly.springboot.httpClientUtil.dto;
+package cn.freefly.springboot.httpClientUtil.dto.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
