@@ -130,12 +130,15 @@
         </table>-->
 
         <!--<table tableName="person" domainObjectName="Person"/>-->
-        <table tableName="t_data_znjc_huankuan" domainObjectName="TDataZnjcHuanKuan">
-            <!--<generatedKey column="id" sqlStatement="JDBC" identity="true" />-->
-        </table>
+        <!--<table tableName="t_data_znjc_huankuan" domainObjectName="TDataZnjcHuanKuan">-->
+            <!--&lt;!&ndash;<generatedKey column="id" sqlStatement="JDBC" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
         <!--<table tableName="pa_mq_access_log" domainObjectName="MqAccessLog">-->
             <!--<generatedKey column="id" sqlStatement="JDBC" identity="true" />-->
         <!--</table>-->
+        <table tableName="cacmp_generate_id" domainObjectName="CacmpGenerateId">
+            <!--<generatedKey column="id" sqlStatement="JDBC" identity="true" />-->
+        </table>
 
     </context>
 
