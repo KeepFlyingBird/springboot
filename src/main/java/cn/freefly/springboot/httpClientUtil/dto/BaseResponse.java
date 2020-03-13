@@ -17,6 +17,11 @@ public class BaseResponse {
     private String resMsg;
     private Object resData;
 
+    public BaseResponse(boolean resFlag, String resMsg) {
+        this.resFlag = resFlag;
+        this.resMsg = resMsg;
+    }
+
     public BaseResponse(boolean resFlag, String resCode, String resMsg) {
         this.resFlag = resFlag;
         this.resCode = resCode;
