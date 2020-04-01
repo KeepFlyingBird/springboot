@@ -1,0 +1,1798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.freefly.springboot.httpClientUtil.mapper.gj.CacmpGjAssetCarAssessmentMapper">
+  <resultMap id="BaseResultMap" type="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetCarAssessment">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="engine_lid" jdbcType="VARCHAR" property="engineLid" />
+    <result column="trunk_lid" jdbcType="VARCHAR" property="trunkLid" />
+    <result column="rear_bumper" jdbcType="VARCHAR" property="rearBumper" />
+    <result column="front_bumper" jdbcType="VARCHAR" property="frontBumper" />
+    <result column="front_windshield" jdbcType="VARCHAR" property="frontWindshield" />
+    <result column="rear_windshield" jdbcType="VARCHAR" property="rearWindshield" />
+    <result column="panel_front_fender_rh" jdbcType="VARCHAR" property="panelFrontFenderRh" />
+    <result column="panel_front_fender_lh" jdbcType="VARCHAR" property="panelFrontFenderLh" />
+    <result column="panel_rear_fender_rh" jdbcType="VARCHAR" property="panelRearFenderRh" />
+    <result column="panel_rear_fender_lh" jdbcType="VARCHAR" property="panelRearFenderLh" />
+    <result column="front_door_rh" jdbcType="VARCHAR" property="frontDoorRh" />
+    <result column="front_door_lh" jdbcType="VARCHAR" property="frontDoorLh" />
+    <result column="rear_door_rh" jdbcType="VARCHAR" property="rearDoorRh" />
+    <result column="rear_door_lh" jdbcType="VARCHAR" property="rearDoorLh" />
+    <result column="front_headlight_lh" jdbcType="VARCHAR" property="frontHeadlightLh" />
+    <result column="front_headlight_rh" jdbcType="VARCHAR" property="frontHeadlightRh" />
+    <result column="rear_taillamp_lh" jdbcType="VARCHAR" property="rearTaillampLh" />
+    <result column="rear_taillamp_rh" jdbcType="VARCHAR" property="rearTaillampRh" />
+    <result column="car_roof" jdbcType="VARCHAR" property="carRoof" />
+    <result column="a_pillar_rh" jdbcType="VARCHAR" property="aPillarRh" />
+    <result column="a_pillar_lh" jdbcType="VARCHAR" property="aPillarLh" />
+    <result column="b_pillar_rh" jdbcType="VARCHAR" property="bPillarRh" />
+    <result column="b_pillar_lh" jdbcType="VARCHAR" property="bPillarLh" />
+    <result column="c_pillar_rh" jdbcType="VARCHAR" property="cPillarRh" />
+    <result column="c_pillar_lh" jdbcType="VARCHAR" property="cPillarLh" />
+    <result column="cistern_frame" jdbcType="VARCHAR" property="cisternFrame" />
+    <result column="anticollision_deam" jdbcType="VARCHAR" property="anticollisionDeam" />
+    <result column="front_longeron_lh" jdbcType="VARCHAR" property="frontLongeronLh" />
+    <result column="front_longeron_rh" jdbcType="VARCHAR" property="frontLongeronRh" />
+    <result column="rear_longeron_lh" jdbcType="VARCHAR" property="rearLongeronLh" />
+    <result column="rear_longeron_rh" jdbcType="VARCHAR" property="rearLongeronRh" />
+    <result column="front_panel_lh" jdbcType="VARCHAR" property="frontPanelLh" />
+    <result column="front_panel_rh" jdbcType="VARCHAR" property="frontPanelRh" />
+    <result column="front_absorber_bearing_lh" jdbcType="VARCHAR" property="frontAbsorberBearingLh" />
+    <result column="front_absorber_bearing_rh" jdbcType="VARCHAR" property="frontAbsorberBearingRh" />
+    <result column="firewall" jdbcType="VARCHAR" property="firewall" />
+    <result column="anticollision_deam_rear" jdbcType="VARCHAR" property="anticollisionDeamRear" />
+    <result column="spare_wheel_mulde" jdbcType="VARCHAR" property="spareWheelMulde" />
+    <result column="rear_water_channel_lh" jdbcType="VARCHAR" property="rearWaterChannelLh" />
+    <result column="rear_water_channel_rh" jdbcType="VARCHAR" property="rearWaterChannelRh" />
+    <result column="back_panel" jdbcType="VARCHAR" property="backPanel" />
+    <result column="a_pillar_rh2" jdbcType="VARCHAR" property="aPillarRh2" />
+    <result column="a_pillar_lh2" jdbcType="VARCHAR" property="aPillarLh2" />
+    <result column="b_pillar_rh2" jdbcType="VARCHAR" property="bPillarRh2" />
+    <result column="b_pillar_lh2" jdbcType="VARCHAR" property="bPillarLh2" />
+    <result column="c_pillar_rh2" jdbcType="VARCHAR" property="cPillarRh2" />
+    <result column="c_pillar_lh2" jdbcType="VARCHAR" property="cPillarLh2" />
+    <result column="d_pillar_rh2" jdbcType="VARCHAR" property="dPillarRh2" />
+    <result column="d_pillar_lh2" jdbcType="VARCHAR" property="dPillarLh2" />
+    <result column="top_beam_rh" jdbcType="VARCHAR" property="topBeamRh" />
+    <result column="top_beam_lh" jdbcType="VARCHAR" property="topBeamLh" />
+    <result column="bottom_beam_rh" jdbcType="VARCHAR" property="bottomBeamRh" />
+    <result column="bottom_beam_lh" jdbcType="VARCHAR" property="bottomBeamLh" />
+    <result column="rear_panel_rh" jdbcType="VARCHAR" property="rearPanelRh" />
+    <result column="rear_panel_lh" jdbcType="VARCHAR" property="rearPanelLh" />
+    <result column="front_hinge_bracket_rh" jdbcType="VARCHAR" property="frontHingeBracketRh" />
+    <result column="front_hinge_bracket_lh" jdbcType="VARCHAR" property="frontHingeBracketLh" />
+    <result column="rear_hinge_bracket_rh" jdbcType="VARCHAR" property="rearHingeBracketRh" />
+    <result column="rear_hinge_bracket_lh" jdbcType="VARCHAR" property="rearHingeBracketLh" />
+    <result column="main_engine_bundle" jdbcType="VARCHAR" property="mainEngineBundle" />
+    <result column="seat_slide_rail" jdbcType="VARCHAR" property="seatSlideRail" />
+    <result column="in_car_wire" jdbcType="VARCHAR" property="inCarWire" />
+    <result column="seat_belt" jdbcType="VARCHAR" property="seatBelt" />
+    <result column="trunk_corner" jdbcType="VARCHAR" property="trunkCorner" />
+    <result column="seat_cushion" jdbcType="VARCHAR" property="seatCushion" />
+    <result column="fuse_box_ecu" jdbcType="VARCHAR" property="fuseBoxEcu" />
+    <result column="rubber_carpets" jdbcType="VARCHAR" property="rubberCarpets" />
+    <result column="ashtray_bottom" jdbcType="VARCHAR" property="ashtrayBottom" />
+    <result column="insulation_cotton" jdbcType="VARCHAR" property="insulationCotton" />
+    <result column="rubber_product" jdbcType="VARCHAR" property="rubberProduct" />
+    <result column="vehicle_cover_cockpit" jdbcType="VARCHAR" property="vehicleCoverCockpit" />
+    <result column="valve_cover_dasket" jdbcType="VARCHAR" property="valveCoverDasket" />
+    <result column="engine_head" jdbcType="VARCHAR" property="engineHead" />
+    <result column="power_steering_pump" jdbcType="VARCHAR" property="powerSteeringPump" />
+    <result column="engine_assy" jdbcType="VARCHAR" property="engineAssy" />
+    <result column="cistern" jdbcType="VARCHAR" property="cistern" />
+    <result column="transmission_assembly" jdbcType="VARCHAR" property="transmissionAssembly" />
+    <result column="drivers_airbag" jdbcType="VARCHAR" property="driversAirbag" />
+    <result column="passengers_airbag" jdbcType="VARCHAR" property="passengersAirbag" />
+    <result column="front_Side_airbags" jdbcType="VARCHAR" property="frontSideAirbags" />
+    <result column="rear_Side_airbags" jdbcType="VARCHAR" property="rearSideAirbags" />
+    <result column="front_head_bag" jdbcType="VARCHAR" property="frontHeadBag" />
+    <result column="bear_head_bag" jdbcType="VARCHAR" property="bearHeadBag" />
+    <result column="rear_seat" jdbcType="VARCHAR" property="rearSeat" />
+    <result column="center_console" jdbcType="VARCHAR" property="centerConsole" />
+    <result column="armrest_box" jdbcType="VARCHAR" property="armrestBox" />
+    <result column="car_storage_box" jdbcType="VARCHAR" property="carStorageBox" />
+    <result column="shield" jdbcType="VARCHAR" property="shield" />
+    <result column="steering_wheel" jdbcType="VARCHAR" property="steeringWheel" />
+    <result column="main_driving_seat" jdbcType="VARCHAR" property="mainDrivingSeat" />
+    <result column="assistant_seat" jdbcType="VARCHAR" property="assistantSeat" />
+    <result column="car_carpet" jdbcType="VARCHAR" property="carCarpet" />
+    <result column="instrument_desk" jdbcType="VARCHAR" property="instrumentDesk" />
+    <result column="invoice_price" jdbcType="VARCHAR" property="invoicePrice" />
+    <result column="appraiser_result2" jdbcType="VARCHAR" property="appraiserResult2" />
+    <result column="system_ass_price" jdbcType="DECIMAL" property="systemAssPrice" />
+    <result column="transfer_count" jdbcType="DECIMAL" property="transferCount" />
+    <result column="transfer_count_oneyear" jdbcType="DECIMAL" property="transferCountOneyear" />
+    <result column="system_ass_price2" jdbcType="DECIMAL" property="systemAssPrice2" />
+    <result column="artificial_price" jdbcType="DECIMAL" property="artificialPrice" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, order_id, engine_lid, trunk_lid, rear_bumper, front_bumper, front_windshield, 
+    rear_windshield, panel_front_fender_rh, panel_front_fender_lh, panel_rear_fender_rh, 
+    panel_rear_fender_lh, front_door_rh, front_door_lh, rear_door_rh, rear_door_lh, front_headlight_lh, 
+    front_headlight_rh, rear_taillamp_lh, rear_taillamp_rh, car_roof, a_pillar_rh, a_pillar_lh, 
+    b_pillar_rh, b_pillar_lh, c_pillar_rh, c_pillar_lh, cistern_frame, anticollision_deam, 
+    front_longeron_lh, front_longeron_rh, rear_longeron_lh, rear_longeron_rh, front_panel_lh, 
+    front_panel_rh, front_absorber_bearing_lh, front_absorber_bearing_rh, firewall, anticollision_deam_rear, 
+    spare_wheel_mulde, rear_water_channel_lh, rear_water_channel_rh, back_panel, a_pillar_rh2, 
+    a_pillar_lh2, b_pillar_rh2, b_pillar_lh2, c_pillar_rh2, c_pillar_lh2, d_pillar_rh2, 
+    d_pillar_lh2, top_beam_rh, top_beam_lh, bottom_beam_rh, bottom_beam_lh, rear_panel_rh, 
+    rear_panel_lh, front_hinge_bracket_rh, front_hinge_bracket_lh, rear_hinge_bracket_rh, 
+    rear_hinge_bracket_lh, main_engine_bundle, seat_slide_rail, in_car_wire, seat_belt, 
+    trunk_corner, seat_cushion, fuse_box_ecu, rubber_carpets, ashtray_bottom, insulation_cotton, 
+    rubber_product, vehicle_cover_cockpit, valve_cover_dasket, engine_head, power_steering_pump, 
+    engine_assy, cistern, transmission_assembly, drivers_airbag, passengers_airbag, front_Side_airbags, 
+    rear_Side_airbags, front_head_bag, bear_head_bag, rear_seat, center_console, armrest_box, 
+    car_storage_box, shield, steering_wheel, main_driving_seat, assistant_seat, car_carpet, 
+    instrument_desk, invoice_price, appraiser_result2, system_ass_price, transfer_count, 
+    transfer_count_oneyear, system_ass_price2, artificial_price, create_time, modify_time
+  </sql>
+  <select id="selectByExample" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetCarAssessmentCriteria" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cacmp_gj_asset_car_assessment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cacmp_gj_asset_car_assessment
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from cacmp_gj_asset_car_assessment
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetCarAssessmentCriteria">
+    delete from cacmp_gj_asset_car_assessment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetCarAssessment">
+    insert into cacmp_gj_asset_car_assessment (id, order_id, engine_lid, 
+      trunk_lid, rear_bumper, front_bumper, 
+      front_windshield, rear_windshield, panel_front_fender_rh, 
+      panel_front_fender_lh, panel_rear_fender_rh, 
+      panel_rear_fender_lh, front_door_rh, front_door_lh, 
+      rear_door_rh, rear_door_lh, front_headlight_lh, 
+      front_headlight_rh, rear_taillamp_lh, rear_taillamp_rh, 
+      car_roof, a_pillar_rh, a_pillar_lh, 
+      b_pillar_rh, b_pillar_lh, c_pillar_rh, 
+      c_pillar_lh, cistern_frame, anticollision_deam, 
+      front_longeron_lh, front_longeron_rh, rear_longeron_lh, 
+      rear_longeron_rh, front_panel_lh, front_panel_rh, 
+      front_absorber_bearing_lh, front_absorber_bearing_rh, 
+      firewall, anticollision_deam_rear, spare_wheel_mulde, 
+      rear_water_channel_lh, rear_water_channel_rh, 
+      back_panel, a_pillar_rh2, a_pillar_lh2, 
+      b_pillar_rh2, b_pillar_lh2, c_pillar_rh2, 
+      c_pillar_lh2, d_pillar_rh2, d_pillar_lh2, 
+      top_beam_rh, top_beam_lh, bottom_beam_rh, 
+      bottom_beam_lh, rear_panel_rh, rear_panel_lh, 
+      front_hinge_bracket_rh, front_hinge_bracket_lh, 
+      rear_hinge_bracket_rh, rear_hinge_bracket_lh, 
+      main_engine_bundle, seat_slide_rail, in_car_wire, 
+      seat_belt, trunk_corner, seat_cushion, 
+      fuse_box_ecu, rubber_carpets, ashtray_bottom, 
+      insulation_cotton, rubber_product, vehicle_cover_cockpit, 
+      valve_cover_dasket, engine_head, power_steering_pump, 
+      engine_assy, cistern, transmission_assembly, 
+      drivers_airbag, passengers_airbag, front_Side_airbags, 
+      rear_Side_airbags, front_head_bag, bear_head_bag, 
+      rear_seat, center_console, armrest_box, 
+      car_storage_box, shield, steering_wheel, 
+      main_driving_seat, assistant_seat, car_carpet, 
+      instrument_desk, invoice_price, appraiser_result2, 
+      system_ass_price, transfer_count, transfer_count_oneyear, 
+      system_ass_price2, artificial_price, create_time, 
+      modify_time)
+    values (#{id,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, #{engineLid,jdbcType=VARCHAR}, 
+      #{trunkLid,jdbcType=VARCHAR}, #{rearBumper,jdbcType=VARCHAR}, #{frontBumper,jdbcType=VARCHAR}, 
+      #{frontWindshield,jdbcType=VARCHAR}, #{rearWindshield,jdbcType=VARCHAR}, #{panelFrontFenderRh,jdbcType=VARCHAR}, 
+      #{panelFrontFenderLh,jdbcType=VARCHAR}, #{panelRearFenderRh,jdbcType=VARCHAR}, 
+      #{panelRearFenderLh,jdbcType=VARCHAR}, #{frontDoorRh,jdbcType=VARCHAR}, #{frontDoorLh,jdbcType=VARCHAR}, 
+      #{rearDoorRh,jdbcType=VARCHAR}, #{rearDoorLh,jdbcType=VARCHAR}, #{frontHeadlightLh,jdbcType=VARCHAR}, 
+      #{frontHeadlightRh,jdbcType=VARCHAR}, #{rearTaillampLh,jdbcType=VARCHAR}, #{rearTaillampRh,jdbcType=VARCHAR}, 
+      #{carRoof,jdbcType=VARCHAR}, #{aPillarRh,jdbcType=VARCHAR}, #{aPillarLh,jdbcType=VARCHAR}, 
+      #{bPillarRh,jdbcType=VARCHAR}, #{bPillarLh,jdbcType=VARCHAR}, #{cPillarRh,jdbcType=VARCHAR}, 
+      #{cPillarLh,jdbcType=VARCHAR}, #{cisternFrame,jdbcType=VARCHAR}, #{anticollisionDeam,jdbcType=VARCHAR}, 
+      #{frontLongeronLh,jdbcType=VARCHAR}, #{frontLongeronRh,jdbcType=VARCHAR}, #{rearLongeronLh,jdbcType=VARCHAR}, 
+      #{rearLongeronRh,jdbcType=VARCHAR}, #{frontPanelLh,jdbcType=VARCHAR}, #{frontPanelRh,jdbcType=VARCHAR}, 
+      #{frontAbsorberBearingLh,jdbcType=VARCHAR}, #{frontAbsorberBearingRh,jdbcType=VARCHAR}, 
+      #{firewall,jdbcType=VARCHAR}, #{anticollisionDeamRear,jdbcType=VARCHAR}, #{spareWheelMulde,jdbcType=VARCHAR}, 
+      #{rearWaterChannelLh,jdbcType=VARCHAR}, #{rearWaterChannelRh,jdbcType=VARCHAR}, 
+      #{backPanel,jdbcType=VARCHAR}, #{aPillarRh2,jdbcType=VARCHAR}, #{aPillarLh2,jdbcType=VARCHAR}, 
+      #{bPillarRh2,jdbcType=VARCHAR}, #{bPillarLh2,jdbcType=VARCHAR}, #{cPillarRh2,jdbcType=VARCHAR}, 
+      #{cPillarLh2,jdbcType=VARCHAR}, #{dPillarRh2,jdbcType=VARCHAR}, #{dPillarLh2,jdbcType=VARCHAR}, 
+      #{topBeamRh,jdbcType=VARCHAR}, #{topBeamLh,jdbcType=VARCHAR}, #{bottomBeamRh,jdbcType=VARCHAR}, 
+      #{bottomBeamLh,jdbcType=VARCHAR}, #{rearPanelRh,jdbcType=VARCHAR}, #{rearPanelLh,jdbcType=VARCHAR}, 
+      #{frontHingeBracketRh,jdbcType=VARCHAR}, #{frontHingeBracketLh,jdbcType=VARCHAR}, 
+      #{rearHingeBracketRh,jdbcType=VARCHAR}, #{rearHingeBracketLh,jdbcType=VARCHAR}, 
+      #{mainEngineBundle,jdbcType=VARCHAR}, #{seatSlideRail,jdbcType=VARCHAR}, #{inCarWire,jdbcType=VARCHAR}, 
+      #{seatBelt,jdbcType=VARCHAR}, #{trunkCorner,jdbcType=VARCHAR}, #{seatCushion,jdbcType=VARCHAR}, 
+      #{fuseBoxEcu,jdbcType=VARCHAR}, #{rubberCarpets,jdbcType=VARCHAR}, #{ashtrayBottom,jdbcType=VARCHAR}, 
+      #{insulationCotton,jdbcType=VARCHAR}, #{rubberProduct,jdbcType=VARCHAR}, #{vehicleCoverCockpit,jdbcType=VARCHAR}, 
+      #{valveCoverDasket,jdbcType=VARCHAR}, #{engineHead,jdbcType=VARCHAR}, #{powerSteeringPump,jdbcType=VARCHAR}, 
+      #{engineAssy,jdbcType=VARCHAR}, #{cistern,jdbcType=VARCHAR}, #{transmissionAssembly,jdbcType=VARCHAR}, 
+      #{driversAirbag,jdbcType=VARCHAR}, #{passengersAirbag,jdbcType=VARCHAR}, #{frontSideAirbags,jdbcType=VARCHAR}, 
+      #{rearSideAirbags,jdbcType=VARCHAR}, #{frontHeadBag,jdbcType=VARCHAR}, #{bearHeadBag,jdbcType=VARCHAR}, 
+      #{rearSeat,jdbcType=VARCHAR}, #{centerConsole,jdbcType=VARCHAR}, #{armrestBox,jdbcType=VARCHAR}, 
+      #{carStorageBox,jdbcType=VARCHAR}, #{shield,jdbcType=VARCHAR}, #{steeringWheel,jdbcType=VARCHAR}, 
+      #{mainDrivingSeat,jdbcType=VARCHAR}, #{assistantSeat,jdbcType=VARCHAR}, #{carCarpet,jdbcType=VARCHAR}, 
+      #{instrumentDesk,jdbcType=VARCHAR}, #{invoicePrice,jdbcType=VARCHAR}, #{appraiserResult2,jdbcType=VARCHAR}, 
+      #{systemAssPrice,jdbcType=DECIMAL}, #{transferCount,jdbcType=DECIMAL}, #{transferCountOneyear,jdbcType=DECIMAL}, 
+      #{systemAssPrice2,jdbcType=DECIMAL}, #{artificialPrice,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetCarAssessment">
+    insert into cacmp_gj_asset_car_assessment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="engineLid != null">
+        engine_lid,
+      </if>
+      <if test="trunkLid != null">
+        trunk_lid,
+      </if>
+      <if test="rearBumper != null">
+        rear_bumper,
+      </if>
+      <if test="frontBumper != null">
+        front_bumper,
+      </if>
+      <if test="frontWindshield != null">
+        front_windshield,
+      </if>
+      <if test="rearWindshield != null">
+        rear_windshield,
+      </if>
+      <if test="panelFrontFenderRh != null">
+        panel_front_fender_rh,
+      </if>
+      <if test="panelFrontFenderLh != null">
+        panel_front_fender_lh,
+      </if>
+      <if test="panelRearFenderRh != null">
+        panel_rear_fender_rh,
+      </if>
+      <if test="panelRearFenderLh != null">
+        panel_rear_fender_lh,
+      </if>
+      <if test="frontDoorRh != null">
+        front_door_rh,
+      </if>
+      <if test="frontDoorLh != null">
+        front_door_lh,
+      </if>
+      <if test="rearDoorRh != null">
+        rear_door_rh,
+      </if>
+      <if test="rearDoorLh != null">
+        rear_door_lh,
+      </if>
+      <if test="frontHeadlightLh != null">
+        front_headlight_lh,
+      </if>
+      <if test="frontHeadlightRh != null">
+        front_headlight_rh,
+      </if>
+      <if test="rearTaillampLh != null">
+        rear_taillamp_lh,
+      </if>
+      <if test="rearTaillampRh != null">
+        rear_taillamp_rh,
+      </if>
+      <if test="carRoof != null">
+        car_roof,
+      </if>
+      <if test="aPillarRh != null">
+        a_pillar_rh,
+      </if>
+      <if test="aPillarLh != null">
+        a_pillar_lh,
+      </if>
+      <if test="bPillarRh != null">
+        b_pillar_rh,
+      </if>
+      <if test="bPillarLh != null">
+        b_pillar_lh,
+      </if>
+      <if test="cPillarRh != null">
+        c_pillar_rh,
+      </if>
+      <if test="cPillarLh != null">
+        c_pillar_lh,
+      </if>
+      <if test="cisternFrame != null">
+        cistern_frame,
+      </if>
+      <if test="anticollisionDeam != null">
+        anticollision_deam,
+      </if>
+      <if test="frontLongeronLh != null">
+        front_longeron_lh,
+      </if>
+      <if test="frontLongeronRh != null">
+        front_longeron_rh,
+      </if>
+      <if test="rearLongeronLh != null">
+        rear_longeron_lh,
+      </if>
+      <if test="rearLongeronRh != null">
+        rear_longeron_rh,
+      </if>
+      <if test="frontPanelLh != null">
+        front_panel_lh,
+      </if>
+      <if test="frontPanelRh != null">
+        front_panel_rh,
+      </if>
+      <if test="frontAbsorberBearingLh != null">
+        front_absorber_bearing_lh,
+      </if>
+      <if test="frontAbsorberBearingRh != null">
+        front_absorber_bearing_rh,
+      </if>
+      <if test="firewall != null">
+        firewall,
+      </if>
+      <if test="anticollisionDeamRear != null">
+        anticollision_deam_rear,
+      </if>
+      <if test="spareWheelMulde != null">
+        spare_wheel_mulde,
+      </if>
+      <if test="rearWaterChannelLh != null">
+        rear_water_channel_lh,
+      </if>
+      <if test="rearWaterChannelRh != null">
+        rear_water_channel_rh,
+      </if>
+      <if test="backPanel != null">
+        back_panel,
+      </if>
+      <if test="aPillarRh2 != null">
+        a_pillar_rh2,
+      </if>
+      <if test="aPillarLh2 != null">
+        a_pillar_lh2,
+      </if>
+      <if test="bPillarRh2 != null">
+        b_pillar_rh2,
+      </if>
+      <if test="bPillarLh2 != null">
+        b_pillar_lh2,
+      </if>
+      <if test="cPillarRh2 != null">
+        c_pillar_rh2,
+      </if>
+      <if test="cPillarLh2 != null">
+        c_pillar_lh2,
+      </if>
+      <if test="dPillarRh2 != null">
+        d_pillar_rh2,
+      </if>
+      <if test="dPillarLh2 != null">
+        d_pillar_lh2,
+      </if>
+      <if test="topBeamRh != null">
+        top_beam_rh,
+      </if>
+      <if test="topBeamLh != null">
+        top_beam_lh,
+      </if>
+      <if test="bottomBeamRh != null">
+        bottom_beam_rh,
+      </if>
+      <if test="bottomBeamLh != null">
+        bottom_beam_lh,
+      </if>
+      <if test="rearPanelRh != null">
+        rear_panel_rh,
+      </if>
+      <if test="rearPanelLh != null">
+        rear_panel_lh,
+      </if>
+      <if test="frontHingeBracketRh != null">
+        front_hinge_bracket_rh,
+      </if>
+      <if test="frontHingeBracketLh != null">
+        front_hinge_bracket_lh,
+      </if>
+      <if test="rearHingeBracketRh != null">
+        rear_hinge_bracket_rh,
+      </if>
+      <if test="rearHingeBracketLh != null">
+        rear_hinge_bracket_lh,
+      </if>
+      <if test="mainEngineBundle != null">
+        main_engine_bundle,
+      </if>
+      <if test="seatSlideRail != null">
+        seat_slide_rail,
+      </if>
+      <if test="inCarWire != null">
+        in_car_wire,
+      </if>
+      <if test="seatBelt != null">
+        seat_belt,
+      </if>
+      <if test="trunkCorner != null">
+        trunk_corner,
+      </if>
+      <if test="seatCushion != null">
+        seat_cushion,
+      </if>
+      <if test="fuseBoxEcu != null">
+        fuse_box_ecu,
+      </if>
+      <if test="rubberCarpets != null">
+        rubber_carpets,
+      </if>
+      <if test="ashtrayBottom != null">
+        ashtray_bottom,
+      </if>
+      <if test="insulationCotton != null">
+        insulation_cotton,
+      </if>
+      <if test="rubberProduct != null">
+        rubber_product,
+      </if>
+      <if test="vehicleCoverCockpit != null">
+        vehicle_cover_cockpit,
+      </if>
+      <if test="valveCoverDasket != null">
+        valve_cover_dasket,
+      </if>
+      <if test="engineHead != null">
+        engine_head,
+      </if>
+      <if test="powerSteeringPump != null">
+        power_steering_pump,
+      </if>
+      <if test="engineAssy != null">
+        engine_assy,
+      </if>
+      <if test="cistern != null">
+        cistern,
+      </if>
+      <if test="transmissionAssembly != null">
+        transmission_assembly,
+      </if>
+      <if test="driversAirbag != null">
+        drivers_airbag,
+      </if>
+      <if test="passengersAirbag != null">
+        passengers_airbag,
+      </if>
+      <if test="frontSideAirbags != null">
+        front_Side_airbags,
+      </if>
+      <if test="rearSideAirbags != null">
+        rear_Side_airbags,
+      </if>
+      <if test="frontHeadBag != null">
+        front_head_bag,
+      </if>
+      <if test="bearHeadBag != null">
+        bear_head_bag,
+      </if>
+      <if test="rearSeat != null">
+        rear_seat,
+      </if>
+      <if test="centerConsole != null">
+        center_console,
+      </if>
+      <if test="armrestBox != null">
+        armrest_box,
+      </if>
+      <if test="carStorageBox != null">
+        car_storage_box,
+      </if>
+      <if test="shield != null">
+        shield,
+      </if>
+      <if test="steeringWheel != null">
+        steering_wheel,
+      </if>
+      <if test="mainDrivingSeat != null">
+        main_driving_seat,
+      </if>
+      <if test="assistantSeat != null">
+        assistant_seat,
+      </if>
+      <if test="carCarpet != null">
+        car_carpet,
+      </if>
+      <if test="instrumentDesk != null">
+        instrument_desk,
+      </if>
+      <if test="invoicePrice != null">
+        invoice_price,
+      </if>
+      <if test="appraiserResult2 != null">
+        appraiser_result2,
+      </if>
+      <if test="systemAssPrice != null">
+        system_ass_price,
+      </if>
+      <if test="transferCount != null">
+        transfer_count,
+      </if>
+      <if test="transferCountOneyear != null">
+        transfer_count_oneyear,
+      </if>
+      <if test="systemAssPrice2 != null">
+        system_ass_price2,
+      </if>
+      <if test="artificialPrice != null">
+        artificial_price,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="engineLid != null">
+        #{engineLid,jdbcType=VARCHAR},
+      </if>
+      <if test="trunkLid != null">
+        #{trunkLid,jdbcType=VARCHAR},
+      </if>
+      <if test="rearBumper != null">
+        #{rearBumper,jdbcType=VARCHAR},
+      </if>
+      <if test="frontBumper != null">
+        #{frontBumper,jdbcType=VARCHAR},
+      </if>
+      <if test="frontWindshield != null">
+        #{frontWindshield,jdbcType=VARCHAR},
+      </if>
+      <if test="rearWindshield != null">
+        #{rearWindshield,jdbcType=VARCHAR},
+      </if>
+      <if test="panelFrontFenderRh != null">
+        #{panelFrontFenderRh,jdbcType=VARCHAR},
+      </if>
+      <if test="panelFrontFenderLh != null">
+        #{panelFrontFenderLh,jdbcType=VARCHAR},
+      </if>
+      <if test="panelRearFenderRh != null">
+        #{panelRearFenderRh,jdbcType=VARCHAR},
+      </if>
+      <if test="panelRearFenderLh != null">
+        #{panelRearFenderLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontDoorRh != null">
+        #{frontDoorRh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontDoorLh != null">
+        #{frontDoorLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearDoorRh != null">
+        #{rearDoorRh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearDoorLh != null">
+        #{rearDoorLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontHeadlightLh != null">
+        #{frontHeadlightLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontHeadlightRh != null">
+        #{frontHeadlightRh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearTaillampLh != null">
+        #{rearTaillampLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearTaillampRh != null">
+        #{rearTaillampRh,jdbcType=VARCHAR},
+      </if>
+      <if test="carRoof != null">
+        #{carRoof,jdbcType=VARCHAR},
+      </if>
+      <if test="aPillarRh != null">
+        #{aPillarRh,jdbcType=VARCHAR},
+      </if>
+      <if test="aPillarLh != null">
+        #{aPillarLh,jdbcType=VARCHAR},
+      </if>
+      <if test="bPillarRh != null">
+        #{bPillarRh,jdbcType=VARCHAR},
+      </if>
+      <if test="bPillarLh != null">
+        #{bPillarLh,jdbcType=VARCHAR},
+      </if>
+      <if test="cPillarRh != null">
+        #{cPillarRh,jdbcType=VARCHAR},
+      </if>
+      <if test="cPillarLh != null">
+        #{cPillarLh,jdbcType=VARCHAR},
+      </if>
+      <if test="cisternFrame != null">
+        #{cisternFrame,jdbcType=VARCHAR},
+      </if>
+      <if test="anticollisionDeam != null">
+        #{anticollisionDeam,jdbcType=VARCHAR},
+      </if>
+      <if test="frontLongeronLh != null">
+        #{frontLongeronLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontLongeronRh != null">
+        #{frontLongeronRh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearLongeronLh != null">
+        #{rearLongeronLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearLongeronRh != null">
+        #{rearLongeronRh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontPanelLh != null">
+        #{frontPanelLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontPanelRh != null">
+        #{frontPanelRh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontAbsorberBearingLh != null">
+        #{frontAbsorberBearingLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontAbsorberBearingRh != null">
+        #{frontAbsorberBearingRh,jdbcType=VARCHAR},
+      </if>
+      <if test="firewall != null">
+        #{firewall,jdbcType=VARCHAR},
+      </if>
+      <if test="anticollisionDeamRear != null">
+        #{anticollisionDeamRear,jdbcType=VARCHAR},
+      </if>
+      <if test="spareWheelMulde != null">
+        #{spareWheelMulde,jdbcType=VARCHAR},
+      </if>
+      <if test="rearWaterChannelLh != null">
+        #{rearWaterChannelLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearWaterChannelRh != null">
+        #{rearWaterChannelRh,jdbcType=VARCHAR},
+      </if>
+      <if test="backPanel != null">
+        #{backPanel,jdbcType=VARCHAR},
+      </if>
+      <if test="aPillarRh2 != null">
+        #{aPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="aPillarLh2 != null">
+        #{aPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="bPillarRh2 != null">
+        #{bPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="bPillarLh2 != null">
+        #{bPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="cPillarRh2 != null">
+        #{cPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="cPillarLh2 != null">
+        #{cPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="dPillarRh2 != null">
+        #{dPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="dPillarLh2 != null">
+        #{dPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="topBeamRh != null">
+        #{topBeamRh,jdbcType=VARCHAR},
+      </if>
+      <if test="topBeamLh != null">
+        #{topBeamLh,jdbcType=VARCHAR},
+      </if>
+      <if test="bottomBeamRh != null">
+        #{bottomBeamRh,jdbcType=VARCHAR},
+      </if>
+      <if test="bottomBeamLh != null">
+        #{bottomBeamLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearPanelRh != null">
+        #{rearPanelRh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearPanelLh != null">
+        #{rearPanelLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontHingeBracketRh != null">
+        #{frontHingeBracketRh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontHingeBracketLh != null">
+        #{frontHingeBracketLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearHingeBracketRh != null">
+        #{rearHingeBracketRh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearHingeBracketLh != null">
+        #{rearHingeBracketLh,jdbcType=VARCHAR},
+      </if>
+      <if test="mainEngineBundle != null">
+        #{mainEngineBundle,jdbcType=VARCHAR},
+      </if>
+      <if test="seatSlideRail != null">
+        #{seatSlideRail,jdbcType=VARCHAR},
+      </if>
+      <if test="inCarWire != null">
+        #{inCarWire,jdbcType=VARCHAR},
+      </if>
+      <if test="seatBelt != null">
+        #{seatBelt,jdbcType=VARCHAR},
+      </if>
+      <if test="trunkCorner != null">
+        #{trunkCorner,jdbcType=VARCHAR},
+      </if>
+      <if test="seatCushion != null">
+        #{seatCushion,jdbcType=VARCHAR},
+      </if>
+      <if test="fuseBoxEcu != null">
+        #{fuseBoxEcu,jdbcType=VARCHAR},
+      </if>
+      <if test="rubberCarpets != null">
+        #{rubberCarpets,jdbcType=VARCHAR},
+      </if>
+      <if test="ashtrayBottom != null">
+        #{ashtrayBottom,jdbcType=VARCHAR},
+      </if>
+      <if test="insulationCotton != null">
+        #{insulationCotton,jdbcType=VARCHAR},
+      </if>
+      <if test="rubberProduct != null">
+        #{rubberProduct,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleCoverCockpit != null">
+        #{vehicleCoverCockpit,jdbcType=VARCHAR},
+      </if>
+      <if test="valveCoverDasket != null">
+        #{valveCoverDasket,jdbcType=VARCHAR},
+      </if>
+      <if test="engineHead != null">
+        #{engineHead,jdbcType=VARCHAR},
+      </if>
+      <if test="powerSteeringPump != null">
+        #{powerSteeringPump,jdbcType=VARCHAR},
+      </if>
+      <if test="engineAssy != null">
+        #{engineAssy,jdbcType=VARCHAR},
+      </if>
+      <if test="cistern != null">
+        #{cistern,jdbcType=VARCHAR},
+      </if>
+      <if test="transmissionAssembly != null">
+        #{transmissionAssembly,jdbcType=VARCHAR},
+      </if>
+      <if test="driversAirbag != null">
+        #{driversAirbag,jdbcType=VARCHAR},
+      </if>
+      <if test="passengersAirbag != null">
+        #{passengersAirbag,jdbcType=VARCHAR},
+      </if>
+      <if test="frontSideAirbags != null">
+        #{frontSideAirbags,jdbcType=VARCHAR},
+      </if>
+      <if test="rearSideAirbags != null">
+        #{rearSideAirbags,jdbcType=VARCHAR},
+      </if>
+      <if test="frontHeadBag != null">
+        #{frontHeadBag,jdbcType=VARCHAR},
+      </if>
+      <if test="bearHeadBag != null">
+        #{bearHeadBag,jdbcType=VARCHAR},
+      </if>
+      <if test="rearSeat != null">
+        #{rearSeat,jdbcType=VARCHAR},
+      </if>
+      <if test="centerConsole != null">
+        #{centerConsole,jdbcType=VARCHAR},
+      </if>
+      <if test="armrestBox != null">
+        #{armrestBox,jdbcType=VARCHAR},
+      </if>
+      <if test="carStorageBox != null">
+        #{carStorageBox,jdbcType=VARCHAR},
+      </if>
+      <if test="shield != null">
+        #{shield,jdbcType=VARCHAR},
+      </if>
+      <if test="steeringWheel != null">
+        #{steeringWheel,jdbcType=VARCHAR},
+      </if>
+      <if test="mainDrivingSeat != null">
+        #{mainDrivingSeat,jdbcType=VARCHAR},
+      </if>
+      <if test="assistantSeat != null">
+        #{assistantSeat,jdbcType=VARCHAR},
+      </if>
+      <if test="carCarpet != null">
+        #{carCarpet,jdbcType=VARCHAR},
+      </if>
+      <if test="instrumentDesk != null">
+        #{instrumentDesk,jdbcType=VARCHAR},
+      </if>
+      <if test="invoicePrice != null">
+        #{invoicePrice,jdbcType=VARCHAR},
+      </if>
+      <if test="appraiserResult2 != null">
+        #{appraiserResult2,jdbcType=VARCHAR},
+      </if>
+      <if test="systemAssPrice != null">
+        #{systemAssPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="transferCount != null">
+        #{transferCount,jdbcType=DECIMAL},
+      </if>
+      <if test="transferCountOneyear != null">
+        #{transferCountOneyear,jdbcType=DECIMAL},
+      </if>
+      <if test="systemAssPrice2 != null">
+        #{systemAssPrice2,jdbcType=DECIMAL},
+      </if>
+      <if test="artificialPrice != null">
+        #{artificialPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetCarAssessmentCriteria" resultType="java.lang.Long">
+    select count(*) from cacmp_gj_asset_car_assessment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update cacmp_gj_asset_car_assessment
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.engineLid != null">
+        engine_lid = #{record.engineLid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.trunkLid != null">
+        trunk_lid = #{record.trunkLid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearBumper != null">
+        rear_bumper = #{record.rearBumper,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontBumper != null">
+        front_bumper = #{record.frontBumper,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontWindshield != null">
+        front_windshield = #{record.frontWindshield,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearWindshield != null">
+        rear_windshield = #{record.rearWindshield,jdbcType=VARCHAR},
+      </if>
+      <if test="record.panelFrontFenderRh != null">
+        panel_front_fender_rh = #{record.panelFrontFenderRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.panelFrontFenderLh != null">
+        panel_front_fender_lh = #{record.panelFrontFenderLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.panelRearFenderRh != null">
+        panel_rear_fender_rh = #{record.panelRearFenderRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.panelRearFenderLh != null">
+        panel_rear_fender_lh = #{record.panelRearFenderLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontDoorRh != null">
+        front_door_rh = #{record.frontDoorRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontDoorLh != null">
+        front_door_lh = #{record.frontDoorLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearDoorRh != null">
+        rear_door_rh = #{record.rearDoorRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearDoorLh != null">
+        rear_door_lh = #{record.rearDoorLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontHeadlightLh != null">
+        front_headlight_lh = #{record.frontHeadlightLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontHeadlightRh != null">
+        front_headlight_rh = #{record.frontHeadlightRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearTaillampLh != null">
+        rear_taillamp_lh = #{record.rearTaillampLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearTaillampRh != null">
+        rear_taillamp_rh = #{record.rearTaillampRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carRoof != null">
+        car_roof = #{record.carRoof,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aPillarRh != null">
+        a_pillar_rh = #{record.aPillarRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aPillarLh != null">
+        a_pillar_lh = #{record.aPillarLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bPillarRh != null">
+        b_pillar_rh = #{record.bPillarRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bPillarLh != null">
+        b_pillar_lh = #{record.bPillarLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cPillarRh != null">
+        c_pillar_rh = #{record.cPillarRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cPillarLh != null">
+        c_pillar_lh = #{record.cPillarLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cisternFrame != null">
+        cistern_frame = #{record.cisternFrame,jdbcType=VARCHAR},
+      </if>
+      <if test="record.anticollisionDeam != null">
+        anticollision_deam = #{record.anticollisionDeam,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontLongeronLh != null">
+        front_longeron_lh = #{record.frontLongeronLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontLongeronRh != null">
+        front_longeron_rh = #{record.frontLongeronRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearLongeronLh != null">
+        rear_longeron_lh = #{record.rearLongeronLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearLongeronRh != null">
+        rear_longeron_rh = #{record.rearLongeronRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontPanelLh != null">
+        front_panel_lh = #{record.frontPanelLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontPanelRh != null">
+        front_panel_rh = #{record.frontPanelRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontAbsorberBearingLh != null">
+        front_absorber_bearing_lh = #{record.frontAbsorberBearingLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontAbsorberBearingRh != null">
+        front_absorber_bearing_rh = #{record.frontAbsorberBearingRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.firewall != null">
+        firewall = #{record.firewall,jdbcType=VARCHAR},
+      </if>
+      <if test="record.anticollisionDeamRear != null">
+        anticollision_deam_rear = #{record.anticollisionDeamRear,jdbcType=VARCHAR},
+      </if>
+      <if test="record.spareWheelMulde != null">
+        spare_wheel_mulde = #{record.spareWheelMulde,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearWaterChannelLh != null">
+        rear_water_channel_lh = #{record.rearWaterChannelLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearWaterChannelRh != null">
+        rear_water_channel_rh = #{record.rearWaterChannelRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.backPanel != null">
+        back_panel = #{record.backPanel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aPillarRh2 != null">
+        a_pillar_rh2 = #{record.aPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aPillarLh2 != null">
+        a_pillar_lh2 = #{record.aPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bPillarRh2 != null">
+        b_pillar_rh2 = #{record.bPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bPillarLh2 != null">
+        b_pillar_lh2 = #{record.bPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cPillarRh2 != null">
+        c_pillar_rh2 = #{record.cPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cPillarLh2 != null">
+        c_pillar_lh2 = #{record.cPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dPillarRh2 != null">
+        d_pillar_rh2 = #{record.dPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dPillarLh2 != null">
+        d_pillar_lh2 = #{record.dPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.topBeamRh != null">
+        top_beam_rh = #{record.topBeamRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.topBeamLh != null">
+        top_beam_lh = #{record.topBeamLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bottomBeamRh != null">
+        bottom_beam_rh = #{record.bottomBeamRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bottomBeamLh != null">
+        bottom_beam_lh = #{record.bottomBeamLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearPanelRh != null">
+        rear_panel_rh = #{record.rearPanelRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearPanelLh != null">
+        rear_panel_lh = #{record.rearPanelLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontHingeBracketRh != null">
+        front_hinge_bracket_rh = #{record.frontHingeBracketRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontHingeBracketLh != null">
+        front_hinge_bracket_lh = #{record.frontHingeBracketLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearHingeBracketRh != null">
+        rear_hinge_bracket_rh = #{record.rearHingeBracketRh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearHingeBracketLh != null">
+        rear_hinge_bracket_lh = #{record.rearHingeBracketLh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mainEngineBundle != null">
+        main_engine_bundle = #{record.mainEngineBundle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seatSlideRail != null">
+        seat_slide_rail = #{record.seatSlideRail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.inCarWire != null">
+        in_car_wire = #{record.inCarWire,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seatBelt != null">
+        seat_belt = #{record.seatBelt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.trunkCorner != null">
+        trunk_corner = #{record.trunkCorner,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seatCushion != null">
+        seat_cushion = #{record.seatCushion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fuseBoxEcu != null">
+        fuse_box_ecu = #{record.fuseBoxEcu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rubberCarpets != null">
+        rubber_carpets = #{record.rubberCarpets,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ashtrayBottom != null">
+        ashtray_bottom = #{record.ashtrayBottom,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insulationCotton != null">
+        insulation_cotton = #{record.insulationCotton,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rubberProduct != null">
+        rubber_product = #{record.rubberProduct,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vehicleCoverCockpit != null">
+        vehicle_cover_cockpit = #{record.vehicleCoverCockpit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.valveCoverDasket != null">
+        valve_cover_dasket = #{record.valveCoverDasket,jdbcType=VARCHAR},
+      </if>
+      <if test="record.engineHead != null">
+        engine_head = #{record.engineHead,jdbcType=VARCHAR},
+      </if>
+      <if test="record.powerSteeringPump != null">
+        power_steering_pump = #{record.powerSteeringPump,jdbcType=VARCHAR},
+      </if>
+      <if test="record.engineAssy != null">
+        engine_assy = #{record.engineAssy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cistern != null">
+        cistern = #{record.cistern,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transmissionAssembly != null">
+        transmission_assembly = #{record.transmissionAssembly,jdbcType=VARCHAR},
+      </if>
+      <if test="record.driversAirbag != null">
+        drivers_airbag = #{record.driversAirbag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.passengersAirbag != null">
+        passengers_airbag = #{record.passengersAirbag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontSideAirbags != null">
+        front_Side_airbags = #{record.frontSideAirbags,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearSideAirbags != null">
+        rear_Side_airbags = #{record.rearSideAirbags,jdbcType=VARCHAR},
+      </if>
+      <if test="record.frontHeadBag != null">
+        front_head_bag = #{record.frontHeadBag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bearHeadBag != null">
+        bear_head_bag = #{record.bearHeadBag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rearSeat != null">
+        rear_seat = #{record.rearSeat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.centerConsole != null">
+        center_console = #{record.centerConsole,jdbcType=VARCHAR},
+      </if>
+      <if test="record.armrestBox != null">
+        armrest_box = #{record.armrestBox,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carStorageBox != null">
+        car_storage_box = #{record.carStorageBox,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shield != null">
+        shield = #{record.shield,jdbcType=VARCHAR},
+      </if>
+      <if test="record.steeringWheel != null">
+        steering_wheel = #{record.steeringWheel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mainDrivingSeat != null">
+        main_driving_seat = #{record.mainDrivingSeat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.assistantSeat != null">
+        assistant_seat = #{record.assistantSeat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carCarpet != null">
+        car_carpet = #{record.carCarpet,jdbcType=VARCHAR},
+      </if>
+      <if test="record.instrumentDesk != null">
+        instrument_desk = #{record.instrumentDesk,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoicePrice != null">
+        invoice_price = #{record.invoicePrice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appraiserResult2 != null">
+        appraiser_result2 = #{record.appraiserResult2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemAssPrice != null">
+        system_ass_price = #{record.systemAssPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.transferCount != null">
+        transfer_count = #{record.transferCount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.transferCountOneyear != null">
+        transfer_count_oneyear = #{record.transferCountOneyear,jdbcType=DECIMAL},
+      </if>
+      <if test="record.systemAssPrice2 != null">
+        system_ass_price2 = #{record.systemAssPrice2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.artificialPrice != null">
+        artificial_price = #{record.artificialPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifyTime != null">
+        modify_time = #{record.modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update cacmp_gj_asset_car_assessment
+    set id = #{record.id,jdbcType=VARCHAR},
+      order_id = #{record.orderId,jdbcType=VARCHAR},
+      engine_lid = #{record.engineLid,jdbcType=VARCHAR},
+      trunk_lid = #{record.trunkLid,jdbcType=VARCHAR},
+      rear_bumper = #{record.rearBumper,jdbcType=VARCHAR},
+      front_bumper = #{record.frontBumper,jdbcType=VARCHAR},
+      front_windshield = #{record.frontWindshield,jdbcType=VARCHAR},
+      rear_windshield = #{record.rearWindshield,jdbcType=VARCHAR},
+      panel_front_fender_rh = #{record.panelFrontFenderRh,jdbcType=VARCHAR},
+      panel_front_fender_lh = #{record.panelFrontFenderLh,jdbcType=VARCHAR},
+      panel_rear_fender_rh = #{record.panelRearFenderRh,jdbcType=VARCHAR},
+      panel_rear_fender_lh = #{record.panelRearFenderLh,jdbcType=VARCHAR},
+      front_door_rh = #{record.frontDoorRh,jdbcType=VARCHAR},
+      front_door_lh = #{record.frontDoorLh,jdbcType=VARCHAR},
+      rear_door_rh = #{record.rearDoorRh,jdbcType=VARCHAR},
+      rear_door_lh = #{record.rearDoorLh,jdbcType=VARCHAR},
+      front_headlight_lh = #{record.frontHeadlightLh,jdbcType=VARCHAR},
+      front_headlight_rh = #{record.frontHeadlightRh,jdbcType=VARCHAR},
+      rear_taillamp_lh = #{record.rearTaillampLh,jdbcType=VARCHAR},
+      rear_taillamp_rh = #{record.rearTaillampRh,jdbcType=VARCHAR},
+      car_roof = #{record.carRoof,jdbcType=VARCHAR},
+      a_pillar_rh = #{record.aPillarRh,jdbcType=VARCHAR},
+      a_pillar_lh = #{record.aPillarLh,jdbcType=VARCHAR},
+      b_pillar_rh = #{record.bPillarRh,jdbcType=VARCHAR},
+      b_pillar_lh = #{record.bPillarLh,jdbcType=VARCHAR},
+      c_pillar_rh = #{record.cPillarRh,jdbcType=VARCHAR},
+      c_pillar_lh = #{record.cPillarLh,jdbcType=VARCHAR},
+      cistern_frame = #{record.cisternFrame,jdbcType=VARCHAR},
+      anticollision_deam = #{record.anticollisionDeam,jdbcType=VARCHAR},
+      front_longeron_lh = #{record.frontLongeronLh,jdbcType=VARCHAR},
+      front_longeron_rh = #{record.frontLongeronRh,jdbcType=VARCHAR},
+      rear_longeron_lh = #{record.rearLongeronLh,jdbcType=VARCHAR},
+      rear_longeron_rh = #{record.rearLongeronRh,jdbcType=VARCHAR},
+      front_panel_lh = #{record.frontPanelLh,jdbcType=VARCHAR},
+      front_panel_rh = #{record.frontPanelRh,jdbcType=VARCHAR},
+      front_absorber_bearing_lh = #{record.frontAbsorberBearingLh,jdbcType=VARCHAR},
+      front_absorber_bearing_rh = #{record.frontAbsorberBearingRh,jdbcType=VARCHAR},
+      firewall = #{record.firewall,jdbcType=VARCHAR},
+      anticollision_deam_rear = #{record.anticollisionDeamRear,jdbcType=VARCHAR},
+      spare_wheel_mulde = #{record.spareWheelMulde,jdbcType=VARCHAR},
+      rear_water_channel_lh = #{record.rearWaterChannelLh,jdbcType=VARCHAR},
+      rear_water_channel_rh = #{record.rearWaterChannelRh,jdbcType=VARCHAR},
+      back_panel = #{record.backPanel,jdbcType=VARCHAR},
+      a_pillar_rh2 = #{record.aPillarRh2,jdbcType=VARCHAR},
+      a_pillar_lh2 = #{record.aPillarLh2,jdbcType=VARCHAR},
+      b_pillar_rh2 = #{record.bPillarRh2,jdbcType=VARCHAR},
+      b_pillar_lh2 = #{record.bPillarLh2,jdbcType=VARCHAR},
+      c_pillar_rh2 = #{record.cPillarRh2,jdbcType=VARCHAR},
+      c_pillar_lh2 = #{record.cPillarLh2,jdbcType=VARCHAR},
+      d_pillar_rh2 = #{record.dPillarRh2,jdbcType=VARCHAR},
+      d_pillar_lh2 = #{record.dPillarLh2,jdbcType=VARCHAR},
+      top_beam_rh = #{record.topBeamRh,jdbcType=VARCHAR},
+      top_beam_lh = #{record.topBeamLh,jdbcType=VARCHAR},
+      bottom_beam_rh = #{record.bottomBeamRh,jdbcType=VARCHAR},
+      bottom_beam_lh = #{record.bottomBeamLh,jdbcType=VARCHAR},
+      rear_panel_rh = #{record.rearPanelRh,jdbcType=VARCHAR},
+      rear_panel_lh = #{record.rearPanelLh,jdbcType=VARCHAR},
+      front_hinge_bracket_rh = #{record.frontHingeBracketRh,jdbcType=VARCHAR},
+      front_hinge_bracket_lh = #{record.frontHingeBracketLh,jdbcType=VARCHAR},
+      rear_hinge_bracket_rh = #{record.rearHingeBracketRh,jdbcType=VARCHAR},
+      rear_hinge_bracket_lh = #{record.rearHingeBracketLh,jdbcType=VARCHAR},
+      main_engine_bundle = #{record.mainEngineBundle,jdbcType=VARCHAR},
+      seat_slide_rail = #{record.seatSlideRail,jdbcType=VARCHAR},
+      in_car_wire = #{record.inCarWire,jdbcType=VARCHAR},
+      seat_belt = #{record.seatBelt,jdbcType=VARCHAR},
+      trunk_corner = #{record.trunkCorner,jdbcType=VARCHAR},
+      seat_cushion = #{record.seatCushion,jdbcType=VARCHAR},
+      fuse_box_ecu = #{record.fuseBoxEcu,jdbcType=VARCHAR},
+      rubber_carpets = #{record.rubberCarpets,jdbcType=VARCHAR},
+      ashtray_bottom = #{record.ashtrayBottom,jdbcType=VARCHAR},
+      insulation_cotton = #{record.insulationCotton,jdbcType=VARCHAR},
+      rubber_product = #{record.rubberProduct,jdbcType=VARCHAR},
+      vehicle_cover_cockpit = #{record.vehicleCoverCockpit,jdbcType=VARCHAR},
+      valve_cover_dasket = #{record.valveCoverDasket,jdbcType=VARCHAR},
+      engine_head = #{record.engineHead,jdbcType=VARCHAR},
+      power_steering_pump = #{record.powerSteeringPump,jdbcType=VARCHAR},
+      engine_assy = #{record.engineAssy,jdbcType=VARCHAR},
+      cistern = #{record.cistern,jdbcType=VARCHAR},
+      transmission_assembly = #{record.transmissionAssembly,jdbcType=VARCHAR},
+      drivers_airbag = #{record.driversAirbag,jdbcType=VARCHAR},
+      passengers_airbag = #{record.passengersAirbag,jdbcType=VARCHAR},
+      front_Side_airbags = #{record.frontSideAirbags,jdbcType=VARCHAR},
+      rear_Side_airbags = #{record.rearSideAirbags,jdbcType=VARCHAR},
+      front_head_bag = #{record.frontHeadBag,jdbcType=VARCHAR},
+      bear_head_bag = #{record.bearHeadBag,jdbcType=VARCHAR},
+      rear_seat = #{record.rearSeat,jdbcType=VARCHAR},
+      center_console = #{record.centerConsole,jdbcType=VARCHAR},
+      armrest_box = #{record.armrestBox,jdbcType=VARCHAR},
+      car_storage_box = #{record.carStorageBox,jdbcType=VARCHAR},
+      shield = #{record.shield,jdbcType=VARCHAR},
+      steering_wheel = #{record.steeringWheel,jdbcType=VARCHAR},
+      main_driving_seat = #{record.mainDrivingSeat,jdbcType=VARCHAR},
+      assistant_seat = #{record.assistantSeat,jdbcType=VARCHAR},
+      car_carpet = #{record.carCarpet,jdbcType=VARCHAR},
+      instrument_desk = #{record.instrumentDesk,jdbcType=VARCHAR},
+      invoice_price = #{record.invoicePrice,jdbcType=VARCHAR},
+      appraiser_result2 = #{record.appraiserResult2,jdbcType=VARCHAR},
+      system_ass_price = #{record.systemAssPrice,jdbcType=DECIMAL},
+      transfer_count = #{record.transferCount,jdbcType=DECIMAL},
+      transfer_count_oneyear = #{record.transferCountOneyear,jdbcType=DECIMAL},
+      system_ass_price2 = #{record.systemAssPrice2,jdbcType=DECIMAL},
+      artificial_price = #{record.artificialPrice,jdbcType=DECIMAL},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      modify_time = #{record.modifyTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetCarAssessment">
+    update cacmp_gj_asset_car_assessment
+    <set>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="engineLid != null">
+        engine_lid = #{engineLid,jdbcType=VARCHAR},
+      </if>
+      <if test="trunkLid != null">
+        trunk_lid = #{trunkLid,jdbcType=VARCHAR},
+      </if>
+      <if test="rearBumper != null">
+        rear_bumper = #{rearBumper,jdbcType=VARCHAR},
+      </if>
+      <if test="frontBumper != null">
+        front_bumper = #{frontBumper,jdbcType=VARCHAR},
+      </if>
+      <if test="frontWindshield != null">
+        front_windshield = #{frontWindshield,jdbcType=VARCHAR},
+      </if>
+      <if test="rearWindshield != null">
+        rear_windshield = #{rearWindshield,jdbcType=VARCHAR},
+      </if>
+      <if test="panelFrontFenderRh != null">
+        panel_front_fender_rh = #{panelFrontFenderRh,jdbcType=VARCHAR},
+      </if>
+      <if test="panelFrontFenderLh != null">
+        panel_front_fender_lh = #{panelFrontFenderLh,jdbcType=VARCHAR},
+      </if>
+      <if test="panelRearFenderRh != null">
+        panel_rear_fender_rh = #{panelRearFenderRh,jdbcType=VARCHAR},
+      </if>
+      <if test="panelRearFenderLh != null">
+        panel_rear_fender_lh = #{panelRearFenderLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontDoorRh != null">
+        front_door_rh = #{frontDoorRh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontDoorLh != null">
+        front_door_lh = #{frontDoorLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearDoorRh != null">
+        rear_door_rh = #{rearDoorRh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearDoorLh != null">
+        rear_door_lh = #{rearDoorLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontHeadlightLh != null">
+        front_headlight_lh = #{frontHeadlightLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontHeadlightRh != null">
+        front_headlight_rh = #{frontHeadlightRh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearTaillampLh != null">
+        rear_taillamp_lh = #{rearTaillampLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearTaillampRh != null">
+        rear_taillamp_rh = #{rearTaillampRh,jdbcType=VARCHAR},
+      </if>
+      <if test="carRoof != null">
+        car_roof = #{carRoof,jdbcType=VARCHAR},
+      </if>
+      <if test="aPillarRh != null">
+        a_pillar_rh = #{aPillarRh,jdbcType=VARCHAR},
+      </if>
+      <if test="aPillarLh != null">
+        a_pillar_lh = #{aPillarLh,jdbcType=VARCHAR},
+      </if>
+      <if test="bPillarRh != null">
+        b_pillar_rh = #{bPillarRh,jdbcType=VARCHAR},
+      </if>
+      <if test="bPillarLh != null">
+        b_pillar_lh = #{bPillarLh,jdbcType=VARCHAR},
+      </if>
+      <if test="cPillarRh != null">
+        c_pillar_rh = #{cPillarRh,jdbcType=VARCHAR},
+      </if>
+      <if test="cPillarLh != null">
+        c_pillar_lh = #{cPillarLh,jdbcType=VARCHAR},
+      </if>
+      <if test="cisternFrame != null">
+        cistern_frame = #{cisternFrame,jdbcType=VARCHAR},
+      </if>
+      <if test="anticollisionDeam != null">
+        anticollision_deam = #{anticollisionDeam,jdbcType=VARCHAR},
+      </if>
+      <if test="frontLongeronLh != null">
+        front_longeron_lh = #{frontLongeronLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontLongeronRh != null">
+        front_longeron_rh = #{frontLongeronRh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearLongeronLh != null">
+        rear_longeron_lh = #{rearLongeronLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearLongeronRh != null">
+        rear_longeron_rh = #{rearLongeronRh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontPanelLh != null">
+        front_panel_lh = #{frontPanelLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontPanelRh != null">
+        front_panel_rh = #{frontPanelRh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontAbsorberBearingLh != null">
+        front_absorber_bearing_lh = #{frontAbsorberBearingLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontAbsorberBearingRh != null">
+        front_absorber_bearing_rh = #{frontAbsorberBearingRh,jdbcType=VARCHAR},
+      </if>
+      <if test="firewall != null">
+        firewall = #{firewall,jdbcType=VARCHAR},
+      </if>
+      <if test="anticollisionDeamRear != null">
+        anticollision_deam_rear = #{anticollisionDeamRear,jdbcType=VARCHAR},
+      </if>
+      <if test="spareWheelMulde != null">
+        spare_wheel_mulde = #{spareWheelMulde,jdbcType=VARCHAR},
+      </if>
+      <if test="rearWaterChannelLh != null">
+        rear_water_channel_lh = #{rearWaterChannelLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearWaterChannelRh != null">
+        rear_water_channel_rh = #{rearWaterChannelRh,jdbcType=VARCHAR},
+      </if>
+      <if test="backPanel != null">
+        back_panel = #{backPanel,jdbcType=VARCHAR},
+      </if>
+      <if test="aPillarRh2 != null">
+        a_pillar_rh2 = #{aPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="aPillarLh2 != null">
+        a_pillar_lh2 = #{aPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="bPillarRh2 != null">
+        b_pillar_rh2 = #{bPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="bPillarLh2 != null">
+        b_pillar_lh2 = #{bPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="cPillarRh2 != null">
+        c_pillar_rh2 = #{cPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="cPillarLh2 != null">
+        c_pillar_lh2 = #{cPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="dPillarRh2 != null">
+        d_pillar_rh2 = #{dPillarRh2,jdbcType=VARCHAR},
+      </if>
+      <if test="dPillarLh2 != null">
+        d_pillar_lh2 = #{dPillarLh2,jdbcType=VARCHAR},
+      </if>
+      <if test="topBeamRh != null">
+        top_beam_rh = #{topBeamRh,jdbcType=VARCHAR},
+      </if>
+      <if test="topBeamLh != null">
+        top_beam_lh = #{topBeamLh,jdbcType=VARCHAR},
+      </if>
+      <if test="bottomBeamRh != null">
+        bottom_beam_rh = #{bottomBeamRh,jdbcType=VARCHAR},
+      </if>
+      <if test="bottomBeamLh != null">
+        bottom_beam_lh = #{bottomBeamLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearPanelRh != null">
+        rear_panel_rh = #{rearPanelRh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearPanelLh != null">
+        rear_panel_lh = #{rearPanelLh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontHingeBracketRh != null">
+        front_hinge_bracket_rh = #{frontHingeBracketRh,jdbcType=VARCHAR},
+      </if>
+      <if test="frontHingeBracketLh != null">
+        front_hinge_bracket_lh = #{frontHingeBracketLh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearHingeBracketRh != null">
+        rear_hinge_bracket_rh = #{rearHingeBracketRh,jdbcType=VARCHAR},
+      </if>
+      <if test="rearHingeBracketLh != null">
+        rear_hinge_bracket_lh = #{rearHingeBracketLh,jdbcType=VARCHAR},
+      </if>
+      <if test="mainEngineBundle != null">
+        main_engine_bundle = #{mainEngineBundle,jdbcType=VARCHAR},
+      </if>
+      <if test="seatSlideRail != null">
+        seat_slide_rail = #{seatSlideRail,jdbcType=VARCHAR},
+      </if>
+      <if test="inCarWire != null">
+        in_car_wire = #{inCarWire,jdbcType=VARCHAR},
+      </if>
+      <if test="seatBelt != null">
+        seat_belt = #{seatBelt,jdbcType=VARCHAR},
+      </if>
+      <if test="trunkCorner != null">
+        trunk_corner = #{trunkCorner,jdbcType=VARCHAR},
+      </if>
+      <if test="seatCushion != null">
+        seat_cushion = #{seatCushion,jdbcType=VARCHAR},
+      </if>
+      <if test="fuseBoxEcu != null">
+        fuse_box_ecu = #{fuseBoxEcu,jdbcType=VARCHAR},
+      </if>
+      <if test="rubberCarpets != null">
+        rubber_carpets = #{rubberCarpets,jdbcType=VARCHAR},
+      </if>
+      <if test="ashtrayBottom != null">
+        ashtray_bottom = #{ashtrayBottom,jdbcType=VARCHAR},
+      </if>
+      <if test="insulationCotton != null">
+        insulation_cotton = #{insulationCotton,jdbcType=VARCHAR},
+      </if>
+      <if test="rubberProduct != null">
+        rubber_product = #{rubberProduct,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleCoverCockpit != null">
+        vehicle_cover_cockpit = #{vehicleCoverCockpit,jdbcType=VARCHAR},
+      </if>
+      <if test="valveCoverDasket != null">
+        valve_cover_dasket = #{valveCoverDasket,jdbcType=VARCHAR},
+      </if>
+      <if test="engineHead != null">
+        engine_head = #{engineHead,jdbcType=VARCHAR},
+      </if>
+      <if test="powerSteeringPump != null">
+        power_steering_pump = #{powerSteeringPump,jdbcType=VARCHAR},
+      </if>
+      <if test="engineAssy != null">
+        engine_assy = #{engineAssy,jdbcType=VARCHAR},
+      </if>
+      <if test="cistern != null">
+        cistern = #{cistern,jdbcType=VARCHAR},
+      </if>
+      <if test="transmissionAssembly != null">
+        transmission_assembly = #{transmissionAssembly,jdbcType=VARCHAR},
+      </if>
+      <if test="driversAirbag != null">
+        drivers_airbag = #{driversAirbag,jdbcType=VARCHAR},
+      </if>
+      <if test="passengersAirbag != null">
+        passengers_airbag = #{passengersAirbag,jdbcType=VARCHAR},
+      </if>
+      <if test="frontSideAirbags != null">
+        front_Side_airbags = #{frontSideAirbags,jdbcType=VARCHAR},
+      </if>
+      <if test="rearSideAirbags != null">
+        rear_Side_airbags = #{rearSideAirbags,jdbcType=VARCHAR},
+      </if>
+      <if test="frontHeadBag != null">
+        front_head_bag = #{frontHeadBag,jdbcType=VARCHAR},
+      </if>
+      <if test="bearHeadBag != null">
+        bear_head_bag = #{bearHeadBag,jdbcType=VARCHAR},
+      </if>
+      <if test="rearSeat != null">
+        rear_seat = #{rearSeat,jdbcType=VARCHAR},
+      </if>
+      <if test="centerConsole != null">
+        center_console = #{centerConsole,jdbcType=VARCHAR},
+      </if>
+      <if test="armrestBox != null">
+        armrest_box = #{armrestBox,jdbcType=VARCHAR},
+      </if>
+      <if test="carStorageBox != null">
+        car_storage_box = #{carStorageBox,jdbcType=VARCHAR},
+      </if>
+      <if test="shield != null">
+        shield = #{shield,jdbcType=VARCHAR},
+      </if>
+      <if test="steeringWheel != null">
+        steering_wheel = #{steeringWheel,jdbcType=VARCHAR},
+      </if>
+      <if test="mainDrivingSeat != null">
+        main_driving_seat = #{mainDrivingSeat,jdbcType=VARCHAR},
+      </if>
+      <if test="assistantSeat != null">
+        assistant_seat = #{assistantSeat,jdbcType=VARCHAR},
+      </if>
+      <if test="carCarpet != null">
+        car_carpet = #{carCarpet,jdbcType=VARCHAR},
+      </if>
+      <if test="instrumentDesk != null">
+        instrument_desk = #{instrumentDesk,jdbcType=VARCHAR},
+      </if>
+      <if test="invoicePrice != null">
+        invoice_price = #{invoicePrice,jdbcType=VARCHAR},
+      </if>
+      <if test="appraiserResult2 != null">
+        appraiser_result2 = #{appraiserResult2,jdbcType=VARCHAR},
+      </if>
+      <if test="systemAssPrice != null">
+        system_ass_price = #{systemAssPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="transferCount != null">
+        transfer_count = #{transferCount,jdbcType=DECIMAL},
+      </if>
+      <if test="transferCountOneyear != null">
+        transfer_count_oneyear = #{transferCountOneyear,jdbcType=DECIMAL},
+      </if>
+      <if test="systemAssPrice2 != null">
+        system_ass_price2 = #{systemAssPrice2,jdbcType=DECIMAL},
+      </if>
+      <if test="artificialPrice != null">
+        artificial_price = #{artificialPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetCarAssessment">
+    update cacmp_gj_asset_car_assessment
+    set order_id = #{orderId,jdbcType=VARCHAR},
+      engine_lid = #{engineLid,jdbcType=VARCHAR},
+      trunk_lid = #{trunkLid,jdbcType=VARCHAR},
+      rear_bumper = #{rearBumper,jdbcType=VARCHAR},
+      front_bumper = #{frontBumper,jdbcType=VARCHAR},
+      front_windshield = #{frontWindshield,jdbcType=VARCHAR},
+      rear_windshield = #{rearWindshield,jdbcType=VARCHAR},
+      panel_front_fender_rh = #{panelFrontFenderRh,jdbcType=VARCHAR},
+      panel_front_fender_lh = #{panelFrontFenderLh,jdbcType=VARCHAR},
+      panel_rear_fender_rh = #{panelRearFenderRh,jdbcType=VARCHAR},
+      panel_rear_fender_lh = #{panelRearFenderLh,jdbcType=VARCHAR},
+      front_door_rh = #{frontDoorRh,jdbcType=VARCHAR},
+      front_door_lh = #{frontDoorLh,jdbcType=VARCHAR},
+      rear_door_rh = #{rearDoorRh,jdbcType=VARCHAR},
+      rear_door_lh = #{rearDoorLh,jdbcType=VARCHAR},
+      front_headlight_lh = #{frontHeadlightLh,jdbcType=VARCHAR},
+      front_headlight_rh = #{frontHeadlightRh,jdbcType=VARCHAR},
+      rear_taillamp_lh = #{rearTaillampLh,jdbcType=VARCHAR},
+      rear_taillamp_rh = #{rearTaillampRh,jdbcType=VARCHAR},
+      car_roof = #{carRoof,jdbcType=VARCHAR},
+      a_pillar_rh = #{aPillarRh,jdbcType=VARCHAR},
+      a_pillar_lh = #{aPillarLh,jdbcType=VARCHAR},
+      b_pillar_rh = #{bPillarRh,jdbcType=VARCHAR},
+      b_pillar_lh = #{bPillarLh,jdbcType=VARCHAR},
+      c_pillar_rh = #{cPillarRh,jdbcType=VARCHAR},
+      c_pillar_lh = #{cPillarLh,jdbcType=VARCHAR},
+      cistern_frame = #{cisternFrame,jdbcType=VARCHAR},
+      anticollision_deam = #{anticollisionDeam,jdbcType=VARCHAR},
+      front_longeron_lh = #{frontLongeronLh,jdbcType=VARCHAR},
+      front_longeron_rh = #{frontLongeronRh,jdbcType=VARCHAR},
+      rear_longeron_lh = #{rearLongeronLh,jdbcType=VARCHAR},
+      rear_longeron_rh = #{rearLongeronRh,jdbcType=VARCHAR},
+      front_panel_lh = #{frontPanelLh,jdbcType=VARCHAR},
+      front_panel_rh = #{frontPanelRh,jdbcType=VARCHAR},
+      front_absorber_bearing_lh = #{frontAbsorberBearingLh,jdbcType=VARCHAR},
+      front_absorber_bearing_rh = #{frontAbsorberBearingRh,jdbcType=VARCHAR},
+      firewall = #{firewall,jdbcType=VARCHAR},
+      anticollision_deam_rear = #{anticollisionDeamRear,jdbcType=VARCHAR},
+      spare_wheel_mulde = #{spareWheelMulde,jdbcType=VARCHAR},
+      rear_water_channel_lh = #{rearWaterChannelLh,jdbcType=VARCHAR},
+      rear_water_channel_rh = #{rearWaterChannelRh,jdbcType=VARCHAR},
+      back_panel = #{backPanel,jdbcType=VARCHAR},
+      a_pillar_rh2 = #{aPillarRh2,jdbcType=VARCHAR},
+      a_pillar_lh2 = #{aPillarLh2,jdbcType=VARCHAR},
+      b_pillar_rh2 = #{bPillarRh2,jdbcType=VARCHAR},
+      b_pillar_lh2 = #{bPillarLh2,jdbcType=VARCHAR},
+      c_pillar_rh2 = #{cPillarRh2,jdbcType=VARCHAR},
+      c_pillar_lh2 = #{cPillarLh2,jdbcType=VARCHAR},
+      d_pillar_rh2 = #{dPillarRh2,jdbcType=VARCHAR},
+      d_pillar_lh2 = #{dPillarLh2,jdbcType=VARCHAR},
+      top_beam_rh = #{topBeamRh,jdbcType=VARCHAR},
+      top_beam_lh = #{topBeamLh,jdbcType=VARCHAR},
+      bottom_beam_rh = #{bottomBeamRh,jdbcType=VARCHAR},
+      bottom_beam_lh = #{bottomBeamLh,jdbcType=VARCHAR},
+      rear_panel_rh = #{rearPanelRh,jdbcType=VARCHAR},
+      rear_panel_lh = #{rearPanelLh,jdbcType=VARCHAR},
+      front_hinge_bracket_rh = #{frontHingeBracketRh,jdbcType=VARCHAR},
+      front_hinge_bracket_lh = #{frontHingeBracketLh,jdbcType=VARCHAR},
+      rear_hinge_bracket_rh = #{rearHingeBracketRh,jdbcType=VARCHAR},
+      rear_hinge_bracket_lh = #{rearHingeBracketLh,jdbcType=VARCHAR},
+      main_engine_bundle = #{mainEngineBundle,jdbcType=VARCHAR},
+      seat_slide_rail = #{seatSlideRail,jdbcType=VARCHAR},
+      in_car_wire = #{inCarWire,jdbcType=VARCHAR},
+      seat_belt = #{seatBelt,jdbcType=VARCHAR},
+      trunk_corner = #{trunkCorner,jdbcType=VARCHAR},
+      seat_cushion = #{seatCushion,jdbcType=VARCHAR},
+      fuse_box_ecu = #{fuseBoxEcu,jdbcType=VARCHAR},
+      rubber_carpets = #{rubberCarpets,jdbcType=VARCHAR},
+      ashtray_bottom = #{ashtrayBottom,jdbcType=VARCHAR},
+      insulation_cotton = #{insulationCotton,jdbcType=VARCHAR},
+      rubber_product = #{rubberProduct,jdbcType=VARCHAR},
+      vehicle_cover_cockpit = #{vehicleCoverCockpit,jdbcType=VARCHAR},
+      valve_cover_dasket = #{valveCoverDasket,jdbcType=VARCHAR},
+      engine_head = #{engineHead,jdbcType=VARCHAR},
+      power_steering_pump = #{powerSteeringPump,jdbcType=VARCHAR},
+      engine_assy = #{engineAssy,jdbcType=VARCHAR},
+      cistern = #{cistern,jdbcType=VARCHAR},
+      transmission_assembly = #{transmissionAssembly,jdbcType=VARCHAR},
+      drivers_airbag = #{driversAirbag,jdbcType=VARCHAR},
+      passengers_airbag = #{passengersAirbag,jdbcType=VARCHAR},
+      front_Side_airbags = #{frontSideAirbags,jdbcType=VARCHAR},
+      rear_Side_airbags = #{rearSideAirbags,jdbcType=VARCHAR},
+      front_head_bag = #{frontHeadBag,jdbcType=VARCHAR},
+      bear_head_bag = #{bearHeadBag,jdbcType=VARCHAR},
+      rear_seat = #{rearSeat,jdbcType=VARCHAR},
+      center_console = #{centerConsole,jdbcType=VARCHAR},
+      armrest_box = #{armrestBox,jdbcType=VARCHAR},
+      car_storage_box = #{carStorageBox,jdbcType=VARCHAR},
+      shield = #{shield,jdbcType=VARCHAR},
+      steering_wheel = #{steeringWheel,jdbcType=VARCHAR},
+      main_driving_seat = #{mainDrivingSeat,jdbcType=VARCHAR},
+      assistant_seat = #{assistantSeat,jdbcType=VARCHAR},
+      car_carpet = #{carCarpet,jdbcType=VARCHAR},
+      instrument_desk = #{instrumentDesk,jdbcType=VARCHAR},
+      invoice_price = #{invoicePrice,jdbcType=VARCHAR},
+      appraiser_result2 = #{appraiserResult2,jdbcType=VARCHAR},
+      system_ass_price = #{systemAssPrice,jdbcType=DECIMAL},
+      transfer_count = #{transferCount,jdbcType=DECIMAL},
+      transfer_count_oneyear = #{transferCountOneyear,jdbcType=DECIMAL},
+      system_ass_price2 = #{systemAssPrice2,jdbcType=DECIMAL},
+      artificial_price = #{artificialPrice,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByExampleWithRowbounds" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetCarAssessmentCriteria" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cacmp_gj_asset_car_assessment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>
