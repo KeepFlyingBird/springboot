@@ -1,0 +1,7 @@
+日志查看 关键字
+    grep
+        grep -A 100 -B 100  '要查找的字符'  被查的文件file
+             -A after 后面  B before 前面
+        案列：grep -A 30 "CmbcAction.saveProjInfo.param:" catalina.out
+
+    less

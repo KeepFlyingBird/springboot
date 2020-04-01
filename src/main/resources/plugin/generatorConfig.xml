@@ -43,9 +43,11 @@
         <!--jdbc的数据库连接 -->
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://10.0.3.4:3306/jy_fund"
+                connectionURL="jdbc:mysql://10.0.3.4:3306/jy_non_insurance"
                 userId="dev_user"
                 password="dev_user@jy28%JK">
+            <!--设置为 true 可以获取 tables 信息, 解决生成文件缺少 xxxByPrimaryKey 的问题 -->
+            <property name="useInformationSchema" value="true"/>
         </jdbcConnection>
         <!--jdbc:oracle:thin:@183.84.2.11:1521:orcl-->
         <!--<jdbcConnection-->
@@ -75,7 +77,7 @@
             targetPackage：生成实体类存放的包名，一般就是放在该包下
             targetProject：目标项目，指定一个存在的目录下，生成的内容会放到指定目录中，如果目录不存在，MBG不会自动建目录
          -->
-        <javaModelGenerator targetPackage="cn.freefly.springboot.mybatis.entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="cn.freefly.springboot.httpClientUtil.entity.gj" targetProject="src/main/java">
             <!-- 该属性只对MyBatis3有效，如果true就会使用构造方法入参，如果false就会使用setter方式。默认为false -->
             <property name="constructorBased" value="false"/>
             <!-- 是否允许子包，即targetPackage.schemaName.tableName
@@ -96,7 +98,7 @@
                 或者只使用Mapper接口+Annotation，
                 所以，如果 javaClientGenerator配置中配置了需要生成XML的话，这个元素就必须配置
          -->
-        <sqlMapGenerator targetPackage="mapper/generator" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mapper/generator/gj" targetProject="src/main/resources">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
@@ -110,7 +112,7 @@
                 3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；
             注意，如果context是MyBatis3Simple：只支持ANNOTATEDMAPPER和XMLMAPPER
         -->
-        <javaClientGenerator targetPackage="cn.freefly.springboot.mybatis.mapper" type="XMLMAPPER"
+        <javaClientGenerator targetPackage="cn.freefly.springboot.httpClientUtil.mapper.gj" type="XMLMAPPER"
                              targetProject="src/main/java">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
@@ -129,15 +131,47 @@
             &lt;!&ndash;<columnOverride column="username" property="userName" />&ndash;&gt;
         </table>-->
 
-        <!--<table tableName="person" domainObjectName="Person"/>-->
-        <!--<table tableName="t_data_znjc_huankuan" domainObjectName="TDataZnjcHuanKuan">-->
-            <!--&lt;!&ndash;<generatedKey column="id" sqlStatement="JDBC" identity="true" />&ndash;&gt;-->
+        <!--<table tableName="cacmp_gj_asset_car" domainObjectName="CacmpGjAssetCar">-->
         <!--</table>-->
-        <!--<table tableName="pa_mq_access_log" domainObjectName="MqAccessLog">-->
-            <!--<generatedKey column="id" sqlStatement="JDBC" identity="true" />-->
+        <!--<table tableName="cacmp_gj_asset_car_extend" domainObjectName="CacmpGjAssetCarExtend">-->
         <!--</table>-->
-        <table tableName="cacmp_generate_id" domainObjectName="CacmpGenerateId">
-            <!--<generatedKey column="id" sqlStatement="JDBC" identity="true" />-->
+        <!--<table tableName="cacmp_gj_asset_real_estate" domainObjectName="CacmpGjAssetRealEstate">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_business_bank_pay" domainObjectName="CacmpGjBusinessBankPay">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_business_finance" domainObjectName="CacmpGjBusinessFinance">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_business_info" domainObjectName="CacmpGjBusinessInfo">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_business_mortgage" domainObjectName="CacmpGjBusinessMortgage">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_business_project" domainObjectName="CacmpGjBusinessProject">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_business_subject" domainObjectName="CacmpGjBusinessSubject">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_subject_contacts" domainObjectName="CacmpGjSubjectContacts">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_subject_guarantee" domainObjectName="CacmpGjSubjectGuarantee">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_subject_person" domainObjectName="CacmpGjSubjectPerson">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_subject_person_extend" domainObjectName="CacmpGjSubjectPersonExtend">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_subject_spouse" domainObjectName="CacmpGjSubjectSpouse">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_node" domainObjectName="CacmpGjNode">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_file" domainObjectName="CacmpGjFile">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_order" domainObjectName="CacmpGjOrder">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_asset_car_extend" domainObjectName="CacmpGjAssetCarExtend">-->
+        <!--</table>-->
+        <!--<table tableName="cacmp_gj_asset_car_assessment" domainObjectName="CacmpGjAssetCarAssessment">-->
+        <!--</table>
+        <table tableName="cacmp_gj_business_info_extend" domainObjectName="CacmpGjBusinessInfoExtend">
+        </table>-->
+        <table tableName="cacmp_gj_person_bank" domainObjectName="CacmpGjPersonBank">
         </table>
 
     </context>

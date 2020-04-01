@@ -40,7 +40,7 @@ public class HttpClientController {
             ,consumes = MediaType.APPLICATION_JSON_UTF8_VALUE
             ,produces = MediaType.APPLICATION_JSON_UTF8_VALUE
             ,response = BaseResponse.class)
-    @PostMapping("/channel/fund/pretrial")
+    @PostMapping("/channel/fund/loanCre")
     public BaseResponse loanCre(@RequestBody@ApiParam(value = "预审参数") ChannelPretrialApplyRequest channelloanCreApplyRequest){
         return pretrialService.pretrialApply(channelloanCreApplyRequest);
     }

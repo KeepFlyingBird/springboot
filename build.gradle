@@ -63,4 +63,7 @@ dependencies {
     
     // httpClient接口
     implementation 'org.apache.httpcomponents:httpclient:4.5.6'
+
+    // dozermapper
+    implementation 'com.github.dozermapper:dozer-core:6.4.1'
 }
