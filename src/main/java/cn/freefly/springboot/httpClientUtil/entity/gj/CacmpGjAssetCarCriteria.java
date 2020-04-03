@@ -1795,52 +1795,62 @@ public class CacmpGjAssetCarCriteria {
             return (Criteria) this;
         }
 
-        public Criteria andRegistrationDateEqualTo(Date value) {
+        public Criteria andRegistrationDateEqualTo(String value) {
             addCriterion("registration_date =", value, "registrationDate");
             return (Criteria) this;
         }
 
-        public Criteria andRegistrationDateNotEqualTo(Date value) {
+        public Criteria andRegistrationDateNotEqualTo(String value) {
             addCriterion("registration_date <>", value, "registrationDate");
             return (Criteria) this;
         }
 
-        public Criteria andRegistrationDateGreaterThan(Date value) {
+        public Criteria andRegistrationDateGreaterThan(String value) {
             addCriterion("registration_date >", value, "registrationDate");
             return (Criteria) this;
         }
 
-        public Criteria andRegistrationDateGreaterThanOrEqualTo(Date value) {
+        public Criteria andRegistrationDateGreaterThanOrEqualTo(String value) {
             addCriterion("registration_date >=", value, "registrationDate");
             return (Criteria) this;
         }
 
-        public Criteria andRegistrationDateLessThan(Date value) {
+        public Criteria andRegistrationDateLessThan(String value) {
             addCriterion("registration_date <", value, "registrationDate");
             return (Criteria) this;
         }
 
-        public Criteria andRegistrationDateLessThanOrEqualTo(Date value) {
+        public Criteria andRegistrationDateLessThanOrEqualTo(String value) {
             addCriterion("registration_date <=", value, "registrationDate");
             return (Criteria) this;
         }
 
-        public Criteria andRegistrationDateIn(List<Date> values) {
+        public Criteria andRegistrationDateLike(String value) {
+            addCriterion("registration_date like", value, "registrationDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegistrationDateNotLike(String value) {
+            addCriterion("registration_date not like", value, "registrationDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegistrationDateIn(List<String> values) {
             addCriterion("registration_date in", values, "registrationDate");
             return (Criteria) this;
         }
 
-        public Criteria andRegistrationDateNotIn(List<Date> values) {
+        public Criteria andRegistrationDateNotIn(List<String> values) {
             addCriterion("registration_date not in", values, "registrationDate");
             return (Criteria) this;
         }
 
-        public Criteria andRegistrationDateBetween(Date value1, Date value2) {
+        public Criteria andRegistrationDateBetween(String value1, String value2) {
             addCriterion("registration_date between", value1, value2, "registrationDate");
             return (Criteria) this;
         }
 
-        public Criteria andRegistrationDateNotBetween(Date value1, Date value2) {
+        public Criteria andRegistrationDateNotBetween(String value1, String value2) {
             addCriterion("registration_date not between", value1, value2, "registrationDate");
             return (Criteria) this;
         }
@@ -1855,52 +1865,62 @@ public class CacmpGjAssetCarCriteria {
             return (Criteria) this;
         }
 
-        public Criteria andProductionDateEqualTo(Date value) {
+        public Criteria andProductionDateEqualTo(String value) {
             addCriterion("production_date =", value, "productionDate");
             return (Criteria) this;
         }
 
-        public Criteria andProductionDateNotEqualTo(Date value) {
+        public Criteria andProductionDateNotEqualTo(String value) {
             addCriterion("production_date <>", value, "productionDate");
             return (Criteria) this;
         }
 
-        public Criteria andProductionDateGreaterThan(Date value) {
+        public Criteria andProductionDateGreaterThan(String value) {
             addCriterion("production_date >", value, "productionDate");
             return (Criteria) this;
         }
 
-        public Criteria andProductionDateGreaterThanOrEqualTo(Date value) {
+        public Criteria andProductionDateGreaterThanOrEqualTo(String value) {
             addCriterion("production_date >=", value, "productionDate");
             return (Criteria) this;
         }
 
-        public Criteria andProductionDateLessThan(Date value) {
+        public Criteria andProductionDateLessThan(String value) {
             addCriterion("production_date <", value, "productionDate");
             return (Criteria) this;
         }
 
-        public Criteria andProductionDateLessThanOrEqualTo(Date value) {
+        public Criteria andProductionDateLessThanOrEqualTo(String value) {
             addCriterion("production_date <=", value, "productionDate");
             return (Criteria) this;
         }
 
-        public Criteria andProductionDateIn(List<Date> values) {
+        public Criteria andProductionDateLike(String value) {
+            addCriterion("production_date like", value, "productionDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionDateNotLike(String value) {
+            addCriterion("production_date not like", value, "productionDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionDateIn(List<String> values) {
             addCriterion("production_date in", values, "productionDate");
             return (Criteria) this;
         }
 
-        public Criteria andProductionDateNotIn(List<Date> values) {
+        public Criteria andProductionDateNotIn(List<String> values) {
             addCriterion("production_date not in", values, "productionDate");
             return (Criteria) this;
         }
 
-        public Criteria andProductionDateBetween(Date value1, Date value2) {
+        public Criteria andProductionDateBetween(String value1, String value2) {
             addCriterion("production_date between", value1, value2, "productionDate");
             return (Criteria) this;
         }
 
-        public Criteria andProductionDateNotBetween(Date value1, Date value2) {
+        public Criteria andProductionDateNotBetween(String value1, String value2) {
             addCriterion("production_date not between", value1, value2, "productionDate");
             return (Criteria) this;
         }

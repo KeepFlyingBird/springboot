@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.freefly.springboot.httpClientUtil.mapper.gj.CacmpGjNodeMapper">
-  <resultMap id="BaseResultMap" type="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjNode">
+<mapper namespace="cn.freefly.springboot.httpClientUtil.mapper.gj.CacmpGjOrderMapper">
+  <resultMap id="BaseResultMap" type="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrder">
     <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
     <result column="inst_no" jdbcType="VARCHAR" property="instNo" />
-    <result column="node_no" jdbcType="VARCHAR" property="nodeNo" />
-    <result column="node_status" jdbcType="VARCHAR" property="nodeStatus" />
-    <result column="node_number" jdbcType="VARCHAR" property="nodeNumber" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="channel_result" jdbcType="VARCHAR" property="channelResult" />
+    <result column="product_code" jdbcType="VARCHAR" property="productCode" />
+    <result column="product_series_code" jdbcType="VARCHAR" property="productSeriesCode" />
+    <result column="channel_key" jdbcType="VARCHAR" property="channelKey" />
+    <result column="channel_name" jdbcType="VARCHAR" property="channelName" />
+    <result column="status_code" jdbcType="VARCHAR" property="statusCode" />
+    <result column="status_message" jdbcType="VARCHAR" property="statusMessage" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
   </resultMap>
@@ -72,16 +72,16 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, order_id, inst_no, node_no, node_status, node_number, remark, channel_result, 
-    create_time, modify_time
+    id, inst_no, product_code, product_series_code, channel_key, channel_name, status_code, 
+    status_message, create_time, modify_time
   </sql>
-  <select id="selectByExample" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjNodeCriteria" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrderCriteria" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from cacmp_gj_node
+    from cacmp_gj_order
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -92,55 +92,55 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from cacmp_gj_node
+    from cacmp_gj_order
     where id = #{id,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from cacmp_gj_node
+    delete from cacmp_gj_order
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjNodeCriteria">
-    delete from cacmp_gj_node
+  <delete id="deleteByExample" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrderCriteria">
+    delete from cacmp_gj_order
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjNode">
-    insert into cacmp_gj_node (id, order_id, inst_no, 
-      node_no, node_status, node_number, 
-      remark, channel_result, create_time, 
+  <insert id="insert" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrder">
+    insert into cacmp_gj_order (id, inst_no, product_code, 
+      product_series_code, channel_key, channel_name, 
+      status_code, status_message, create_time, 
       modify_time)
-    values (#{id,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, #{instNo,jdbcType=VARCHAR}, 
-      #{nodeNo,jdbcType=VARCHAR}, #{nodeStatus,jdbcType=VARCHAR}, #{nodeNumber,jdbcType=VARCHAR}, 
-      #{remark,jdbcType=VARCHAR}, #{channelResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=VARCHAR}, #{instNo,jdbcType=VARCHAR}, #{productCode,jdbcType=VARCHAR}, 
+      #{productSeriesCode,jdbcType=VARCHAR}, #{channelKey,jdbcType=VARCHAR}, #{channelName,jdbcType=VARCHAR}, 
+      #{statusCode,jdbcType=VARCHAR}, #{statusMessage,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{modifyTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjNode">
-    insert into cacmp_gj_node
+  <insert id="insertSelective" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrder">
+    insert into cacmp_gj_order
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="orderId != null">
-        order_id,
-      </if>
       <if test="instNo != null">
         inst_no,
       </if>
-      <if test="nodeNo != null">
-        node_no,
+      <if test="productCode != null">
+        product_code,
       </if>
-      <if test="nodeStatus != null">
-        node_status,
+      <if test="productSeriesCode != null">
+        product_series_code,
       </if>
-      <if test="nodeNumber != null">
-        node_number,
+      <if test="channelKey != null">
+        channel_key,
       </if>
-      <if test="remark != null">
-        remark,
+      <if test="channelName != null">
+        channel_name,
       </if>
-      <if test="channelResult != null">
-        channel_result,
+      <if test="statusCode != null">
+        status_code,
+      </if>
+      <if test="statusMessage != null">
+        status_message,
       </if>
       <if test="createTime != null">
         create_time,
@@ -153,26 +153,26 @@
       <if test="id != null">
         #{id,jdbcType=VARCHAR},
       </if>
-      <if test="orderId != null">
-        #{orderId,jdbcType=VARCHAR},
-      </if>
       <if test="instNo != null">
         #{instNo,jdbcType=VARCHAR},
       </if>
-      <if test="nodeNo != null">
-        #{nodeNo,jdbcType=VARCHAR},
+      <if test="productCode != null">
+        #{productCode,jdbcType=VARCHAR},
       </if>
-      <if test="nodeStatus != null">
-        #{nodeStatus,jdbcType=VARCHAR},
+      <if test="productSeriesCode != null">
+        #{productSeriesCode,jdbcType=VARCHAR},
       </if>
-      <if test="nodeNumber != null">
-        #{nodeNumber,jdbcType=VARCHAR},
+      <if test="channelKey != null">
+        #{channelKey,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null">
-        #{remark,jdbcType=VARCHAR},
+      <if test="channelName != null">
+        #{channelName,jdbcType=VARCHAR},
       </if>
-      <if test="channelResult != null">
-        #{channelResult,jdbcType=VARCHAR},
+      <if test="statusCode != null">
+        #{statusCode,jdbcType=VARCHAR},
+      </if>
+      <if test="statusMessage != null">
+        #{statusMessage,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -182,38 +182,38 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjNodeCriteria" resultType="java.lang.Long">
-    select count(*) from cacmp_gj_node
+  <select id="countByExample" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrderCriteria" resultType="java.lang.Long">
+    select count(*) from cacmp_gj_order
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update cacmp_gj_node
+    update cacmp_gj_order
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=VARCHAR},
       </if>
-      <if test="record.orderId != null">
-        order_id = #{record.orderId,jdbcType=VARCHAR},
-      </if>
       <if test="record.instNo != null">
         inst_no = #{record.instNo,jdbcType=VARCHAR},
       </if>
-      <if test="record.nodeNo != null">
-        node_no = #{record.nodeNo,jdbcType=VARCHAR},
+      <if test="record.productCode != null">
+        product_code = #{record.productCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.nodeStatus != null">
-        node_status = #{record.nodeStatus,jdbcType=VARCHAR},
+      <if test="record.productSeriesCode != null">
+        product_series_code = #{record.productSeriesCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.nodeNumber != null">
-        node_number = #{record.nodeNumber,jdbcType=VARCHAR},
+      <if test="record.channelKey != null">
+        channel_key = #{record.channelKey,jdbcType=VARCHAR},
       </if>
-      <if test="record.remark != null">
-        remark = #{record.remark,jdbcType=VARCHAR},
+      <if test="record.channelName != null">
+        channel_name = #{record.channelName,jdbcType=VARCHAR},
       </if>
-      <if test="record.channelResult != null">
-        channel_result = #{record.channelResult,jdbcType=VARCHAR},
+      <if test="record.statusCode != null">
+        status_code = #{record.statusCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.statusMessage != null">
+        status_message = #{record.statusMessage,jdbcType=VARCHAR},
       </if>
       <if test="record.createTime != null">
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -227,44 +227,44 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update cacmp_gj_node
+    update cacmp_gj_order
     set id = #{record.id,jdbcType=VARCHAR},
-      order_id = #{record.orderId,jdbcType=VARCHAR},
       inst_no = #{record.instNo,jdbcType=VARCHAR},
-      node_no = #{record.nodeNo,jdbcType=VARCHAR},
-      node_status = #{record.nodeStatus,jdbcType=VARCHAR},
-      node_number = #{record.nodeNumber,jdbcType=VARCHAR},
-      remark = #{record.remark,jdbcType=VARCHAR},
-      channel_result = #{record.channelResult,jdbcType=VARCHAR},
+      product_code = #{record.productCode,jdbcType=VARCHAR},
+      product_series_code = #{record.productSeriesCode,jdbcType=VARCHAR},
+      channel_key = #{record.channelKey,jdbcType=VARCHAR},
+      channel_name = #{record.channelName,jdbcType=VARCHAR},
+      status_code = #{record.statusCode,jdbcType=VARCHAR},
+      status_message = #{record.statusMessage,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       modify_time = #{record.modifyTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjNode">
-    update cacmp_gj_node
+  <update id="updateByPrimaryKeySelective" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrder">
+    update cacmp_gj_order
     <set>
-      <if test="orderId != null">
-        order_id = #{orderId,jdbcType=VARCHAR},
-      </if>
       <if test="instNo != null">
         inst_no = #{instNo,jdbcType=VARCHAR},
       </if>
-      <if test="nodeNo != null">
-        node_no = #{nodeNo,jdbcType=VARCHAR},
+      <if test="productCode != null">
+        product_code = #{productCode,jdbcType=VARCHAR},
       </if>
-      <if test="nodeStatus != null">
-        node_status = #{nodeStatus,jdbcType=VARCHAR},
+      <if test="productSeriesCode != null">
+        product_series_code = #{productSeriesCode,jdbcType=VARCHAR},
       </if>
-      <if test="nodeNumber != null">
-        node_number = #{nodeNumber,jdbcType=VARCHAR},
+      <if test="channelKey != null">
+        channel_key = #{channelKey,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=VARCHAR},
+      <if test="channelName != null">
+        channel_name = #{channelName,jdbcType=VARCHAR},
       </if>
-      <if test="channelResult != null">
-        channel_result = #{channelResult,jdbcType=VARCHAR},
+      <if test="statusCode != null">
+        status_code = #{statusCode,jdbcType=VARCHAR},
+      </if>
+      <if test="statusMessage != null">
+        status_message = #{statusMessage,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -275,26 +275,26 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjNode">
-    update cacmp_gj_node
-    set order_id = #{orderId,jdbcType=VARCHAR},
-      inst_no = #{instNo,jdbcType=VARCHAR},
-      node_no = #{nodeNo,jdbcType=VARCHAR},
-      node_status = #{nodeStatus,jdbcType=VARCHAR},
-      node_number = #{nodeNumber,jdbcType=VARCHAR},
-      remark = #{remark,jdbcType=VARCHAR},
-      channel_result = #{channelResult,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrder">
+    update cacmp_gj_order
+    set inst_no = #{instNo,jdbcType=VARCHAR},
+      product_code = #{productCode,jdbcType=VARCHAR},
+      product_series_code = #{productSeriesCode,jdbcType=VARCHAR},
+      channel_key = #{channelKey,jdbcType=VARCHAR},
+      channel_name = #{channelName,jdbcType=VARCHAR},
+      status_code = #{statusCode,jdbcType=VARCHAR},
+      status_message = #{statusMessage,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       modify_time = #{modifyTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <select id="selectByExampleWithRowbounds" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjNodeCriteria" resultMap="BaseResultMap">
+  <select id="selectByExampleWithRowbounds" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrderCriteria" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from cacmp_gj_node
+    from cacmp_gj_order
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>

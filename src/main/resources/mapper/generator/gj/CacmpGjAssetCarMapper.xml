@@ -26,8 +26,8 @@
     <result column="car_model" jdbcType="VARCHAR" property="carModel" />
     <result column="vin_code" jdbcType="VARCHAR" property="vinCode" />
     <result column="engine_no" jdbcType="VARCHAR" property="engineNo" />
-    <result column="registration_date" jdbcType="TIMESTAMP" property="registrationDate" />
-    <result column="production_date" jdbcType="TIMESTAMP" property="productionDate" />
+    <result column="registration_date" jdbcType="VARCHAR" property="registrationDate" />
+    <result column="production_date" jdbcType="VARCHAR" property="productionDate" />
     <result column="mileage" jdbcType="INTEGER" property="mileage" />
     <result column="cheqianzhao_fic" jdbcType="VARCHAR" property="cheqianzhaoFic" />
     <result column="pinggushi_fic" jdbcType="VARCHAR" property="pinggushiFic" />
@@ -173,8 +173,8 @@
       #{registerCity,jdbcType=VARCHAR}, #{registerCityName,jdbcType=VARCHAR}, #{registerDistrict,jdbcType=VARCHAR}, 
       #{registerDistrictName,jdbcType=VARCHAR}, #{registerAddress,jdbcType=VARCHAR}, 
       #{registerLng,jdbcType=VARCHAR}, #{registerLat,jdbcType=VARCHAR}, #{carModel,jdbcType=VARCHAR}, 
-      #{vinCode,jdbcType=VARCHAR}, #{engineNo,jdbcType=VARCHAR}, #{registrationDate,jdbcType=TIMESTAMP}, 
-      #{productionDate,jdbcType=TIMESTAMP}, #{mileage,jdbcType=INTEGER}, #{cheqianzhaoFic,jdbcType=VARCHAR}, 
+      #{vinCode,jdbcType=VARCHAR}, #{engineNo,jdbcType=VARCHAR}, #{registrationDate,jdbcType=VARCHAR}, 
+      #{productionDate,jdbcType=VARCHAR}, #{mileage,jdbcType=INTEGER}, #{cheqianzhaoFic,jdbcType=VARCHAR}, 
       #{pinggushiFic,jdbcType=VARCHAR}, #{abzhuFic,jdbcType=VARCHAR}, #{yibaioFic,jdbcType=VARCHAR}, 
       #{yaoshiFic,jdbcType=VARCHAR}, #{zhongkongFic,jdbcType=VARCHAR}, #{zuohoumenFic,jdbcType=VARCHAR}, 
       #{beitaiFic,jdbcType=VARCHAR}, #{chehouzhaoFic,jdbcType=VARCHAR}, #{youhouFic,jdbcType=VARCHAR}, 
@@ -402,10 +402,10 @@
         #{engineNo,jdbcType=VARCHAR},
       </if>
       <if test="registrationDate != null">
-        #{registrationDate,jdbcType=TIMESTAMP},
+        #{registrationDate,jdbcType=VARCHAR},
       </if>
       <if test="productionDate != null">
-        #{productionDate,jdbcType=TIMESTAMP},
+        #{productionDate,jdbcType=VARCHAR},
       </if>
       <if test="mileage != null">
         #{mileage,jdbcType=INTEGER},
@@ -554,10 +554,10 @@
         engine_no = #{record.engineNo,jdbcType=VARCHAR},
       </if>
       <if test="record.registrationDate != null">
-        registration_date = #{record.registrationDate,jdbcType=TIMESTAMP},
+        registration_date = #{record.registrationDate,jdbcType=VARCHAR},
       </if>
       <if test="record.productionDate != null">
-        production_date = #{record.productionDate,jdbcType=TIMESTAMP},
+        production_date = #{record.productionDate,jdbcType=VARCHAR},
       </if>
       <if test="record.mileage != null">
         mileage = #{record.mileage,jdbcType=INTEGER},
@@ -653,8 +653,8 @@
       car_model = #{record.carModel,jdbcType=VARCHAR},
       vin_code = #{record.vinCode,jdbcType=VARCHAR},
       engine_no = #{record.engineNo,jdbcType=VARCHAR},
-      registration_date = #{record.registrationDate,jdbcType=TIMESTAMP},
-      production_date = #{record.productionDate,jdbcType=TIMESTAMP},
+      registration_date = #{record.registrationDate,jdbcType=VARCHAR},
+      production_date = #{record.productionDate,jdbcType=VARCHAR},
       mileage = #{record.mileage,jdbcType=INTEGER},
       cheqianzhao_fic = #{record.cheqianzhaoFic,jdbcType=VARCHAR},
       pinggushi_fic = #{record.pinggushiFic,jdbcType=VARCHAR},
@@ -753,10 +753,10 @@
         engine_no = #{engineNo,jdbcType=VARCHAR},
       </if>
       <if test="registrationDate != null">
-        registration_date = #{registrationDate,jdbcType=TIMESTAMP},
+        registration_date = #{registrationDate,jdbcType=VARCHAR},
       </if>
       <if test="productionDate != null">
-        production_date = #{productionDate,jdbcType=TIMESTAMP},
+        production_date = #{productionDate,jdbcType=VARCHAR},
       </if>
       <if test="mileage != null">
         mileage = #{mileage,jdbcType=INTEGER},
@@ -849,8 +849,8 @@
       car_model = #{carModel,jdbcType=VARCHAR},
       vin_code = #{vinCode,jdbcType=VARCHAR},
       engine_no = #{engineNo,jdbcType=VARCHAR},
-      registration_date = #{registrationDate,jdbcType=TIMESTAMP},
-      production_date = #{productionDate,jdbcType=TIMESTAMP},
+      registration_date = #{registrationDate,jdbcType=VARCHAR},
+      production_date = #{productionDate,jdbcType=VARCHAR},
       mileage = #{mileage,jdbcType=INTEGER},
       cheqianzhao_fic = #{cheqianzhaoFic,jdbcType=VARCHAR},
       pinggushi_fic = #{pinggushiFic,jdbcType=VARCHAR},

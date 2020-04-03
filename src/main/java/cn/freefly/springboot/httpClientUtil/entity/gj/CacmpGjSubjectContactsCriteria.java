@@ -245,213 +245,213 @@ public class CacmpGjSubjectContactsCriteria {
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameIsNull() {
-            addCriterion("contactsName is null");
+        public Criteria andContactsNameIsNull() {
+            addCriterion("contacts_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameIsNotNull() {
-            addCriterion("contactsName is not null");
+        public Criteria andContactsNameIsNotNull() {
+            addCriterion("contacts_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameEqualTo(String value) {
-            addCriterion("contactsName =", value, "contactsname");
+        public Criteria andContactsNameEqualTo(String value) {
+            addCriterion("contacts_name =", value, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameNotEqualTo(String value) {
-            addCriterion("contactsName <>", value, "contactsname");
+        public Criteria andContactsNameNotEqualTo(String value) {
+            addCriterion("contacts_name <>", value, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameGreaterThan(String value) {
-            addCriterion("contactsName >", value, "contactsname");
+        public Criteria andContactsNameGreaterThan(String value) {
+            addCriterion("contacts_name >", value, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameGreaterThanOrEqualTo(String value) {
-            addCriterion("contactsName >=", value, "contactsname");
+        public Criteria andContactsNameGreaterThanOrEqualTo(String value) {
+            addCriterion("contacts_name >=", value, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameLessThan(String value) {
-            addCriterion("contactsName <", value, "contactsname");
+        public Criteria andContactsNameLessThan(String value) {
+            addCriterion("contacts_name <", value, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameLessThanOrEqualTo(String value) {
-            addCriterion("contactsName <=", value, "contactsname");
+        public Criteria andContactsNameLessThanOrEqualTo(String value) {
+            addCriterion("contacts_name <=", value, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameLike(String value) {
-            addCriterion("contactsName like", value, "contactsname");
+        public Criteria andContactsNameLike(String value) {
+            addCriterion("contacts_name like", value, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameNotLike(String value) {
-            addCriterion("contactsName not like", value, "contactsname");
+        public Criteria andContactsNameNotLike(String value) {
+            addCriterion("contacts_name not like", value, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameIn(List<String> values) {
-            addCriterion("contactsName in", values, "contactsname");
+        public Criteria andContactsNameIn(List<String> values) {
+            addCriterion("contacts_name in", values, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameNotIn(List<String> values) {
-            addCriterion("contactsName not in", values, "contactsname");
+        public Criteria andContactsNameNotIn(List<String> values) {
+            addCriterion("contacts_name not in", values, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameBetween(String value1, String value2) {
-            addCriterion("contactsName between", value1, value2, "contactsname");
+        public Criteria andContactsNameBetween(String value1, String value2) {
+            addCriterion("contacts_name between", value1, value2, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsnameNotBetween(String value1, String value2) {
-            addCriterion("contactsName not between", value1, value2, "contactsname");
+        public Criteria andContactsNameNotBetween(String value1, String value2) {
+            addCriterion("contacts_name not between", value1, value2, "contactsName");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneIsNull() {
-            addCriterion("contactsPhone is null");
+        public Criteria andContactsPhoneIsNull() {
+            addCriterion("contacts_phone is null");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneIsNotNull() {
-            addCriterion("contactsPhone is not null");
+        public Criteria andContactsPhoneIsNotNull() {
+            addCriterion("contacts_phone is not null");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneEqualTo(String value) {
-            addCriterion("contactsPhone =", value, "contactsphone");
+        public Criteria andContactsPhoneEqualTo(String value) {
+            addCriterion("contacts_phone =", value, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneNotEqualTo(String value) {
-            addCriterion("contactsPhone <>", value, "contactsphone");
+        public Criteria andContactsPhoneNotEqualTo(String value) {
+            addCriterion("contacts_phone <>", value, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneGreaterThan(String value) {
-            addCriterion("contactsPhone >", value, "contactsphone");
+        public Criteria andContactsPhoneGreaterThan(String value) {
+            addCriterion("contacts_phone >", value, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneGreaterThanOrEqualTo(String value) {
-            addCriterion("contactsPhone >=", value, "contactsphone");
+        public Criteria andContactsPhoneGreaterThanOrEqualTo(String value) {
+            addCriterion("contacts_phone >=", value, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneLessThan(String value) {
-            addCriterion("contactsPhone <", value, "contactsphone");
+        public Criteria andContactsPhoneLessThan(String value) {
+            addCriterion("contacts_phone <", value, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneLessThanOrEqualTo(String value) {
-            addCriterion("contactsPhone <=", value, "contactsphone");
+        public Criteria andContactsPhoneLessThanOrEqualTo(String value) {
+            addCriterion("contacts_phone <=", value, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneLike(String value) {
-            addCriterion("contactsPhone like", value, "contactsphone");
+        public Criteria andContactsPhoneLike(String value) {
+            addCriterion("contacts_phone like", value, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneNotLike(String value) {
-            addCriterion("contactsPhone not like", value, "contactsphone");
+        public Criteria andContactsPhoneNotLike(String value) {
+            addCriterion("contacts_phone not like", value, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneIn(List<String> values) {
-            addCriterion("contactsPhone in", values, "contactsphone");
+        public Criteria andContactsPhoneIn(List<String> values) {
+            addCriterion("contacts_phone in", values, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneNotIn(List<String> values) {
-            addCriterion("contactsPhone not in", values, "contactsphone");
+        public Criteria andContactsPhoneNotIn(List<String> values) {
+            addCriterion("contacts_phone not in", values, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneBetween(String value1, String value2) {
-            addCriterion("contactsPhone between", value1, value2, "contactsphone");
+        public Criteria andContactsPhoneBetween(String value1, String value2) {
+            addCriterion("contacts_phone between", value1, value2, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsphoneNotBetween(String value1, String value2) {
-            addCriterion("contactsPhone not between", value1, value2, "contactsphone");
+        public Criteria andContactsPhoneNotBetween(String value1, String value2) {
+            addCriterion("contacts_phone not between", value1, value2, "contactsPhone");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationIsNull() {
-            addCriterion("contactsRelation is null");
+        public Criteria andContactsRelationIsNull() {
+            addCriterion("contacts_relation is null");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationIsNotNull() {
-            addCriterion("contactsRelation is not null");
+        public Criteria andContactsRelationIsNotNull() {
+            addCriterion("contacts_relation is not null");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationEqualTo(String value) {
-            addCriterion("contactsRelation =", value, "contactsrelation");
+        public Criteria andContactsRelationEqualTo(String value) {
+            addCriterion("contacts_relation =", value, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationNotEqualTo(String value) {
-            addCriterion("contactsRelation <>", value, "contactsrelation");
+        public Criteria andContactsRelationNotEqualTo(String value) {
+            addCriterion("contacts_relation <>", value, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationGreaterThan(String value) {
-            addCriterion("contactsRelation >", value, "contactsrelation");
+        public Criteria andContactsRelationGreaterThan(String value) {
+            addCriterion("contacts_relation >", value, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationGreaterThanOrEqualTo(String value) {
-            addCriterion("contactsRelation >=", value, "contactsrelation");
+        public Criteria andContactsRelationGreaterThanOrEqualTo(String value) {
+            addCriterion("contacts_relation >=", value, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationLessThan(String value) {
-            addCriterion("contactsRelation <", value, "contactsrelation");
+        public Criteria andContactsRelationLessThan(String value) {
+            addCriterion("contacts_relation <", value, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationLessThanOrEqualTo(String value) {
-            addCriterion("contactsRelation <=", value, "contactsrelation");
+        public Criteria andContactsRelationLessThanOrEqualTo(String value) {
+            addCriterion("contacts_relation <=", value, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationLike(String value) {
-            addCriterion("contactsRelation like", value, "contactsrelation");
+        public Criteria andContactsRelationLike(String value) {
+            addCriterion("contacts_relation like", value, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationNotLike(String value) {
-            addCriterion("contactsRelation not like", value, "contactsrelation");
+        public Criteria andContactsRelationNotLike(String value) {
+            addCriterion("contacts_relation not like", value, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationIn(List<String> values) {
-            addCriterion("contactsRelation in", values, "contactsrelation");
+        public Criteria andContactsRelationIn(List<String> values) {
+            addCriterion("contacts_relation in", values, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationNotIn(List<String> values) {
-            addCriterion("contactsRelation not in", values, "contactsrelation");
+        public Criteria andContactsRelationNotIn(List<String> values) {
+            addCriterion("contacts_relation not in", values, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationBetween(String value1, String value2) {
-            addCriterion("contactsRelation between", value1, value2, "contactsrelation");
+        public Criteria andContactsRelationBetween(String value1, String value2) {
+            addCriterion("contacts_relation between", value1, value2, "contactsRelation");
             return (Criteria) this;
         }
 
-        public Criteria andContactsrelationNotBetween(String value1, String value2) {
-            addCriterion("contactsRelation not between", value1, value2, "contactsrelation");
+        public Criteria andContactsRelationNotBetween(String value1, String value2) {
+            addCriterion("contacts_relation not between", value1, value2, "contactsRelation");
             return (Criteria) this;
         }
 

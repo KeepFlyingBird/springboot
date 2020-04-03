@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* Created by Mybatis Generator on 2020/03/31
+* Created by Mybatis Generator on 2020/04/03
 */
 @Data
 @Builder
@@ -28,6 +28,8 @@ public class CacmpGjNode implements Serializable {
     private String nodeNumber;
 
     private String remark;
+
+    private String channelResult;
 
     private Date createTime;
 

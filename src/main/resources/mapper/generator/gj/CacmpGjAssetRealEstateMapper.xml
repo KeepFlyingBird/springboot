@@ -8,7 +8,7 @@
     <result column="property" jdbcType="VARCHAR" property="property" />
     <result column="property_type" jdbcType="VARCHAR" property="propertyType" />
     <result column="source" jdbcType="VARCHAR" property="source" />
-    <result column="condition" jdbcType="VARCHAR" property="condition" />
+    <result column="condition_state" jdbcType="VARCHAR" property="conditionState" />
     <result column="floor_space" jdbcType="DECIMAL" property="floorSpace" />
     <result column="mortgage_amount" jdbcType="VARCHAR" property="mortgageAmount" />
     <result column="mortgage_years" jdbcType="VARCHAR" property="mortgageYears" />
@@ -76,7 +76,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, order_id, ownership_person_name, property, property_type, source, condition, 
+    id, order_id, ownership_person_name, property, property_type, source, condition_state, 
     floor_space, mortgage_amount, mortgage_years, mortgage_month_amount, xinxitu_fic, 
     create_time, modify_time
   </sql>
@@ -113,12 +113,12 @@
   <insert id="insert" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetRealEstate">
     insert into cacmp_gj_asset_real_estate (id, order_id, ownership_person_name, 
       property, property_type, source, 
-      condition, floor_space, mortgage_amount, 
+      condition_state, floor_space, mortgage_amount, 
       mortgage_years, mortgage_month_amount, xinxitu_fic, 
       create_time, modify_time)
     values (#{id,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, #{ownershipPersonName,jdbcType=VARCHAR}, 
       #{property,jdbcType=VARCHAR}, #{propertyType,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR}, 
-      #{condition,jdbcType=VARCHAR}, #{floorSpace,jdbcType=DECIMAL}, #{mortgageAmount,jdbcType=VARCHAR}, 
+      #{conditionState,jdbcType=VARCHAR}, #{floorSpace,jdbcType=DECIMAL}, #{mortgageAmount,jdbcType=VARCHAR}, 
       #{mortgageYears,jdbcType=VARCHAR}, #{mortgageMonthAmount,jdbcType=VARCHAR}, #{xinxituFic,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
   </insert>
@@ -143,8 +143,8 @@
       <if test="source != null">
         source,
       </if>
-      <if test="condition != null">
-        condition,
+      <if test="conditionState != null">
+        condition_state,
       </if>
       <if test="floorSpace != null">
         floor_space,
@@ -187,8 +187,8 @@
       <if test="source != null">
         #{source,jdbcType=VARCHAR},
       </if>
-      <if test="condition != null">
-        #{condition,jdbcType=VARCHAR},
+      <if test="conditionState != null">
+        #{conditionState,jdbcType=VARCHAR},
       </if>
       <if test="floorSpace != null">
         #{floorSpace,jdbcType=DECIMAL},
@@ -240,8 +240,8 @@
       <if test="record.source != null">
         source = #{record.source,jdbcType=VARCHAR},
       </if>
-      <if test="record.condition != null">
-        condition = #{record.condition,jdbcType=VARCHAR},
+      <if test="record.conditionState != null">
+        condition_state = #{record.conditionState,jdbcType=VARCHAR},
       </if>
       <if test="record.floorSpace != null">
         floor_space = #{record.floorSpace,jdbcType=DECIMAL},
@@ -277,7 +277,7 @@
       property = #{record.property,jdbcType=VARCHAR},
       property_type = #{record.propertyType,jdbcType=VARCHAR},
       source = #{record.source,jdbcType=VARCHAR},
-      condition = #{record.condition,jdbcType=VARCHAR},
+      condition_state = #{record.conditionState,jdbcType=VARCHAR},
       floor_space = #{record.floorSpace,jdbcType=DECIMAL},
       mortgage_amount = #{record.mortgageAmount,jdbcType=VARCHAR},
       mortgage_years = #{record.mortgageYears,jdbcType=VARCHAR},
@@ -307,8 +307,8 @@
       <if test="source != null">
         source = #{source,jdbcType=VARCHAR},
       </if>
-      <if test="condition != null">
-        condition = #{condition,jdbcType=VARCHAR},
+      <if test="conditionState != null">
+        condition_state = #{conditionState,jdbcType=VARCHAR},
       </if>
       <if test="floorSpace != null">
         floor_space = #{floorSpace,jdbcType=DECIMAL},
@@ -341,7 +341,7 @@
       property = #{property,jdbcType=VARCHAR},
       property_type = #{propertyType,jdbcType=VARCHAR},
       source = #{source,jdbcType=VARCHAR},
-      condition = #{condition,jdbcType=VARCHAR},
+      condition_state = #{conditionState,jdbcType=VARCHAR},
       floor_space = #{floorSpace,jdbcType=DECIMAL},
       mortgage_amount = #{mortgageAmount,jdbcType=VARCHAR},
       mortgage_years = #{mortgageYears,jdbcType=VARCHAR},

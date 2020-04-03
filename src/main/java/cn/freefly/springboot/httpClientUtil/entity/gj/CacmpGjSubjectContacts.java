@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* Created by Mybatis Generator on 2020/03/31
+* Created by Mybatis Generator on 2020/04/03
 */
 @Data
 @Builder
@@ -19,11 +19,11 @@ public class CacmpGjSubjectContacts implements Serializable {
 
     private String orderId;
 
-    private String contactsname;
+    private String contactsName;
 
-    private String contactsphone;
+    private String contactsPhone;
 
-    private String contactsrelation;
+    private String contactsRelation;
 
     private Date createTime;
 

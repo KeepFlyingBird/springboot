@@ -9,6 +9,7 @@ import cn.freefly.springboot.httpClientUtil.dto.BaseResponse;
 import cn.freefly.springboot.httpClientUtil.dto.gj.enums.ResFlagE;
 import cn.freefly.springboot.httpClientUtil.dto.gj.enums.ResponseCode;
 import cn.freefly.springboot.httpClientUtil.service.PathConfigService;
+import com.github.dozermapper.core.Mapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.http.HttpEntity;
@@ -42,7 +43,8 @@ public class GjHttpClient {
 
     @Autowired
     private PathConfigService pathConfigService;
-
+    @Autowired
+    private Mapper dozerMapper;
     public BaseResponse post(String url, Object data, String applicationName, GjFundServerConfig serverConfig) {
         GjChannelConfig channelConfig = pathConfigService.findGjChannelConfig(applicationName);
         if (Objects.isNull(channelConfig)) {
@@ -57,7 +59,7 @@ public class GjHttpClient {
     }
 
     public String post(String url, Object data, ChannelGjFundModeConfig channelFundConfig, GjFundServerConfig serverConfig) {
-        Map<String, Object> requestParamMap = BeanUtils.beanToMap(data);
+        Map<String, Object> requestParamMap = dozerMapper.map(data,Map.class);
         log.info("requestParamMap：{}", JsonUtil.toJson(requestParamMap));
         requestParamMap.put("appId", channelFundConfig.getAppId());
         requestParamMap.put("clientId", channelFundConfig.getClientId());

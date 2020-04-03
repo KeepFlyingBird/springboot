@@ -526,73 +526,73 @@ public class CacmpGjAssetRealEstateCriteria {
             return (Criteria) this;
         }
 
-        public Criteria andConditionIsNull() {
-            addCriterion("condition is null");
+        public Criteria andConditionStateIsNull() {
+            addCriterion("condition_state is null");
             return (Criteria) this;
         }
 
-        public Criteria andConditionIsNotNull() {
-            addCriterion("condition is not null");
+        public Criteria andConditionStateIsNotNull() {
+            addCriterion("condition_state is not null");
             return (Criteria) this;
         }
 
-        public Criteria andConditionEqualTo(String value) {
-            addCriterion("condition =", value, "condition");
+        public Criteria andConditionStateEqualTo(String value) {
+            addCriterion("condition_state =", value, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionNotEqualTo(String value) {
-            addCriterion("condition <>", value, "condition");
+        public Criteria andConditionStateNotEqualTo(String value) {
+            addCriterion("condition_state <>", value, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionGreaterThan(String value) {
-            addCriterion("condition >", value, "condition");
+        public Criteria andConditionStateGreaterThan(String value) {
+            addCriterion("condition_state >", value, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionGreaterThanOrEqualTo(String value) {
-            addCriterion("condition >=", value, "condition");
+        public Criteria andConditionStateGreaterThanOrEqualTo(String value) {
+            addCriterion("condition_state >=", value, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionLessThan(String value) {
-            addCriterion("condition <", value, "condition");
+        public Criteria andConditionStateLessThan(String value) {
+            addCriterion("condition_state <", value, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionLessThanOrEqualTo(String value) {
-            addCriterion("condition <=", value, "condition");
+        public Criteria andConditionStateLessThanOrEqualTo(String value) {
+            addCriterion("condition_state <=", value, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionLike(String value) {
-            addCriterion("condition like", value, "condition");
+        public Criteria andConditionStateLike(String value) {
+            addCriterion("condition_state like", value, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionNotLike(String value) {
-            addCriterion("condition not like", value, "condition");
+        public Criteria andConditionStateNotLike(String value) {
+            addCriterion("condition_state not like", value, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionIn(List<String> values) {
-            addCriterion("condition in", values, "condition");
+        public Criteria andConditionStateIn(List<String> values) {
+            addCriterion("condition_state in", values, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionNotIn(List<String> values) {
-            addCriterion("condition not in", values, "condition");
+        public Criteria andConditionStateNotIn(List<String> values) {
+            addCriterion("condition_state not in", values, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionBetween(String value1, String value2) {
-            addCriterion("condition between", value1, value2, "condition");
+        public Criteria andConditionStateBetween(String value1, String value2) {
+            addCriterion("condition_state between", value1, value2, "conditionState");
             return (Criteria) this;
         }
 
-        public Criteria andConditionNotBetween(String value1, String value2) {
-            addCriterion("condition not between", value1, value2, "condition");
+        public Criteria andConditionStateNotBetween(String value1, String value2) {
+            addCriterion("condition_state not between", value1, value2, "conditionState");
             return (Criteria) this;
         }
 

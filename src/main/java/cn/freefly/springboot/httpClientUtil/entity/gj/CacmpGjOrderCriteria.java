@@ -175,6 +175,76 @@ public class CacmpGjOrderCriteria {
             return (Criteria) this;
         }
 
+        public Criteria andInstNoIsNull() {
+            addCriterion("inst_no is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoIsNotNull() {
+            addCriterion("inst_no is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoEqualTo(String value) {
+            addCriterion("inst_no =", value, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoNotEqualTo(String value) {
+            addCriterion("inst_no <>", value, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoGreaterThan(String value) {
+            addCriterion("inst_no >", value, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoGreaterThanOrEqualTo(String value) {
+            addCriterion("inst_no >=", value, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoLessThan(String value) {
+            addCriterion("inst_no <", value, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoLessThanOrEqualTo(String value) {
+            addCriterion("inst_no <=", value, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoLike(String value) {
+            addCriterion("inst_no like", value, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoNotLike(String value) {
+            addCriterion("inst_no not like", value, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoIn(List<String> values) {
+            addCriterion("inst_no in", values, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoNotIn(List<String> values) {
+            addCriterion("inst_no not in", values, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoBetween(String value1, String value2) {
+            addCriterion("inst_no between", value1, value2, "instNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andInstNoNotBetween(String value1, String value2) {
+            addCriterion("inst_no not between", value1, value2, "instNo");
+            return (Criteria) this;
+        }
+
         public Criteria andProductCodeIsNull() {
             addCriterion("product_code is null");
             return (Criteria) this;

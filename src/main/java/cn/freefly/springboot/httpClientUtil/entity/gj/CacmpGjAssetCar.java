@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* Created by Mybatis Generator on 2020/03/31
+* Created by Mybatis Generator on 2020/04/03
 */
 @Data
 @Builder
@@ -63,9 +63,9 @@ public class CacmpGjAssetCar implements Serializable {
 
     private String engineNo;
 
-    private Date registrationDate;
+    private String registrationDate;
 
-    private Date productionDate;
+    private String productionDate;
 
     private Integer mileage;
 

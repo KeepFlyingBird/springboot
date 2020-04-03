@@ -595,6 +595,76 @@ public class CacmpGjNodeCriteria {
             return (Criteria) this;
         }
 
+        public Criteria andChannelResultIsNull() {
+            addCriterion("channel_result is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultIsNotNull() {
+            addCriterion("channel_result is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultEqualTo(String value) {
+            addCriterion("channel_result =", value, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultNotEqualTo(String value) {
+            addCriterion("channel_result <>", value, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultGreaterThan(String value) {
+            addCriterion("channel_result >", value, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultGreaterThanOrEqualTo(String value) {
+            addCriterion("channel_result >=", value, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultLessThan(String value) {
+            addCriterion("channel_result <", value, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultLessThanOrEqualTo(String value) {
+            addCriterion("channel_result <=", value, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultLike(String value) {
+            addCriterion("channel_result like", value, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultNotLike(String value) {
+            addCriterion("channel_result not like", value, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultIn(List<String> values) {
+            addCriterion("channel_result in", values, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultNotIn(List<String> values) {
+            addCriterion("channel_result not in", values, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultBetween(String value1, String value2) {
+            addCriterion("channel_result between", value1, value2, "channelResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andChannelResultNotBetween(String value1, String value2) {
+            addCriterion("channel_result not between", value1, value2, "channelResult");
+            return (Criteria) this;
+        }
+
         public Criteria andCreateTimeIsNull() {
             addCriterion("create_time is null");
             return (Criteria) this;

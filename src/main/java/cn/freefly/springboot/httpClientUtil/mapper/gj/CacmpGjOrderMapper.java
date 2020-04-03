@@ -5,12 +5,10 @@ import cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrderCriteria;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
-import org.springframework.stereotype.Repository;
 
 /**
-* Created by Mybatis Generator on 2020/03/31
+* Created by Mybatis Generator on 2020/04/03
 */
-@Repository
 public interface CacmpGjOrderMapper {
     long countByExample(CacmpGjOrderCriteria example);
 

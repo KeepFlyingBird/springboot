@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* Created by Mybatis Generator on 2020/03/31
+* Created by Mybatis Generator on 2020/04/03
 */
 @Data
 @Builder
@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CacmpGjOrder implements Serializable {
     private String id;
+
+    private String instNo;
 
     private String productCode;
 

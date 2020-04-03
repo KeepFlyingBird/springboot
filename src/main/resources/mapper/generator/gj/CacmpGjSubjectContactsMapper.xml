@@ -4,9 +4,9 @@
   <resultMap id="BaseResultMap" type="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjSubjectContacts">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="order_id" jdbcType="VARCHAR" property="orderId" />
-    <result column="contactsName" jdbcType="VARCHAR" property="contactsname" />
-    <result column="contactsPhone" jdbcType="VARCHAR" property="contactsphone" />
-    <result column="contactsRelation" jdbcType="VARCHAR" property="contactsrelation" />
+    <result column="contacts_name" jdbcType="VARCHAR" property="contactsName" />
+    <result column="contacts_phone" jdbcType="VARCHAR" property="contactsPhone" />
+    <result column="contacts_relation" jdbcType="VARCHAR" property="contactsRelation" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
   </resultMap>
@@ -69,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, order_id, contactsName, contactsPhone, contactsRelation, create_time, modify_time
+    id, order_id, contacts_name, contacts_phone, contacts_relation, create_time, modify_time
   </sql>
   <select id="selectByExample" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjSubjectContactsCriteria" resultMap="BaseResultMap">
     select
@@ -102,11 +102,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjSubjectContacts">
-    insert into cacmp_gj_subject_contacts (id, order_id, contactsName, 
-      contactsPhone, contactsRelation, create_time, 
+    insert into cacmp_gj_subject_contacts (id, order_id, contacts_name, 
+      contacts_phone, contacts_relation, create_time, 
       modify_time)
-    values (#{id,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, #{contactsname,jdbcType=VARCHAR}, 
-      #{contactsphone,jdbcType=VARCHAR}, #{contactsrelation,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, #{contactsName,jdbcType=VARCHAR}, 
+      #{contactsPhone,jdbcType=VARCHAR}, #{contactsRelation,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{modifyTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjSubjectContacts">
@@ -118,14 +118,14 @@
       <if test="orderId != null">
         order_id,
       </if>
-      <if test="contactsname != null">
-        contactsName,
+      <if test="contactsName != null">
+        contacts_name,
       </if>
-      <if test="contactsphone != null">
-        contactsPhone,
+      <if test="contactsPhone != null">
+        contacts_phone,
       </if>
-      <if test="contactsrelation != null">
-        contactsRelation,
+      <if test="contactsRelation != null">
+        contacts_relation,
       </if>
       <if test="createTime != null">
         create_time,
@@ -141,14 +141,14 @@
       <if test="orderId != null">
         #{orderId,jdbcType=VARCHAR},
       </if>
-      <if test="contactsname != null">
-        #{contactsname,jdbcType=VARCHAR},
+      <if test="contactsName != null">
+        #{contactsName,jdbcType=VARCHAR},
       </if>
-      <if test="contactsphone != null">
-        #{contactsphone,jdbcType=VARCHAR},
+      <if test="contactsPhone != null">
+        #{contactsPhone,jdbcType=VARCHAR},
       </if>
-      <if test="contactsrelation != null">
-        #{contactsrelation,jdbcType=VARCHAR},
+      <if test="contactsRelation != null">
+        #{contactsRelation,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -173,14 +173,14 @@
       <if test="record.orderId != null">
         order_id = #{record.orderId,jdbcType=VARCHAR},
       </if>
-      <if test="record.contactsname != null">
-        contactsName = #{record.contactsname,jdbcType=VARCHAR},
+      <if test="record.contactsName != null">
+        contacts_name = #{record.contactsName,jdbcType=VARCHAR},
       </if>
-      <if test="record.contactsphone != null">
-        contactsPhone = #{record.contactsphone,jdbcType=VARCHAR},
+      <if test="record.contactsPhone != null">
+        contacts_phone = #{record.contactsPhone,jdbcType=VARCHAR},
       </if>
-      <if test="record.contactsrelation != null">
-        contactsRelation = #{record.contactsrelation,jdbcType=VARCHAR},
+      <if test="record.contactsRelation != null">
+        contacts_relation = #{record.contactsRelation,jdbcType=VARCHAR},
       </if>
       <if test="record.createTime != null">
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -197,9 +197,9 @@
     update cacmp_gj_subject_contacts
     set id = #{record.id,jdbcType=VARCHAR},
       order_id = #{record.orderId,jdbcType=VARCHAR},
-      contactsName = #{record.contactsname,jdbcType=VARCHAR},
-      contactsPhone = #{record.contactsphone,jdbcType=VARCHAR},
-      contactsRelation = #{record.contactsrelation,jdbcType=VARCHAR},
+      contacts_name = #{record.contactsName,jdbcType=VARCHAR},
+      contacts_phone = #{record.contactsPhone,jdbcType=VARCHAR},
+      contacts_relation = #{record.contactsRelation,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       modify_time = #{record.modifyTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
@@ -212,14 +212,14 @@
       <if test="orderId != null">
         order_id = #{orderId,jdbcType=VARCHAR},
       </if>
-      <if test="contactsname != null">
-        contactsName = #{contactsname,jdbcType=VARCHAR},
+      <if test="contactsName != null">
+        contacts_name = #{contactsName,jdbcType=VARCHAR},
       </if>
-      <if test="contactsphone != null">
-        contactsPhone = #{contactsphone,jdbcType=VARCHAR},
+      <if test="contactsPhone != null">
+        contacts_phone = #{contactsPhone,jdbcType=VARCHAR},
       </if>
-      <if test="contactsrelation != null">
-        contactsRelation = #{contactsrelation,jdbcType=VARCHAR},
+      <if test="contactsRelation != null">
+        contacts_relation = #{contactsRelation,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -233,9 +233,9 @@
   <update id="updateByPrimaryKey" parameterType="cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjSubjectContacts">
     update cacmp_gj_subject_contacts
     set order_id = #{orderId,jdbcType=VARCHAR},
-      contactsName = #{contactsname,jdbcType=VARCHAR},
-      contactsPhone = #{contactsphone,jdbcType=VARCHAR},
-      contactsRelation = #{contactsrelation,jdbcType=VARCHAR},
+      contacts_name = #{contactsName,jdbcType=VARCHAR},
+      contacts_phone = #{contactsPhone,jdbcType=VARCHAR},
+      contacts_relation = #{contactsRelation,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       modify_time = #{modifyTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
