@@ -46,7 +46,7 @@ public class PersonBankServiceImpl implements PersonBankService {
 //            return BaseResponse.createBaseResponse(ResponseCode.ARGUMENT_CHECK_FAILED);
 //        }
 //        String applicationName = personBankRequest.getHeader().getApplicationName();
-//        GjChannelsConfig channelConfig = pathConfigService.findGjChannelConfig(applicationName);
+//        GjChannelConfig channelConfig = pathConfigService.findGjChannelConfig(applicationName);
 //        if (Objects.isNull(channelConfig)) {
 //            log.info("银行卡绑定接口：渠道{}配置在平台不存在或者未启动", applicationName);
 //            return BaseResponse.createBaseResponse(ResponseCode.CHANNEL_NOT_EXISTED);

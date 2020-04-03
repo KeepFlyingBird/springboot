@@ -2,6 +2,8 @@ package cn.freefly.springboot.httpClientUtil.service.gj.persistence;
 
 import cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjAssetRealEstate;
 
+import java.util.List;
+
 public interface GjAssetRealEstatesService {
     /**
      * @Author xiao.yunfei
@@ -10,7 +12,7 @@ public interface GjAssetRealEstatesService {
      * @Param [assetRealEstate]
      * @Return void
      */
-    void insertGjAssetRealEstates(CacmpGjAssetRealEstate assetRealEstate);
+    void insertGjAssetRealEstate(CacmpGjAssetRealEstate assetRealEstate);
     /**
      * @Author xiao.yunfei
      * @Description 资产不动产扩展表-修改
@@ -18,7 +20,7 @@ public interface GjAssetRealEstatesService {
      * @Param [assetRealEstate]
      * @Return void
      */
-    void modifyGjAssetRealEstates(CacmpGjAssetRealEstate assetRealEstate);
+    void modifyGjAssetRealEstate(CacmpGjAssetRealEstate assetRealEstate);
     /**
      * @Author xiao.yunfei
      * @Description 资产不动产扩展表-查询
@@ -26,5 +28,14 @@ public interface GjAssetRealEstatesService {
      * @Param [orderId]
      * @Return com.jianyuan.fund.domain.gj.CacmpGjAssetRealEstate
      */
-    CacmpGjAssetRealEstate getCacmpGjAssetRealEstateByOrderId(String orderId);
+    List<CacmpGjAssetRealEstate> getCacmpGjAssetRealEstateByOrderId(String orderId);
+
+    /**
+     * @Author xiao.yunfei
+     * @Description 资产不动产扩展表-删除
+     * @Date 2020/4/2 10:24
+     * @Param [orderId]
+     * @Return void
+     */
+    void deleteGjAssetRealEstatesByOrderId(String orderId);
 }

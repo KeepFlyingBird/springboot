@@ -2,6 +2,8 @@ package cn.freefly.springboot.httpClientUtil.service.gj.persistence;
 
 import cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjSubjectContacts;
 
+import java.util.List;
+
 public interface GjSubjectContactsService {
     /**
      * @Author xiao.yunfei
@@ -26,5 +28,14 @@ public interface GjSubjectContactsService {
      * @Param [orderId]
      * @Return com.jianyuan.fund.domain.gj.CacmpGjSubjectContacts
      */
-    CacmpGjSubjectContacts getCacmpGjSubjectContactsByOrderId(String orderId);
+    List<CacmpGjSubjectContacts> getCacmpGjSubjectContactsByOrderId(String orderId);
+
+    /**
+     * @Author xiao.yunfei
+     * @Description 主体联系人表-删除
+     * @Date 2020/4/2 11:21
+     * @Param [orderId]
+     * @Return void
+     */
+    void deleteGjSubjectContacts(String orderId);
 }

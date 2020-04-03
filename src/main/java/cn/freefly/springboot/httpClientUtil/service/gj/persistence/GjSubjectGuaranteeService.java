@@ -2,6 +2,8 @@ package cn.freefly.springboot.httpClientUtil.service.gj.persistence;
 
 import cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjSubjectGuarantee;
 
+import java.util.List;
+
 public interface GjSubjectGuaranteeService {
     /**
      * @Author xiao.yunfei
@@ -26,5 +28,13 @@ public interface GjSubjectGuaranteeService {
      * @Param [orderId]
      * @Return com.jianyuan.fund.domain.gj.CacmpGjSubjectGuarantee
      */
-    CacmpGjSubjectGuarantee getCacmpGjSubjectGuaranteeByOrderId(String orderId);
+    List<CacmpGjSubjectGuarantee> getCacmpGjSubjectGuaranteeByOrderId(String orderId);
+    /**
+     * @Author xiao.yunfei
+     * @Description 主体担保人表-删除
+     * @Date 2020/4/2 11:31
+     * @Param [orderId]
+     * @Return void
+     */
+    void deleteGjSubjectGuarantee(String orderId);
 }

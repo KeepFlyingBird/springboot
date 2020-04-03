@@ -1,7 +1,7 @@
 package cn.freefly.springboot.httpClientUtil.service.gj;
 
 import cn.freefly.springboot.httpClientUtil.dto.BaseResponse;
-import cn.freefly.springboot.httpClientUtil.dto.enums.GjOrderStatusE;
+import cn.freefly.springboot.httpClientUtil.dto.gj.enums.GjOrderStatusE;
 import cn.freefly.springboot.httpClientUtil.dto.gj.order.channel.ChannelOrderRequest;
 import cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjOrder;
 

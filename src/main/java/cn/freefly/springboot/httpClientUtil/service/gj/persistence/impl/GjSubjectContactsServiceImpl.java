@@ -32,14 +32,22 @@ public class GjSubjectContactsServiceImpl implements GjSubjectContactsService {
     }
 
     @Override
-    public CacmpGjSubjectContacts getCacmpGjSubjectContactsByOrderId(String orderId) {
+    public List<CacmpGjSubjectContacts> getCacmpGjSubjectContactsByOrderId(String orderId) {
         CacmpGjSubjectContactsCriteria example = new CacmpGjSubjectContactsCriteria();
         CacmpGjSubjectContactsCriteria.Criteria criteria = example.createCriteria();
         criteria.andOrderIdEqualTo(orderId);
         List<CacmpGjSubjectContacts> subjectContactsList = subjectContactsMapper.selectByExample(example);
         if(CollectionUtils.isNotEmpty(subjectContactsList)){
-            return subjectContactsList.get(0);
+            return subjectContactsList;
         }
         return null;
+    }
+
+    @Override
+    public void deleteGjSubjectContacts(String orderId) {
+        CacmpGjSubjectContactsCriteria example = new CacmpGjSubjectContactsCriteria();
+        CacmpGjSubjectContactsCriteria.Criteria criteria = example.createCriteria();
+        criteria.andOrderIdEqualTo(orderId);
+        subjectContactsMapper.deleteByExample(example);
     }
 }

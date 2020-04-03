@@ -66,4 +66,11 @@ dependencies {
 
     // dozermapper
     implementation 'com.github.dozermapper:dozer-core:6.4.1'
+
+    
+    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.1.2'
+
+    implementation 'com.jcraft:jsch:0.1.54'
+
+    implementation 'com.github.tobato:fastdfs-client:1.26.5'
 }

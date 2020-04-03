@@ -32,14 +32,22 @@ public class GjSubjectGuaranteeServiceImpl implements GjSubjectGuaranteeService 
     }
 
     @Override
-    public CacmpGjSubjectGuarantee getCacmpGjSubjectGuaranteeByOrderId(String orderId) {
+    public List<CacmpGjSubjectGuarantee> getCacmpGjSubjectGuaranteeByOrderId(String orderId) {
         CacmpGjSubjectGuaranteeCriteria example = new CacmpGjSubjectGuaranteeCriteria();
         CacmpGjSubjectGuaranteeCriteria.Criteria criteria = example.createCriteria();
         criteria.andOrderIdEqualTo(orderId);
         List<CacmpGjSubjectGuarantee> subjectGuaranteeList = subjectGuaranteeMapper.selectByExample(example);
         if(CollectionUtils.isNotEmpty(subjectGuaranteeList)){
-            return subjectGuaranteeList.get(0);
+            return subjectGuaranteeList;
         }
         return null;
+    }
+
+    @Override
+    public void deleteGjSubjectGuarantee(String orderId) {
+        CacmpGjSubjectGuaranteeCriteria example = new CacmpGjSubjectGuaranteeCriteria();
+        CacmpGjSubjectGuaranteeCriteria.Criteria criteria = example.createCriteria();
+        criteria.andOrderIdEqualTo(orderId);
+        subjectGuaranteeMapper.deleteByExample(example);
     }
 }

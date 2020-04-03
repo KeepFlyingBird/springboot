@@ -21,24 +21,32 @@ public class GjAssetRealEstatesServiceImpl implements GjAssetRealEstatesService 
     @Autowired
     private CacmpGjAssetRealEstateMapper assetRealEstateMapper;
     @Override
-    public void insertGjAssetRealEstates(CacmpGjAssetRealEstate assetRealEstate) {
+    public void insertGjAssetRealEstate(CacmpGjAssetRealEstate assetRealEstate) {
         assetRealEstateMapper.insertSelective(assetRealEstate);
     }
 
     @Override
-    public void modifyGjAssetRealEstates(CacmpGjAssetRealEstate assetRealEstate) {
+    public void modifyGjAssetRealEstate(CacmpGjAssetRealEstate assetRealEstate) {
         assetRealEstateMapper.updateByPrimaryKeySelective(assetRealEstate);
     }
 
     @Override
-    public CacmpGjAssetRealEstate getCacmpGjAssetRealEstateByOrderId(String orderId) {
+    public List<CacmpGjAssetRealEstate> getCacmpGjAssetRealEstateByOrderId(String orderId) {
         CacmpGjAssetRealEstateCriteria example = new CacmpGjAssetRealEstateCriteria();
         CacmpGjAssetRealEstateCriteria.Criteria criteria = example.createCriteria();
         criteria.andOrderIdEqualTo(orderId);
         List<CacmpGjAssetRealEstate> assetRealEstateList = assetRealEstateMapper.selectByExample(example);
         if(CollectionUtils.isNotEmpty(assetRealEstateList)){
-            return assetRealEstateList.get(0);
+            return assetRealEstateList;
         }
         return null;
+    }
+
+    @Override
+    public void deleteGjAssetRealEstatesByOrderId(String orderId) {
+        CacmpGjAssetRealEstateCriteria example = new CacmpGjAssetRealEstateCriteria();
+        CacmpGjAssetRealEstateCriteria.Criteria criteria = example.createCriteria();
+        criteria.andOrderIdEqualTo(orderId);
+        assetRealEstateMapper.deleteByExample(example);
     }
 }

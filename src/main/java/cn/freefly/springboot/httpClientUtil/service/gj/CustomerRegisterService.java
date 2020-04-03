@@ -1,5 +1,8 @@
 package cn.freefly.springboot.httpClientUtil.service.gj;
 
+import cn.freefly.springboot.httpClientUtil.dto.BaseResponse;
+import cn.freefly.springboot.httpClientUtil.dto.gj.customer.channel.ChannelCustomerRequest;
+
 public interface CustomerRegisterService {
 
     /**
@@ -9,5 +12,5 @@ public interface CustomerRegisterService {
      * @Param [customerRequest]
      * @return com.jianyuan.fund.web.dto.BaseResponse
      **/
-//    BaseResponse saveCustomerInfo(ChannelCustomerRequest customerRequest);
+    BaseResponse saveCustomerInfo(ChannelCustomerRequest customerRequest);
 }

@@ -13,5 +13,5 @@ public class ChannelFinanceInfoAssetRealEstate {
     private String property;
     private String propertyType;
     private String source;
-    private String condition;
+    private String conditionState;
 }

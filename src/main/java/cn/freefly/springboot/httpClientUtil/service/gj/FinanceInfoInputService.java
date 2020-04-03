@@ -1,5 +1,8 @@
 package cn.freefly.springboot.httpClientUtil.service.gj;
 
+import cn.freefly.springboot.httpClientUtil.dto.BaseResponse;
+import cn.freefly.springboot.httpClientUtil.dto.gj.financeInfo.channel.ChannelFinanceInfoInputRequest;
+
 /**
  * @Author xiao.yunfei
  * @Date 2020/2/27 10:06
@@ -14,5 +17,5 @@ public interface FinanceInfoInputService {
      * @Param [infoInputRequest]
      * @Return com.jianyuan.fund.web.dto.BaseResponse
      */
-//    BaseResponse saveFinanceInfo(ChannelFinanceInfoInputRequest infoInputRequest);
+    BaseResponse saveFinanceInfo(ChannelFinanceInfoInputRequest infoInputRequest);
 }
