@@ -182,4 +182,13 @@ public class DateUtil {
         calendar.add(Calendar.DAY_OF_YEAR, -1);
         return getDateFormat(SlashYmd).format(calendar.getTime());
     }
+    /**
+     * @Author xiao.yunfei
+     * @Description 时间戳
+     * @Date 2020/4/3 16:19
+     * @Return long
+     */
+    public static long getTimeStamp(){
+        return System.currentTimeMillis();
+    }
 }
