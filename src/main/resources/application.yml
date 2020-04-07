@@ -71,3 +71,14 @@ undertow:
   buffers-per-region: 1024
   ## 是否分配的直接内存(NIO直接分配的堆外内存)
   direct-buffers: true
+
+# fastDFS 配置
+fdfs:
+  connect-timeout: 600
+  so-timeout: 1500
+  thumb-image:
+    width: 150
+    height: 150
+  web-server-url: 'http://10.0.1.34/'
+  tracker-list:
+  - 10.0.1.34:22122
