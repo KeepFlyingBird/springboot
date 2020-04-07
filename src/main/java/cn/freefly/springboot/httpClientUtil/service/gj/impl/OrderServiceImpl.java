@@ -45,9 +45,6 @@ import java.util.Objects;
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
-    private CacmpGjOrderMapper cacmpGjOrderMapper;
-
-    @Autowired
     private GjHttpClient gjHttpClients;
 
     @Autowired
@@ -55,6 +52,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private CacmpGjNodeService cacmpGjNodeService;
+
+    @Autowired
+    private CacmpGjOrderMapper cacmpGjOrderMapper;
 
     @Override
     @Transactional
