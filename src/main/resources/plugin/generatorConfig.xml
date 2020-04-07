@@ -159,21 +159,18 @@
         <!--</table>-->
         <!--<table tableName="cacmp_gj_subject_spouse" domainObjectName="CacmpGjSubjectSpouse">-->
         <!--</table>-->
-        <!--<table tableName="cacmp_gj_node" domainObjectName="CacmpGjNode">-->
-        <!--</table>-->
         <!--<table tableName="cacmp_gj_file" domainObjectName="CacmpGjFile">-->
-        <!--</table>-->
-        <!--<table tableName="cacmp_gj_order" domainObjectName="CacmpGjOrder">-->
         <!--</table>-->
         <!--<table tableName="cacmp_gj_asset_car_extend" domainObjectName="CacmpGjAssetCarExtend">-->
         <!--</table>-->
         <!--<table tableName="cacmp_gj_asset_car_assessment" domainObjectName="CacmpGjAssetCarAssessment">-->
         <!--</table>
         <table tableName="cacmp_gj_business_info_extend" domainObjectName="CacmpGjBusinessInfoExtend">
-        </table>-->
-        <table tableName="cacmp_gj_person_bank" domainObjectName="CacmpGjPersonBank">
         </table>
-
+        <table tableName="cacmp_gj_order" domainObjectName="CacmpGjOrder">
+        </table>-->
+        <table tableName="cacmp_gj_node" domainObjectName="CacmpGjNode">
+        </table>
     </context>
 
 </generatorConfiguration>
