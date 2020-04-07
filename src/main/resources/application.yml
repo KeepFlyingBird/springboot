@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: springboot
   datasource:
 #    mysql配置
     driver-class-name: com.mysql.cj.jdbc.Driver
