@@ -10,7 +10,7 @@ import java.util.UUID;
  */
 public class UUIDUtil {
     /**
-     * 生成随机UUID,不包含"-",统一转为小写
+     * 生成随机UUID,不包含"-",统一转为小写 32位随机字符串
      */
     public static String uuidLower() {
         String regex = "-";
@@ -20,7 +20,7 @@ public class UUIDUtil {
     }
 
     /**
-     * 生成随机UUID,不包含"-",统一转为大写
+     * 生成随机UUID,不包含"-",统一转为大写 32位随机字符串
      */
     public static String uuidUpper() {
         String regex = "-";
