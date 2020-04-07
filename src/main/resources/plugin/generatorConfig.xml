@@ -167,9 +167,9 @@
         <!--</table>
         <table tableName="cacmp_gj_business_info_extend" domainObjectName="CacmpGjBusinessInfoExtend">
         </table>
-        <table tableName="cacmp_gj_order" domainObjectName="CacmpGjOrder">
-        </table>-->
         <table tableName="cacmp_gj_node" domainObjectName="CacmpGjNode">
+        </table>-->
+        <table tableName="cacmp_gj_order" domainObjectName="CacmpGjOrder">
         </table>
     </context>
 

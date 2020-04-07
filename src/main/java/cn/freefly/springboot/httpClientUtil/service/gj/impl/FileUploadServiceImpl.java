@@ -2,6 +2,7 @@ package cn.freefly.springboot.httpClientUtil.service.gj.impl;
 
 import cn.freefly.springboot.devUtils.DateUtil;
 import cn.freefly.springboot.devUtils.UUIDUtil;
+import cn.freefly.springboot.fastDFS.util.FastDFSClientUtil;
 import cn.freefly.springboot.httpClientUtil.config.gj.GjChannelConfig;
 import cn.freefly.springboot.httpClientUtil.dto.gj.enums.UploadFieldEnum;
 import cn.freefly.springboot.httpClientUtil.dto.gj.fileUpload.ChanneFileUpload;
@@ -10,7 +11,6 @@ import cn.freefly.springboot.httpClientUtil.mapper.PathConfigMapper;
 import cn.freefly.springboot.httpClientUtil.mapper.gj.CacmpGjUpload;
 import cn.freefly.springboot.httpClientUtil.service.PathConfigService;
 import cn.freefly.springboot.httpClientUtil.service.gj.FileUploadService;
-import cn.freefly.springboot.httpClientUtil.util.FastdfsCilentUtil;
 import cn.freefly.springboot.httpClientUtil.util.GjFile;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class FileUploadServiceImpl implements FileUploadService {
     private PathConfigService pathConfigService;
 
     @Autowired
-    private FastdfsCilentUtil fastdfsCilentUtil;
+    private FastDFSClientUtil fastdfsCilentUtil;
 
     @Override
     public List<HashMap> selectuploadURL(String fileStage) {
