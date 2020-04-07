@@ -5,10 +5,12 @@ import cn.freefly.springboot.httpClientUtil.entity.gj.CacmpGjNodeCriteria;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
+import org.springframework.stereotype.Repository;
 
 /**
 * Created by Mybatis Generator on 2020/04/03
 */
+@Repository
 public interface CacmpGjNodeMapper {
     long countByExample(CacmpGjNodeCriteria example);
 
