@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
+    <property resource="application.yml"/>
+    <springProperty scope="context" name="LOG_PATH" source="log.path"/>
     <!--日志文件名称：这里spring.application.name表示工程名称-->
-    <springProperty scope="context" name="PRO_NAME" source="spring.application.name"/>
+    <springProperty scope="context" name="PRO_NAME" source="log.proName"/>
+    <springProperty scope="context" name="ROOT_LEVEL" source="log.rootLevel"/>
     <!--默认配置-->
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 
     <!--配置日志文件(File)-->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!--设置策略-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--日志文件路径：这里%d{yyyyMMdd}表示按天分类日志-->
-            <FileNamePattern>logs/${PRO_NAME}/%d{yyyy-MM,aux}/${PRO_NAME}.%d{yyyyMMdd}.log</FileNamePattern>
+            <FileNamePattern>${LOG_PATH}/${PRO_NAME}-%d{yyyyMMdd}.log</FileNamePattern>
             <!--日志保留天数-->
             <MaxHistory>15</MaxHistory>
         </rollingPolicy>
@@ -36,7 +40,8 @@
         <appender-ref ref="FILE"/>
     </appender>
 
-    <root level="info">
+    <root level="${ROOT_LEVEL}">
+        <appender-ref ref="CONSOLE"/>
         <appender-ref ref="ASYNC-FILE"/>
     </root>
 </configuration>
