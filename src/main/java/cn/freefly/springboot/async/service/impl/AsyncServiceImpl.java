@@ -1,6 +1,7 @@
 package cn.freefly.springboot.async.service.impl;
 
 import cn.freefly.springboot.async.service.AsyncService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +12,11 @@ import org.springframework.stereotype.Service;
  * @Desc
  */
 @Service
+@Slf4j
 public class AsyncServiceImpl implements AsyncService {
     @Override
     @Async // 声明使用异步调用
     public void testAsync() {
-        System.out.println("--impl请求线程名称："+"【"+Thread.currentThread().getName()+"】");
+        log.info("--impl请求线程名称："+"【"+Thread.currentThread().getName()+"】");
     }
 }
