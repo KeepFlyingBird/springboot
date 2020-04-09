@@ -1,7 +1,10 @@
 package cn.freefly.springboot.devUtils.ObjectCopyUtil;
 
 import com.github.dozermapper.core.DozerBeanMapper;
+import com.github.dozermapper.core.DozerBeanMapperBuilder;
 import com.github.dozermapper.core.Mapper;
+import com.github.dozermapper.core.loader.api.BeanMappingBuilder;
+import com.github.dozermapper.core.loader.api.TypeMappingOptions;
 import com.google.common.collect.Lists;
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import static com.github.dozermapper.core.loader.api.TypeMappingOptions.mapNull;
+
 /**
  * @ClassNmae BeanMapperUtil
  * @Author xiao.yunfei
@@ -19,50 +24,14 @@ import java.util.stream.Collectors;
  * @Desc
  */
 public class BeanMapperUtil {
-    @Autowired
-    private static DozerBeanMapper dozer;
 
-    /**
-     * @Author xiao.yunfei
-     * @Description 对象-》对象
-     * @Date 2020/3/30 0:09
-     * @Param
-     * @Return
-     */
-    public static void copy(Object source, Object destinationObject) {
-        if(Objects.nonNull(source)){
-            dozer.map(source, destinationObject);
-        }
+    public static <T, K> void copyPropertiesWithNull(final T sources, final K destination) {
+        Mapper mapper = DozerBeanMapperBuilder.create().withMappingBuilder(new BeanMappingBuilder() {
+            @Override
+            protected void configure() {
+                mapping(type(sources.getClass()), type(destination.getClass()), mapNull(false), TypeMappingOptions.mapEmptyString(false));
+            }
+        }).build();
+        mapper.map(sources, destination);
     }
-    /**
-     * @Author xiao.yunfei
-     * @Description 对象-》Class 类
-     * @Date 2020/3/30 0:10
-     * @Param [source, destinationClass]
-     * @Return T
-     */
-    public static <T> T map(Object source, Class<T> destinationClass) {
-        if(Objects.isNull(source)){
-            return null;
-        }
-        return dozer.map(source, destinationClass);
-    }
-
-
-    /**
-     * @Author xiao.yunfei
-     * @Description LIST->LIST
-     * @Date 2020/3/30 0:11
-     * @Param [sourceList, destinationClass]
-     * @Return java.util.List<T>
-     */
-    public static <T> List<T> mapList(Collection<?> sourceList, Class<T> destinationClass) {
-        if(sourceList == null || sourceList.isEmpty()){
-            return null;
-        }
-        return sourceList.stream()
-                .map(tem->dozer.map(tem,destinationClass))
-                .collect(Collectors.toList());
-    }
-
 }
