@@ -1,19 +1,9 @@
-package cn.freefly.springboot.devUtils.ObjectCopyUtil;
+package cn.freefly.springboot.devUtils.ObjCopyUtil;
 
-import com.github.dozermapper.core.DozerBeanMapper;
 import com.github.dozermapper.core.DozerBeanMapperBuilder;
 import com.github.dozermapper.core.Mapper;
 import com.github.dozermapper.core.loader.api.BeanMappingBuilder;
 import com.github.dozermapper.core.loader.api.TypeMappingOptions;
-import com.google.common.collect.Lists;
-import org.apache.commons.beanutils.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 import static com.github.dozermapper.core.loader.api.TypeMappingOptions.mapNull;
 
