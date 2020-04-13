@@ -1,6 +1,5 @@
 package cn.freefly.springboot;
 
-import cn.freefly.springboot.devUtils.DateUtil;
 import cn.freefly.springboot.devUtils.RSAUtils;
 import cn.freefly.springboot.redis.service.RedisService;
 import cn.freefly.springboot.redis.util.SequenceUtils;
@@ -13,7 +12,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
