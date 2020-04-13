@@ -1,7 +1,9 @@
 package cn.freefly.springboot.tokenAuth.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @ClassNmae UserInfo
@@ -10,7 +12,8 @@ import lombok.Data;
  * @Desc
  */
 @Data
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserInfo {
     public String userName;
     public String passWord;
