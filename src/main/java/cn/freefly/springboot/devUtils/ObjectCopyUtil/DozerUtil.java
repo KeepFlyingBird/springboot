@@ -24,6 +24,8 @@ import static com.github.dozermapper.core.loader.api.TypeMappingOptions.mapNull;
  * @Desc
  */
 public class DozerUtil {
+    @Autowired
+    public Mapper dozerMapper;
     /**
      * @Author: xiao.yunfei
      * @Description: API 自定义 mapper 避免源对象空值属性覆盖目标对象值未匹配字段数据
