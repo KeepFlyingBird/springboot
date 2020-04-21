@@ -6,6 +6,7 @@ import cn.freefly.springboot.tokenAuth.utils.TokenConstant;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.method.HandlerMethod;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
+import java.util.Enumeration;
 
 /**
  * @ClassNmae AuthInterceptor
@@ -44,7 +46,16 @@ public class AuthInterceptor implements HandlerInterceptor {
         if (!(handler instanceof HandlerMethod)) {
             return true;
         }
+        Enumeration<String> headerNames = request.getHeaderNames();
+        while (headerNames.hasMoreElements()){
+            log.info("nextElement:{}",headerNames.nextElement());
+        }
         HandlerMethod handlerMethod = (HandlerMethod) handler;
+        MethodParameter[] methodParameters = handlerMethod.getMethodParameters();
+
+        for (MethodParameter mp:  methodParameters) {
+            log.info("getParameter:{},name:{},type:{}",mp.getParameter(),mp.getParameterName(),mp.getParameterType());
+        }
         Method method = handlerMethod.getMethod();
         if (method.getAnnotation(AuthToken.class) != null) {
             String token = request.getHeader(httpHeaderName);
@@ -58,7 +69,7 @@ public class AuthInterceptor implements HandlerInterceptor {
                 Long tokeBirthTime = Long.valueOf(redisUtil.get(token+username).toString());
                 log.info("token Birth time is: {}", tokeBirthTime);
                 Long diff = System.currentTimeMillis() - tokeBirthTime;
-                log.info("token is exist : {} ms", diff);
+                log.info("token is exist : {},{} ", diff,TokenConstant.TOKEN_RESET_TIME);
                 if (diff > TokenConstant.TOKEN_RESET_TIME) {
                     redisUtil.expire(username.toString(), TokenConstant.TOKEN_EXPIRE_TIME);
                     redisUtil.expire(token, TokenConstant.TOKEN_EXPIRE_TIME);
