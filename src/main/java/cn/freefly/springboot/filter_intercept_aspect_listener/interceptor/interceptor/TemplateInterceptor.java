@@ -1,6 +1,6 @@
-package cn.freefly.springboot.filter_intercept_aspect.interceptor.interceptor;
+package cn.freefly.springboot.filter_intercept_aspect_listener.interceptor.interceptor;
 
-import cn.freefly.springboot.filter_intercept_aspect.interceptor.utils.InterceptorAnnotation;
+import cn.freefly.springboot.filter_intercept_aspect_listener.interceptor.utils.InterceptorAnnotation;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 

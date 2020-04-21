@@ -1,6 +1,6 @@
-package cn.freefly.springboot.filter_intercept_aspect.interceptor.interceptor;
+package cn.freefly.springboot.filter_intercept_aspect_listener.interceptor.interceptor;
 
-import cn.freefly.springboot.filter_intercept_aspect.interceptor.utils.AuthToken;
+import cn.freefly.springboot.filter_intercept_aspect_listener.interceptor.utils.AuthToken;
 import cn.freefly.springboot.redis.util.RedisUtil;
 import cn.freefly.springboot.tokenAuth.utils.TokenConstant;
 import com.alibaba.fastjson.JSONObject;

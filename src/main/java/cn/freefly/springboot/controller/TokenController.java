@@ -2,7 +2,7 @@ package cn.freefly.springboot.controller;
 
 import cn.freefly.springboot.httpClientUtil.dto.BaseResponse;
 import cn.freefly.springboot.tokenAuth.dto.UserInfo;
-import cn.freefly.springboot.filter_intercept_aspect.interceptor.utils.AuthToken;
+import cn.freefly.springboot.filter_intercept_aspect_listener.interceptor.utils.AuthToken;
 import cn.freefly.springboot.tokenAuth.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
