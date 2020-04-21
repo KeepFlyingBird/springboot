@@ -6,4 +6,6 @@ import cn.freefly.springboot.tokenAuth.dto.UserInfo;
 
 public interface TokenService {
     BaseResponse login(UserInfo userInfo);
+
+    void query(String token);
 }

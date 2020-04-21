@@ -3,7 +3,7 @@ package cn.freefly.springboot.tokenAuth.service.impl;
 import cn.freefly.springboot.httpClientUtil.dto.BaseResponse;
 import cn.freefly.springboot.tokenAuth.dto.UserInfo;
 import cn.freefly.springboot.tokenAuth.service.TokenService;
-import cn.freefly.springboot.tokenAuth.utils.RedisUtil;
+import cn.freefly.springboot.redis.util.RedisUtil;
 import cn.freefly.springboot.tokenAuth.utils.TokenConstant;
 import cn.freefly.springboot.tokenAuth.utils.TokenGeneratorUtil;
 import com.alibaba.fastjson.JSONObject;
@@ -29,11 +29,17 @@ public class TokenServiceImpl implements TokenService {
         //1、生成token
         String token = tokenGeneratorUtil.generate(userInfo.getUserName(),userInfo.telPhone);
         //2、token存入内存
-        redisUtil.set(userInfo.getUserName(),token, TokenConstant.TOKEN_EXPIRE_TIME);
         redisUtil.set(token,userInfo.getUserName(), TokenConstant.TOKEN_EXPIRE_TIME);
         redisUtil.set(token+userInfo.getUserName(),System.currentTimeMillis());
+        String userName = redisUtil.get(token).toString();
+        log.info("userName:{},token:{}",userName,token);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("token",token);
         return BaseResponse.createBaseResponse(true,jsonObject);
+    }
+
+    @Override
+    public void query(String token) {
+        log.info("token:{}",redisUtil.get(token));
     }
 }

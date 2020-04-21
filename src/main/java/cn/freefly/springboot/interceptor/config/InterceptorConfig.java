@@ -1,6 +1,7 @@
-package cn.freefly.springboot.tokenAuth.config;
+package cn.freefly.springboot.interceptor.config;
 
-import cn.freefly.springboot.tokenAuth.interceptor.AuthInterceptor;
+import cn.freefly.springboot.interceptor.interceptor.TemplateInterceptor;
+import cn.freefly.springboot.interceptor.interceptor.AuthInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -15,14 +16,19 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
-    //让bean提前加载
     @Bean
-    public HandlerInterceptor getInterceptor(){
+    public HandlerInterceptor getTemplateInterceptor(){
+        return new TemplateInterceptor();
+    }
+    @Bean
+    public HandlerInterceptor getAuthInterceptor(){
         return new AuthInterceptor();
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(getInterceptor()).addPathPatterns("/**");
+        // 拦截指定路径请求
+        registry.addInterceptor(getTemplateInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(getAuthInterceptor()).addPathPatterns("/**");
     }
 }

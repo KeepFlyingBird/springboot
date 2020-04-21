@@ -2,12 +2,8 @@ package cn.freefly.springboot.controller;
 
 import cn.freefly.springboot.httpClientUtil.dto.BaseResponse;
 import cn.freefly.springboot.tokenAuth.dto.UserInfo;
-import cn.freefly.springboot.tokenAuth.service.AuthToken;
+import cn.freefly.springboot.interceptor.utils.AuthToken;
 import cn.freefly.springboot.tokenAuth.service.TokenService;
-import cn.freefly.springboot.tokenAuth.utils.RedisUtil;
-import cn.freefly.springboot.tokenAuth.utils.TokenConstant;
-import cn.freefly.springboot.tokenAuth.utils.TokenGeneratorUtil;
-import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,11 +30,20 @@ public class TokenController {
      * 加了权限注解的方法
      * @return
      */
+    @RequestMapping(value = "/query", method = RequestMethod.POST)
+    public String querytoken(@RequestParam String token) {
+        System.out.println("权限通过验证"+token);
+        tokenService.query(token);
+        return "成功";
+    }
+    /**
+     * 加了权限注解的方法
+     * @return
+     */
     @AuthToken
-    @ResponseBody
-    @RequestMapping(value = "/testtoken", method = RequestMethod.GET)
-    public String testtoken() {
-        System.out.println("权限通过验证");
+    @RequestMapping(value = "/tokenBody", method = RequestMethod.POST)
+    public String tokenBody(@RequestBody UserInfo userInfo) {
+        System.out.println("权限通过验证"+userInfo.getUserName()+":"+userInfo.getTelPhone());
         return "成功";
     }
 }

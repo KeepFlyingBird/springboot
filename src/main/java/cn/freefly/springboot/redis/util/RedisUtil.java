@@ -1,4 +1,4 @@
-package cn.freefly.springboot.tokenAuth.utils;
+package cn.freefly.springboot.redis.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
