@@ -1,6 +1,4 @@
-package cn.freefly.springboot.interceptor.utils;
-
-import net.bytebuddy.implementation.bind.annotation.RuntimeType;
+package cn.freefly.springboot.filter_intercept_aspect.interceptor.utils;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

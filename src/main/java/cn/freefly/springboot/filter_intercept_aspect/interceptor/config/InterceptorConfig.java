@@ -1,7 +1,7 @@
-package cn.freefly.springboot.interceptor.config;
+package cn.freefly.springboot.filter_intercept_aspect.interceptor.config;
 
-import cn.freefly.springboot.interceptor.interceptor.TemplateInterceptor;
-import cn.freefly.springboot.interceptor.interceptor.AuthInterceptor;
+import cn.freefly.springboot.filter_intercept_aspect.interceptor.interceptor.TemplateInterceptor;
+import cn.freefly.springboot.filter_intercept_aspect.interceptor.interceptor.AuthInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
