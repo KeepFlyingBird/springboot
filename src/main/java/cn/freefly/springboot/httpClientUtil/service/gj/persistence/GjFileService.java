@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface GjFileService {
     /**
-     * @return java.util.List<com.jianyuan.fund.domain.gj.CacmpGjFile>
+     * @return java.utils.List<com.jianyuan.fund.domain.gj.CacmpGjFile>
      * @Author houjianhui
      * @Description 通过阶段获取当前阶段文件列表
      * @Date 15:17 2020/3/23

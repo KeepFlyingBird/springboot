@@ -70,7 +70,7 @@ public class CacmpGjNodeServiceImpl implements CacmpGjNodeService {
     }
 
     /**
-     * @return java.util.List<com.jianyuan.fund.domain.gj.CacmpGjNode>
+     * @return java.utils.List<com.jianyuan.fund.domain.gj.CacmpGjNode>
      * @Author houjianhui
      * @Description 根据订单ID查询所有节点
      * @Date 18:34 2020/2/28
