@@ -73,4 +73,6 @@ dependencies {
     implementation 'com.jcraft:jsch:0.1.54'
 
     implementation 'com.github.tobato:fastdfs-client:1.26.5'
+    
+    implementation 'org.springframework:spring-aop' 
 }
