@@ -8,6 +8,7 @@ import com.github.tobato.fastdfs.domain.proto.storage.DownloadByteArray;
 import com.github.tobato.fastdfs.exception.FdfsUnsupportStorePathException;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -66,6 +67,7 @@ public class FastDFSClientUtil {
         byte[] buff = content.getBytes(Charset.forName("UTF-8"));
         ByteArrayInputStream stream = new ByteArrayInputStream(buff);
         StorePath storePath = storageClient.uploadFile(stream, buff.length, fileExtension, null);
+
         return getResAccessUrl(storePath);
     }
 
@@ -88,6 +90,11 @@ public class FastDFSClientUtil {
         return bytes;
     }
 
+    /**
+     * 转换为可视地址
+     * @param storeKey
+     * @return
+     */
     public String transferToPreviewUrl(String storeKey) {
         StringBuffer sb = new StringBuffer();
         int index = org.apache.commons.lang3.StringUtils.indexOf(storeKey, "/");
