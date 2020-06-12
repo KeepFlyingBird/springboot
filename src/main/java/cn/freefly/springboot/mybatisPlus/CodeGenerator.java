@@ -18,7 +18,7 @@ import java.util.Properties;
 
 public class CodeGenerator {
 
-    public static final String[] TABLE_ARR = new String[] {"cacmp_gj_asset_car"};
+    public static final String[] TABLE_ARR = new String[] {"cacmp_refund_result"};
 
     /**
      * <p>
@@ -76,7 +76,7 @@ public class CodeGenerator {
         gc.setFileOverride(true);
         gc.setActiveRecord(true);
         // xml 中自动生成返回对象
-//        gc.setBaseResultMap(true); // XML ResultMap
+        gc.setBaseResultMap(true); // XML ResultMap
         // xml 中自动生成属性
 //        gc.setBaseColumnList(true);
         //实体属性 Swagger2 注解

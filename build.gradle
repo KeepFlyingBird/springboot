@@ -71,10 +71,10 @@ dependencies {
     // dozermapper
     implementation 'com.github.dozermapper:dozer-core:6.5.0'
 
-    
+    // sftp连接池
+    implementation 'com.jcraft:jsch:0.1.55'
+    implementation 'org.apache.commons:commons-pool2:2.8.0'
 
-
-    implementation 'com.jcraft:jsch:0.1.54'
 
     implementation 'com.github.tobato:fastdfs-client:1.26.5'
     

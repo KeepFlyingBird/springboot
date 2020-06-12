@@ -79,6 +79,19 @@ undertow:
   ## 是否分配的直接内存(NIO直接分配的堆外内存)
   direct-buffers: true
 
+#sftp
+sftp:
+  host: 183.84.2.11
+  type: sftp
+  port: 26
+  username: cebbank
+  password: c!5rlkIBAS46xE*rIha3
+  uploadDir: /tmp/jianyuan
+  pool:
+    maxTotal: 10
+    maxIdle: 10
+    minIdle: 5
+
 # fastDFS 配置
 fdfs:
   connect-timeout: 600
