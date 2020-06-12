@@ -21,10 +21,10 @@ public class ValidateAspect {
     //@Around：环绕通知
     @Around("Pointcut()")
     public Object Around(ProceedingJoinPoint pjp) throws Throwable {
-        log.info("around执行方法之前");
+        log.info("切面：around执行方法之前");
         Object[] args = beforeExecute(pjp);
         Object object = pjp.proceed(args);
-        log.info("around执行方法之后--返回值：" + object);
+        log.info("切面：around执行方法之后" );
         return object;
     }
 

@@ -1,0 +1,2 @@
+1、SimpleRabbitListenerContainerFactoryConfigurer 类为什么可以直接使用
+2、baseRabbitTemplate bean 没有用到，为什么还要生成
