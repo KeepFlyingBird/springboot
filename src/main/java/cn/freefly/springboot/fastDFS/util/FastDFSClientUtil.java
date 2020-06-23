@@ -97,9 +97,9 @@ public class FastDFSClientUtil {
      */
     public String transferToPreviewUrl(String storeKey) {
         StringBuffer sb = new StringBuffer();
-        int index = org.apache.commons.lang3.StringUtils.indexOf(storeKey, "/");
-        sb.append(fdfsWebServer.getWebServerUrl()).append(org.apache.commons.lang3.StringUtils.substring(storeKey, index + 1));
-
+//        int index = org.apache.commons.lang3.StringUtils.indexOf(storeKey, "/");
+//        sb.append(fdfsWebServer.getWebServerUrl()).append(org.apache.commons.lang3.StringUtils.substring(storeKey, index + 1));
+        sb.append(fdfsWebServer.getWebServerUrl()).append(storeKey);
         return sb.toString();
     }
 

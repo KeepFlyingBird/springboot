@@ -99,9 +99,9 @@ fdfs:
   thumb-image:
     width: 150
     height: 150
-  web-server-url: 'http://10.0.1.34/'
+  web-server-url: 'http://192.168.213.128/'
   tracker-list:
-  - 10.0.1.34:22122
+  - 192.168.213.128:22122
 
 log:
   path: /logs

@@ -7,3 +7,14 @@
     1.4、nohup java -jar shareniu.jar >/dev/out.file  &
         输出重定向到指定文件，即输出内容不打印到屏幕上，而是输出到指定文件中
 
+2、systemctl
+    防火墙：
+        打开：systemctl start firewalld
+        关闭：systemctl stop firewalld
+        状态查询：systemctl status firewalld
+3、端口
+    查看所有端口：netstat -aptn
+    查看某个服务端口：netstat -unltp|grep nginx
+4、文件查找
+    find / -name *find_name*
+
