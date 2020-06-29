@@ -1,0 +1,5 @@
+1、Caused by: java.sql.SQLException: ORA-01691: Lob 段 LOPPRO.SYS_LOB0000121981C00005$$ 无法通过 8192 (在表空间 DBLS_DATA 中) 扩展
+    方法1：修改数据文件的扩展性
+    alter database datafile '文件路径' autoextend on next 100m maxsize 4000M;
+    方法2：给表空间增加新的数据文件
+    alter tablespace jack_data add datafile '数据文件路径' size 1000m autoextend on next 100m maxsize 4000M;
