@@ -33,8 +33,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-redis')
     compile('redis.clients:jedis:3.0.0')
     //lombok 依赖
-    compileOnly('org.projectlombok:lombok:1.18.8')
-    
+//    compileOnly('org.projectlombok:lombok:1.18.8')
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
     // 高级消息队列协议
     compile('org.springframework.boot:spring-boot-starter-amqp')
     
