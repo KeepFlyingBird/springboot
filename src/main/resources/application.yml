@@ -1,8 +1,10 @@
 spring:
+  application:
+    name: springboot
   datasource:
 #    mysql配置
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.0.3.4:3306/jy_fund?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://10.0.3.4:3306/jy_non_insurance?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
     username: dev_user
     password: dev_user@jy28%JK
 
@@ -42,11 +44,12 @@ spring:
         min-idle: 0
   ## RabbitMQ 配置
   rabbitmq:
-    host: '183.84.2.5' # RabbitMQ 服务器地址
-    port: 5672 # RabbitMQ 服务器端口
-    username: 'jianyuanRish' # RabbitMQ 服务器用户
-    password: 'jy123456' # RabbitMQ 服务器密码
-    virtual-host: 'rish'
+    # vpn:10.0.2.3:45672 测试服务器：183.84.2.5:5762
+    host: '10.0.1.46' # RabbitMQ 服务器地址
+    port: 5762 # RabbitMQ 服务器端口
+    username: 'picc_callback_test' # RabbitMQ 服务器用户
+    password: 'S823cichege2R1tlbamA' # RabbitMQ 服务器密码
+    virtual-host: '/cacmp/picc/callback'
 
 server:
   port: 8082
@@ -59,6 +62,11 @@ mybatis:
     #配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性。
     map-underscore-to-camel-case: true
 
+mybatis-plus:
+  global-config:
+    db-config:
+      update-strategy: not_empty
+
 undertow:
   ## IO线程数, 它主要执行非阻塞的任务，它们会负责多个连接，默认设置每个CPU核心一个线程，不可设置过大，否则启动项目会报错：打开文件数过多
   io-threads: 16
@@ -70,3 +78,32 @@ undertow:
   buffers-per-region: 1024
   ## 是否分配的直接内存(NIO直接分配的堆外内存)
   direct-buffers: true
+
+#sftp
+sftp:
+  host: 183.84.2.11
+  type: sftp
+  port: 26
+  username: cebbank
+  password: c!5rlkIBAS46xE*rIha3
+  uploadDir: /tmp/jianyuan
+  pool:
+    maxTotal: 10
+    maxIdle: 10
+    minIdle: 5
+
+# fastDFS 配置
+fdfs:
+  connect-timeout: 600
+  so-timeout: 1500
+  thumb-image:
+    width: 150
+    height: 150
+  web-server-url: 'http://192.168.213.128/'
+  tracker-list:
+  - 192.168.213.128:22122
+
+log:
+  path: /logs
+  proName: springboot
+  rootLevel: debug

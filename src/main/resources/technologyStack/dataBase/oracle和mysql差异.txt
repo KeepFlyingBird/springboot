@@ -1,0 +1,19 @@
+1、批量插入
+ oracle:
+    <insert id="insertBatch" parameterType="com.caihao.oracledemo1.entity.CopyEmp">
+        INSERT INTO copy_emp(empno,ename,job,mgr,hiredate,sal,comm,deptno)
+        <foreach collection="copyEmpList" item="copyEmp" separator="UNION ALL">
+          SELECT #{copyEmp.empno},#{copyEmp.ename},#{copyEmp.job},#{copyEmp.mgr},
+            #{copyEmp.hiredate},#{copyEmp.sal},#{copyEmp.comm},#{copyEmp.deptno}
+          FROM dual
+        </foreach>
+      </insert>
+ mysql:
+    <insert id="insertBatch">
+        INSERT INTO t_user
+                (id, name, del_flag)
+        VALUES
+        <foreach collection ="list" item="user" separator =",">
+             (#{user.id}, #{user.name}, #{user.delFlag})
+        </foreach >
+    </insert>

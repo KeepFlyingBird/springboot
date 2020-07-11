@@ -1,0 +1,20 @@
+1、linux运行jar包方式：
+    1.1、java -jar shareniu.jar 当前ssh窗口被锁定，可按CTRL + C打断程序运行，或直接关闭窗口，程序退出
+    1.2、java -jar shareniu.jar &  在后台运行，当前ssh窗口不被锁定，但是当窗口关闭时，程序中止运行
+    1.3、nohup java -jar shareniu.jar &
+            nohup：不挂断运行命令,当账户退出或终端关闭时,程序仍然运行，当用 nohup 命令执行作业时，
+            缺省情况下该作业的所有输出被重定向到nohup.out的文件中，除非另外指定了输出文件
+    1.4、nohup java -jar shareniu.jar >/dev/out.file  &
+        输出重定向到指定文件，即输出内容不打印到屏幕上，而是输出到指定文件中
+
+2、systemctl
+    防火墙：
+        打开：systemctl start firewalld
+        关闭：systemctl stop firewalld
+        状态查询：systemctl status firewalld
+3、端口
+    查看所有端口：netstat -aptn
+    查看某个服务端口：netstat -unltp|grep nginx
+4、文件查找
+    find / -iname *find_name*
+

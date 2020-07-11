@@ -1,9 +1,6 @@
 package cn.freefly.springboot.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * @ClassNmae BaseRes
@@ -11,10 +8,9 @@ import lombok.Setter;
  * @Date 2020/1/6 15:37
  * @Desc
  */
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class BaseRes {
     private boolean flag;
     private String resMsg ;

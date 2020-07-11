@@ -1,5 +1,5 @@
 1、vmware官网下载虚拟机并安装
-2、下载centos7镜像并安装系统
+2、下载centos7镜像并安装系统 root xyf888888
 3、设置ip地址，可以shell链接
      vi /etc/sysconfig/network-scripts/ifcfg-ens33
     设置：onboot=yes
@@ -18,3 +18,5 @@
           export CLASSPATH=$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
           export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
     source /etc/profile
+
+

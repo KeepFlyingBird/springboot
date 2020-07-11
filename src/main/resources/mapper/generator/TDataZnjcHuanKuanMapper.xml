@@ -307,7 +307,7 @@
       )
     </foreach>
   </insert>
-  <!--<insert id="insertTDataHuanKuanBatchOrcl" parameterType="java.util.List" >-->
+  <!--<insert id="insertTDataHuanKuanBatchOrcl" parameterType="java.utils.List" >-->
     <!--<foreach collection="list" item="item" close="end;" open="begin ">-->
       <!--INSERT INTO T_DATA_ZNJC_HUANKUAN_1 (-->
         <!--project_id, paylist_code, beginning_receive_data,-->
