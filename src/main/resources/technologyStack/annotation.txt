@@ -1,0 +1,24 @@
+1、@Target
+     Target设定注解使用范围，通过ElementType来指定注解可使用范围的枚举集合 。
+     ElementType用法
+         取值	注解使用范围
+         TYPE	类，接口上或者枚举申明
+         FIELD	字段申明和枚举常量
+         METHOD	方法
+         PARAMETER	参数
+         CONSTRUCTOR	构造方法
+         LOCAL_VARIABLE	局部变量
+         ANNOTATION_TYPE	注解类型上（被@interface修饰的类型）
+         PACKAGE	安装包申明
+         TYPE_PARAMETER	类型参数申明
+         TYPE_USE	使用一种类型
+2、@Documented
+     Documented注解表明这个注释是由 javadoc记录的。 如果一个类型声明被注释了文档化，它的注释成为公共API的一部分。
+3、@Retention
+     @Retention与RetentionPolicy这个枚举类型的常量一起指定注释要保留多长时间
+     RetentionPolicy用法：
+     取值	解释
+     SOURCE	编译器丢弃注释
+     CLASS	编译器会记录在文件中，默认运行时不需要虚拟机保留
+     RUNTIME	编译器记录在文件中，由虚拟机运行时保留，便于读取。
+

@@ -3,5 +3,404 @@
         PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
         "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <mapper namespace="test">
-   
+    CREATE OR REPLACE PROCEDURE "PRC_DUN_ONE" (PAYCODE VARCHAR2) AS
+    支付表编号   VARCHAR(2000);
+    期次         NUMBER;
+    应收租金     NUMBER;
+    实收租金     NUMBER;
+    应收罚息     NUMBER;
+    实收罚息     NUMBER;
+    已有逾期条数 NUMBER;
+    添加次数     NUMBER;
+    创建日期     DATE;
+    应收日期     DATE;
+    客户名称     VARCHAR(2000);
+    逾期状态     VARCHAR(2000);
+    设备         VARCHAR(2000);
+    逾期类型     VARCHAR(2000);
+    起租日期     DATE;
+    逾期天数     NUMBER;
+    项目ID       VARCHAR(2000);
+    供应商       VARCHAR(2000);
+    罚息率       NUMBER;
+    项目编号     VARCHAR(2000);
+    COPY1        NUMBER;
+    COPY2        VARCHAR(2000);
+    COPY3        NUMBER;
+    COPY4        NUMBER;
+    COPY5        DATE;
+    COPY6        NUMBER;
+    COPY7        NUMBER;
+    COPY8        NUMBER;
+    COPY9        NUMBER;
+    BEGIN
+    FOR PAYFB IN (SELECT T1.PAYLIST_CODE 支付表编号,
+    T1.BEGINNING_NUM 期次,
+    T1.BEGINNING_RECEIVE_DATA 应收日期,
+    T1.BEGINNING_MONEY 应收租金,
+    T1.BEGINNING_PAID 实收租金,
+    NVL(T2.D_RECEIVE_MONEY, 0) 实收罚息
+    FROM (SELECT *
+    FROM (SELECT FRB.PAYLIST_CODE,
+    FRB.BEGINNING_NUM,
+    FRPH.PROJECT_ID,
+    MAX(FRB.BEGINNING_RECEIVE_DATA) BEGINNING_RECEIVE_DATA,
+    SUM(NVL(FRB.BEGINNING_MONEY, 0)) BEGINNING_MONEY,
+    SUM(NVL(FRB.BEGINNING_PAID, 0)) BEGINNING_PAID
+    FROM FI_R_BEGINNING FRB
+    LEFT JOIN FIL_RENT_PLAN_HEAD_MAX_V FRPH
+    ON FRPH.PAYLIST_CODE = FRB.PAYLIST_CODE
+    WHERE FRB.BEGINNING_NUM > 0
+    AND FRB.VINUAL_FLAG = 0
+    AND FRPH.STATUS NOT IN
+    (2, 3, 6, 22, 5, 9, 55)
+    AND FRB.ITEM_FLAG = 2
+    AND FRB.BEGINNING_RECEIVE_DATA <
+        TRUNC(SYSDATE)
+    AND FRB.BEGINNING_RECEIVE_DATA >
+    TO_DATE('2000-01-01', 'yyyy-mm-dd')
+    GROUP BY FRB.PAYLIST_CODE,
+    FRB.BEGINNING_NUM,
+    FRPH.PROJECT_ID)
+    WHERE BEGINNING_MONEY - BEGINNING_PAID >= 0.01) T1,
+    (SELECT A.PAYLIST_CODE,
+    A.BEGINNING_NUM,
+    (SUM(A.D_PAY_MONEY) - SUM(A.D_RECEIVE_MONEY)) D_RECEIVE_MONEY
+    FROM (SELECT FFD.D_PAY_CODE      PAYLIST_CODE,
+    FFD.PERIOD          BEGINNING_NUM,
+    FFD.D_RECEIVE_MONEY,
+    FFD.D_PAY_MONEY
+    FROM FI_FUND_DETAIL FFD
+    LEFT JOIN FI_FUND_HEAD FFH
+    ON FFH.ID = FFD.D_FUND_ID
+    WHERE FFH.FI_STATUS = 2
+    AND FFD.D_PAY_PROJECT = '违约金') A
+    WHERE A.BEGINNING_NUM > 0
+    GROUP BY A.PAYLIST_CODE, A.BEGINNING_NUM) T2,
+    FIL_PROJECT_HEAD FPH
+    WHERE T1.PAYLIST_CODE = T2.PAYLIST_CODE(+)
+    AND T1.BEGINNING_NUM = T2.BEGINNING_NUM(+)
+    AND T1.PROJECT_ID = FPH.ID
+    AND FPH.PRO_CODE NOT LIKE '%TEST%'
+    AND FPH.STATUS >= 20
+    and fph.platform_type !=7
+    AND T1.PAYLIST_CODE = PAYCODE
+    AND (FPH.SUP_SHORTNAME NOT LIKE '%测试%' OR
+    FPH.SUP_SHORTNAME IS NULL)
+    AND T1.BEGINNING_MONEY > 0
+    ORDER BY BEGINNING_RECEIVE_DATA DESC) LOOP
+
+
+
+    支付表编号 := PAYFB.支付表编号;
+    期次       := PAYFB.期次;
+    应收日期   := PAYFB.应收日期;
+    应收租金   := PAYFB.应收租金;
+    实收租金   := PAYFB.实收租金;
+    实收罚息   := PAYFB.实收罚息;
+
+    供应商     := NULL;
+    项目编号   := NULL;
+    SELECT COUNT(1)
+    INTO 已有逾期条数
+    FROM FI_OVERDUE T
+    WHERE T.PAY_CODE = PAYFB.支付表编号
+    AND T.PERIOD = PAYFB.期次;
+    添加次数 := 0;
+    IF (已有逾期条数 = 0) THEN
+    SELECT FRPHMV.PROJECT_ID,
+    FRPHMV.START_DATE PAY_START,
+    FCC.NAME          CUST_NAME,
+    FPH.SUP_SHORTNAME,
+    FPH.PRODUCT_NAME  EQUI,
+    FPH.PRO_CODE
+    INTO 项目ID, 起租日期, 客户名称, 供应商, 设备, 项目编号
+    FROM FIL_RENT_PLAN_HEAD_MAX_V FRPHMV,
+    FIL_PROJECT_HEAD         FPH,
+    FIL_CUST_CLIENT          FCC
+    WHERE FRPHMV.PROJECT_ID = FPH.ID(+)
+    AND FPH.CLIENT_ID = FCC.ID(+)
+    AND FRPHMV.PAYLIST_CODE = PAYFB.支付表编号;
+
+    SELECT NVL(max(T.RATE),0)
+    INTO 罚息率
+    FROM FIL_PROJECT_DAY_PUACCRATE T
+    WHERE T.PAYLIST_CODE = PAYFB.支付表编号 and T.DAY_START<=1 and T.DAY_END>=1  and rownum=1;
+
+    应收罚息   := (应收租金 - 实收租金) * 罚息率;
+
+    INSERT INTO FI_OVERDUE
+    (ID,
+    PAY_CODE,
+    PERIOD,
+    RENT_RECE,
+    RENT_PAID,
+    PENALTY_RECE,
+    PENALTY_PAID,
+    CREATE_DATE,
+    RENT_DATE,
+    PENALTY_DAY,
+    PROJECT_ID,
+    CUST_NAME,
+    SUP,
+    PAY_START,
+    EQUI)
+    VALUES
+    (SEQ_FI_OVERDUE.NEXTVAL,
+    支付表编号,
+    期次,
+    应收租金,
+    实收租金,
+    应收罚息,
+    实收罚息,
+    应收日期 + 1,
+    应收日期,
+    1,
+    项目ID,
+    客户名称,
+    供应商,
+    起租日期,
+    设备);
+    END IF;
+    --最后一条
+    IF TRUNC(应收日期 + 1) < TRUNC(SYSDATE) THEN
+    SELECT T.CREATE_DATE,
+    T.CUST_NAME,
+    T.DUE_STATUS,
+    T.EQUI,
+    T.OVER_TYPE,
+    T.PAY_START,
+    T.PENALTY_DAY + 1,
+    T.PROJECT_ID,
+    T.SUP,
+    TRUNC(SYSDATE) - T.CREATE_DATE,
+    T.PENALTY_RECE,
+    T.BEGINNING_FALSE_NUM,
+    T.BEGINNING_FALSE_REASON,
+    T.OVERDUE_STATUS,
+    T.VINUAL_PAID,
+    T.VINUAL_DUE_DATE,
+    T.VINUAL_DUN_FLAG,
+    T.IS_BUY_PENALTY,
+    T.VINUAL_RECE,
+    T.VINUAL_DUN_STATUS
+    INTO 创建日期,
+    客户名称,
+    逾期状态,
+    设备,
+    逾期类型,
+    起租日期,
+    逾期天数,
+    项目ID,
+    供应商,
+    添加次数,
+    应收罚息,
+    COPY1,
+    COPY2,
+    COPY3,
+    COPY4,
+    COPY5,
+    COPY6,
+    COPY7,
+    COPY8,
+    COPY9
+    FROM FI_OVERDUE T
+    WHERE T.ID = (SELECT MAX(ID)
+    FROM FI_OVERDUE T
+    WHERE T.PAY_CODE = PAYFB.支付表编号
+    AND T.PERIOD = PAYFB.期次)
+    ORDER BY ID DESC;
+    WHILE 添加次数 > 0 LOOP
+    BEGIN
+
+
+    创建日期 := 创建日期 + 1;
+
+    SELECT NVL(max(T.RATE),0)
+    INTO 罚息率
+    FROM FIL_PROJECT_DAY_PUACCRATE T
+    WHERE T.PAYLIST_CODE = 支付表编号 and T.DAY_START<=(创建日期 - 应收日期) and T.DAY_END>=(创建日期 - 应收日期) and rownum=1;
+
+    应收罚息 := (应收租金 - 实收租金) * 罚息率 + 应收罚息;
+
+    INSERT INTO FI_OVERDUE
+    (ID,
+    PAY_CODE,
+    PERIOD,
+    RENT_RECE,
+    RENT_PAID,
+    PENALTY_RECE,
+    PENALTY_PAID,
+    CREATE_DATE,
+    RENT_DATE,
+    PENALTY_DAY,
+    DUE_STATUS,
+    PROJECT_ID,
+    CUST_NAME,
+    SUP,
+    PAY_START,
+    EQUI,
+    OVER_TYPE,
+    BEGINNING_FALSE_NUM,
+    BEGINNING_FALSE_REASON,
+    OVERDUE_STATUS,
+    VINUAL_PAID,
+    VINUAL_DUE_DATE,
+    VINUAL_DUN_FLAG,
+    IS_BUY_PENALTY,
+    VINUAL_RECE,
+    VINUAL_DUN_STATUS)
+    VALUES
+    (SEQ_FI_OVERDUE.NEXTVAL,
+    支付表编号,
+    期次,
+    应收租金,
+    实收租金,
+    应收罚息,
+    实收罚息,
+    创建日期,
+    应收日期,
+    创建日期 - 应收日期,
+    逾期状态,
+    项目ID,
+    客户名称,
+    供应商,
+    起租日期,
+    设备,
+    逾期类型,
+    COPY1,
+    COPY2,
+    COPY3,
+    COPY4,
+    COPY5,
+    COPY6,
+    COPY7,
+    COPY8,
+    COPY9);
+    添加次数 := 添加次数 - 1;
+    END;
+    END LOOP;
+    END IF;
+    COMMIT;
+    DBMS_OUTPUT.PUT_LINE(PAYFB.支付表编号 || ':' || PAYFB.期次);
+    END LOOP;
+    COMMIT;
+    FOR PAYFB IN (SELECT T1.ID,
+    T1.PAY_CODE,
+    T1.PERIOD,
+    T1.RENT_RECE,
+    T1.RENT_PAID,
+    T1.PENALTY_RECE,
+    T1.PENALTY_PAID,
+    T1.CREATE_DATE,
+    T1.RENT_DATE,
+    T1.PENALTY_DAY,
+    T1.DUE_STATUS,
+    T1.PROJECT_ID,
+    T1.CUST_NAME,
+    T1.SUP,
+    T1.PAY_START,
+    T1.EQUI,
+    T1.OVER_TYPE,
+    T1.BEGINNING_FALSE_NUM,
+    T1.BEGINNING_FALSE_REASON,
+    T1.OVERDUE_STATUS,
+    T1.VINUAL_PAID,
+    T1.VINUAL_DUE_DATE,
+    T1.VINUAL_DUN_FLAG,
+    T1.IS_BUY_PENALTY,
+    T1.VINUAL_RECE,
+    T1.VINUAL_DUN_STATUS,
+    T1.TEMP_LC
+    FROM FI_OVERDUE T1,
+    (SELECT MAX(ID) ID
+    FROM FI_OVERDUE FO
+    GROUP BY FO.PAY_CODE, FO.PERIOD) T2,
+    FIL_RENT_PLAN_HEAD_MAX_V FRPH
+    WHERE T1.ID = T2.ID
+    AND FRPH.PAYLIST_CODE = T1.PAY_CODE
+    and T1.RENT_RECE - T1.RENT_PAID <=0.0005
+    AND T1.PENALTY_RECE - T1.PENALTY_PAID >= 0.5
+    AND FRPH.STATUS NOT IN (2, 3, 6, 22, 5, 9, 55)
+    -- AND T1.CREATE_DATE < TRUNC(SYSDATE)
+    AND T1.PAY_CODE = PAYCODE) LOOP
+    创建日期 := PAYFB.CREATE_DATE;
+    逾期天数 := PAYFB.PENALTY_DAY;
+
+    WHILE 创建日期 < TRUNC(SYSDATE) LOOP
+    BEGIN
+    创建日期 := 创建日期 + 1;
+    逾期天数 := 逾期天数 + 1;
+    INSERT INTO FI_OVERDUE
+    (ID,
+    PAY_CODE,
+    PERIOD,
+    RENT_RECE,
+    RENT_PAID,
+    PENALTY_RECE,
+    PENALTY_PAID,
+    CREATE_DATE,
+    RENT_DATE,
+    PENALTY_DAY,
+    DUE_STATUS,
+    PROJECT_ID,
+    CUST_NAME,
+    SUP,
+    PAY_START,
+    EQUI,
+    OVER_TYPE,
+    BEGINNING_FALSE_NUM,
+    BEGINNING_FALSE_REASON,
+    OVERDUE_STATUS,
+    VINUAL_PAID,
+    VINUAL_DUE_DATE,
+    VINUAL_DUN_FLAG,
+    IS_BUY_PENALTY,
+    VINUAL_RECE,
+    VINUAL_DUN_STATUS,
+    TEMP_LC)
+    VALUES
+    (SEQ_FI_OVERDUE.NEXTVAL,
+    PAYFB.PAY_CODE,
+    PAYFB.PERIOD,
+    PAYFB.RENT_RECE,
+    PAYFB.RENT_PAID,
+    PAYFB.PENALTY_RECE,
+    PAYFB.PENALTY_PAID,
+    创建日期,
+    PAYFB.RENT_DATE,
+    创建日期 - PAYFB.RENT_DATE,
+    PAYFB.DUE_STATUS,
+    PAYFB.PROJECT_ID,
+    PAYFB.CUST_NAME,
+    PAYFB.SUP,
+    PAYFB.PAY_START,
+    PAYFB.EQUI,
+    PAYFB.OVER_TYPE,
+    PAYFB.BEGINNING_FALSE_NUM,
+    PAYFB.BEGINNING_FALSE_REASON,
+    PAYFB.OVERDUE_STATUS,
+    PAYFB.VINUAL_PAID,
+    PAYFB.VINUAL_DUE_DATE,
+    PAYFB.VINUAL_DUN_FLAG,
+    PAYFB.IS_BUY_PENALTY,
+    PAYFB.VINUAL_RECE,
+    PAYFB.VINUAL_DUN_STATUS,
+    PAYFB.TEMP_LC);
+    END;
+    END LOOP;
+    COMMIT;
+    DBMS_OUTPUT.PUT_LINE(PAYFB.PAY_CODE || ':' || PAYFB.PERIOD);
+    END LOOP;
+    COMMIT;
+    EXCEPTION
+    WHEN OTHERS THEN
+    ROLLBACK;
+    END PRC_DUN_ONE;
+
+
+
+
+
+
 </mapper>
